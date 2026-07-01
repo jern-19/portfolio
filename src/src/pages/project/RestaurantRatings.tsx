@@ -3,18 +3,57 @@ import react from '../../assets/react.png';
 import js from '../../assets/js.png';
 import python from '../../assets/python.png'
 import firestore from '../../assets/firestore.svg';
+import restaurantRatingGallery1 from '../../assets/restaurantRatingGallery1.png'
+import restaurantRatingGallery2 from '../../assets/restaurantRatingGallery2.png'
+import restaurantRatingGallery3 from '../../assets/restaurantRatingGallery3.png'
+import restaurantRatingGallery4 from '../../assets/restaurantRatingGallery4.png'
+import restaurantRatingGallery5 from '../../assets/restaurantRatingGallery5.png'
+import restaurantRatingGallery6 from '../../assets/restaurantRatingGallery6.png'
+import restaurantRating2 from '../../assets/restaurantRating2.png'
 import { useRef, useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faStar , faArrowLeft, faCheck} from '@fortawesome/free-solid-svg-icons';
+import {
+  faGlobe,
+  faDatabase,
+  faScaleBalanced,
+  faBrain,
+  faCode,
+  faDesktop,
+  faServer,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function RestaurantRatings() {
   const images = [
-  { id: 1, title: "Mountain", url: "https://picsum.photos/800/600?1" },
-  { id: 2, title: "City", url: "https://picsum.photos/800/600?2" },
-  { id: 3, title: "Forest", url: "https://picsum.photos/800/600?3" },
-  { id: 4, title: "Ocean", url: "https://picsum.photos/800/600?4" },
-  { id: 5, title: "Desert", url: "https://picsum.photos/800/600?5" },
-  { id: 6, title: "Night Sky", url: "https://picsum.photos/800/600?6" },
+  { id: 1, title: "1", url: restaurantRatingGallery1},
+  { id: 2, title: "2", url: restaurantRatingGallery2 },
+  { id: 3, title: "3", url: restaurantRatingGallery3 },
+  { id: 4, title: "4", url: restaurantRatingGallery4 },
+  { id: 5, title: "5", url: restaurantRatingGallery5 },
+  { id: 6, title: "6", url: restaurantRatingGallery6 },
+];
+
+const topNodes = [
+  {
+    title: "Web Crawling",
+    description: "Collect restaurant data",
+    icon: faGlobe,
+  },
+  {
+    title: "Normalization",
+    description: "Min-Max Scaling",
+    icon: faScaleBalanced,
+  },
+  {
+    title: "Grading Data",
+    description: "Prepare dataset",
+    icon: faDatabase,
+  },
+  {
+    title: "ML Model",
+    description: "Train prediction model",
+    icon: faBrain,
+  },
 ];
 
 const [index, setIndex] = useState(0);
@@ -68,7 +107,7 @@ const page = Math.floor(index / itemsPerPage);
             </button>
             </a>
 
-            <a href="https://github.com/cerenbulbul/Restaurants_Reviews_Rating" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/jern-19/Restaurants_Reviews_Rating" target="_blank" rel="noopener noreferrer">
                  <button className="px-6 py-3 rounded-lg border border-orange-500 text-orange-400 hover:bg-orange-500/10 transition">
               GitHub
             </button>
@@ -251,9 +290,9 @@ const page = Math.floor(index / itemsPerPage);
         <section className="bg-black w-full flex flex-row gap-4 items-center">
           <div className="w-full flex  items-center justify-center">
           <img
-                src={python}
+                src={restaurantRating2}
                 alt="Project preview"
-                className="relative w-[300px] md:w-[300px] shadow-2xl "
+                className="relative w-[400px] md:w-[400px] shadow-2xl "
               />
           </div>
           <div className="w-full flex flex-col items-start justify-center gap-2">

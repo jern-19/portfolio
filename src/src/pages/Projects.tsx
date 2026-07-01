@@ -1,45 +1,93 @@
 import { Link } from 'react-router-dom';
-import Jern from '../assets/Jern.png';
+import restaurantRatingCard from '../assets/projects/restaurantRatingCard.png';
+import ProjectCard from '../components/ProjectCard';
+import ChatOnCard from '../assets/projects/chatOnCard.png';
+import CalculatorCard from '../assets/projects/calculatorCard.png';
+
+
+export const projects = [
+  {
+    title: "Restaurants Reviews & Rating",
+    description:
+      "Discover restaurants, compare ratings and share reviews with a modern full-stack platform.",
+    image: restaurantRatingCard,
+    technologies: [
+      "React Native",
+      "JavaScript",
+      "Python",
+      "Firebase",
+    ],
+    color: "#f97316",
+    //featured: true,
+    link: "/project/restaurant-ratings",
+  },
+  {
+    title: "Calculator",
+    description:
+      "Real-time messaging application with authentication and Socket.io.",
+    image: CalculatorCard,
+    technologies: [
+      "React",
+      "Node",
+      "Socket.io",
+    ],
+    color: "#22d3ee",
+    github: "#",
+    demo: "#",
+    link: "/project/calculator",
+  },
+{
+    title: "ChatOn",
+    description:
+      "Interactive portfolio with animations and custom components.",
+    image: ChatOnCard,
+    technologies: [
+      "React",
+      "Tailwind",
+      "Framer Motion",
+    ],
+    color: "#0891b2",
+    github: "#",
+    demo: "#",
+    link: "/project/chat-application",
+  },
+  {
+    title: "Classification of Recycling",
+    description:
+      "Interactive portfolio with animations and custom components.",
+    image: "/images/portfolio.png",
+    technologies: [
+      "React",
+      "Tailwind",
+      "Framer Motion",
+    ],
+    color: "#8b5cf6",
+    github: "#",
+    demo: "#",
+    link: "/project/classification-of-recycling",
+  },
+
+   
+];
 
 function Projects() {
   return (
     <div className="w-full h-full flex flex-col gap-4 overflow-auto pr-8">
-
-<div className="w-full flex flex-row gap-4 justify-between">
-    <Link to="/project/restaurant-ratings">
-      <div className="w-[216px] h-[216px] overflow-hidden transition-all duration-300 hover:-translate-y-2">
-          <img className="w-full h-full object-cover" src={Jern} alt="Background" />
-        </div>
-      </Link>
-      <Link to="/project/chatApplication">
-      <div className="w-[216px] h-[216px] overflow-hidden transition-all duration-300 hover:-translate-y-2">
-          <img className="w-full h-full object-cover" src={Jern} alt="Background" />
-        </div>
-      </Link>
-      <Link to="/project/restaurant-ratings">
-      <div className="w-[216px] h-[216px] overflow-hidden transition-all duration-300 hover:-translate-y-2">
-          <img className="w-full h-full object-cover" src={Jern} alt="Background" />
-        </div>
-      </Link>
-</div>
-
-     <div className="w-full flex flex-row gap-4 justify-between">
-    <Link to="/project/restaurant-ratings">
-      <div className="w-[216px] h-[216px] overflow-hidden transition-all duration-300 hover:-translate-y-2">
-          <img className="w-full h-full object-cover" src={Jern} alt="Background" />
-        </div>
-      </Link>
-      <Link to="/project/restaurant-ratings">
-      <div className="w-[216px] h-[216px] overflow-hidden transition-all duration-300 hover:-translate-y-2">
-          <img className="w-full h-full object-cover" src={Jern} alt="Background" />
-        </div>
-      </Link>
-      <Link to="/project/restaurant-ratings">
-      <div className="w-[216px] h-[216px] overflow-hidden transition-all duration-300 hover:-translate-y-2">
-          <img className="w-full h-full object-cover" src={Jern} alt="Background" />
-        </div>
-      </Link>
-</div>
+ <div className="grid gap-8 lg:grid-cols-2 h-full ">
+        {projects.map((project, index) => (
+          <Link
+            to={project.link}
+            key={project.title}
+            className={
+              index % 3 === 0
+                ? "lg:col-span-2"
+                : ""
+            }
+          >
+            <ProjectCard project={project} />
+          </Link>
+        ))}
+      </div>
 
 
     </div>

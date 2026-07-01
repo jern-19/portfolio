@@ -1,49 +1,64 @@
 
 import Jern from '../assets/Jern.png';
 import { ExperienceCard } from '../components/ExperienceCard';
+import { TimelineItem } from '../components/TimelineItem';
+
+export const experiences = [
+  {
+    year: "Present",
+    icon: "🚀",
+    title: "Senior Full Stack Engineer",
+    subtitle: "Current Position",
+    description:
+      "Building scalable web applications, designing modern user experiences, and delivering high-quality software solutions.",
+  },
+  {
+    year: "2023",
+    icon: "💼",
+    title: "Software Engineer",
+    subtitle: "Professional Experience",
+    description:
+      "Developed production-ready applications using React, .NET, and cloud technologies while collaborating in agile teams.",
+  },
+  {
+    year: "2021",
+    icon: "🖥️",
+    title: "First Full-Time Job",
+    subtitle: "Software Engineer",
+    description:
+      "Started my career as a Full Stack Developer, working on enterprise software and learning software engineering best practices.",
+  },
+  {
+    year: "2020",
+    icon: "🤝",
+    title: "Internship",
+    subtitle: "First Industry Experience",
+    description:
+      "Worked alongside experienced developers, contributing features and gaining hands-on experience with real-world software development.",
+  },
+  {
+    year: "2020",
+    icon: "🎓",
+    title: "Bachelor of Computer Science",
+    subtitle: "University",
+    description:
+      "Completed my degree while building personal projects and strengthening my software engineering fundamentals.",
+  },
+];
 
 function Experience() {
+  
   return (
     <div className="w-full h-full flex flex-col gap-4 overflow-auto pr-8">
-      <ExperienceCard 
-        emoji="👧🏾" 
-        subtitle="Software Engineer" 
-        descriptionTitle="Borned" 
-        description="I've borned in 1998 and from now on, my coding journey has started." 
-        timeline="1998"
-        image={Jern} />
-
-        <ExperienceCard 
-          emoji="🎓" 
-          subtitle="Software Engineer" 
-          descriptionTitle="High School" 
-          description="I've graduated from high school and pursued my passion for coding." 
-          timeline="2016"
-          image={Jern} />
-
-        <ExperienceCard 
-          emoji="🎓" 
-          subtitle="Software Engineer" 
-          descriptionTitle="University" 
-          description="I've completed my degree in Computer Science and gained extensive knowledge in software development." 
-          timeline="2020"
-          image={Jern} />
-
-        <ExperienceCard 
-          emoji="🎓" 
-          subtitle="Software Engineer" 
-          descriptionTitle="Internship" 
-          description="I had the opportunity to intern at a tech company, where I applied my skills and learned about real-world software engineering practices." 
-          timeline="2020"
-          image={Jern} />
-
-          <ExperienceCard 
-          emoji="🎓" 
-          subtitle="Software Engineer" 
-          descriptionTitle="First Job" 
-          timeline="2021"
-          description="I secured my first job as a software engineer, where I contributed to building innovative applications and gained valuable industry experience." 
-          image={Jern} />
+      <div className="relative mx-auto max-w-4xl py-8">
+      {experiences.map((experience, index) => (
+        <TimelineItem
+          key={experience.title}
+          {...experience}
+          isLast={index === experiences.length - 1}
+        />
+      ))}
+    </div>
     
     </div>
   );
