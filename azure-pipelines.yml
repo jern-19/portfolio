@@ -13,8 +13,13 @@ steps:
 - script: |
     npm install
     npm run build
+    echo "Current directory:"
+    pwd
+    echo "Repository files:"
+    ls -la
+    echo "Build folder:"
     ls -la build
-  displayName: 'Build React app'
+  displayName: 'npm install, build and verify output'
 
 - task: AzureStaticWebApp@0
   displayName: 'Deploy to Azure Static Web App'
