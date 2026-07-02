@@ -49,7 +49,7 @@ export const experiences = [
 function Experience() {
   
   return (
-    <div className="w-full h-full flex flex-col gap-4 overflow-auto pr-8">
+    <div className="w-full h-full flex flex-col gap-4 ">
       <div className="relative mx-auto max-w-4xl py-8">
       {experiences.map((experience, index) => (
         <TimelineItem

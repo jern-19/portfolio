@@ -3,6 +3,7 @@ import restaurantRatingCard from '../assets/projects/restaurantRatingCard.png';
 import ProjectCard from '../components/ProjectCard';
 import ChatOnCard from '../assets/projects/chatOnCard.png';
 import CalculatorCard from '../assets/projects/calculatorCard.png';
+import ClassificationOfRecyclingCard from '../assets/projects/classificationOfRecyclingCard.png';
 
 
 export const projects = [
@@ -55,7 +56,7 @@ export const projects = [
     title: "Classification of Recycling",
     description:
       "Interactive portfolio with animations and custom components.",
-    image: "/images/portfolio.png",
+    image: ClassificationOfRecyclingCard,
     technologies: [
       "React",
       "Tailwind",
@@ -72,7 +73,7 @@ export const projects = [
 
 function Projects() {
   return (
-    <div className="w-full h-full flex flex-col gap-4 overflow-auto pr-8">
+    <div className="w-full h-full flex flex-col gap-4 ">
  <div className="grid gap-8 lg:grid-cols-2 h-full ">
         {projects.map((project, index) => (
           <Link

@@ -4,7 +4,7 @@ import { ProfileCard } from '../components/ProfileCard';
 
 function Me() {
   return (
-    <div className="w-full h-full flex flex-col  gap-4 overflow-auto pr-8 ">
+    <div className="w-full h-full flex flex-col  gap-4 ">
       <ProfileCard
         title="Jern"
         subtitle="Full Stack Software Engineer"

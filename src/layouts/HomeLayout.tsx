@@ -110,7 +110,7 @@ function HomeLayout() {
             >
               Projects
             </NavLink>
-
+{/* 
             <NavLink
               to="/articles"
               className={({ isActive }) =>
@@ -122,7 +122,7 @@ function HomeLayout() {
               }
             >
               Articles
-            </NavLink>
+            </NavLink> */}
           </nav>
         </div>
 
