@@ -15,11 +15,11 @@ steps:
     npm run build
     echo "Current directory:"
     pwd
-    echo "Repository files:"
+    echo "Files:"
     ls -la
-    echo "Build folder:"
+    echo "Build contents:"
     ls -la build
-  displayName: 'npm install, build and verify output'
+  displayName: 'Build and verify'
 
 - task: AzureStaticWebApp@0
   displayName: 'Deploy to Azure Static Web App'
