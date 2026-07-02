@@ -11,20 +11,25 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    npm install
-    npm run build
     echo "Current directory:"
     pwd
-    echo "Files:"
+
+    echo "Repository root:"
     ls -la
-    echo "Build contents:"
-    ls -la build
-  displayName: 'Build and verify'
+
+    npm install
+    npm run build
+
+    echo "Searching for build folder..."
+    find . -type d -name build
+
+    echo "Searching for index.html..."
+    find . -name index.html
+  displayName: 'Debug build'
 
 - task: AzureStaticWebApp@0
   displayName: 'Deploy to Azure Static Web App'
   inputs:
     app_location: '.'
     output_location: 'build'
-    skip_app_build: true
     azure_static_web_apps_api_token: $(azure_static_web_apps_api_token)
