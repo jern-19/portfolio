@@ -1,9 +1,9 @@
 import ReactDOM from 'react-dom/client';
-import App from './src/layouts/HomeLayout';
+import App from './layouts/HomeLayout';
 import './index.css';
 import { BrowserRouter } from 'react-router';
-import AppRouter from './src/router/AppRouter';
-import { LanguageProvider } from './src/contex/LanguageContext';
+import AppRouter from './router/AppRouter';
+import { LanguageProvider } from './contex/LanguageContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
