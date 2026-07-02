@@ -69,7 +69,7 @@ function HomeLayout() {
         </div>
 
         {/* Sticky Navigation */}
-        <div className="sticky top-0 z-50 bg-black/90 backdrop-blur-lg border-b border-zinc-800">
+        <div className="sticky top-14 z-40 bg-black/90 backdrop-blur-lg border-b border-zinc-800">
           <nav className="h-14 sm:h-16 flex items-center overflow-x-auto">
             <NavLink
               to="/"
