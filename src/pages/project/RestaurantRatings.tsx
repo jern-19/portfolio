@@ -10,7 +10,7 @@ import restaurantRatingGallery4 from '../../assets/restaurantRatingGallery4.png'
 import restaurantRatingGallery5 from '../../assets/restaurantRatingGallery5.png'
 import restaurantRatingGallery6 from '../../assets/restaurantRatingGallery6.png'
 import restaurantRating2 from '../../assets/restaurantRating2.png'
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faStar , faArrowLeft, faCheck} from '@fortawesome/free-solid-svg-icons';
 import {
@@ -22,6 +22,7 @@ import {
   faDesktop,
   faServer,
 } from "@fortawesome/free-solid-svg-icons";
+import { AnimatePresence, motion } from 'framer-motion';
 
 export default function RestaurantRatings() {
   const images = [
@@ -58,7 +59,27 @@ const topNodes = [
 
 const [index, setIndex] = useState(0);
 
-const itemsPerPage = 4;
+const [itemsPerPage, setItemsPerPage] = useState(4);
+
+useEffect(() => {
+  const updateItems = () => {
+    if (window.innerWidth < 640) {
+      setItemsPerPage(1);
+    } else if (window.innerWidth < 1024) {
+      setItemsPerPage(2);
+    } else {
+      setItemsPerPage(4);
+    }
+  };
+
+  updateItems();
+
+  window.addEventListener("resize", updateItems);
+
+  return () => window.removeEventListener("resize", updateItems);
+}, []);
+
+
 const totalPages = Math.ceil(images.length / itemsPerPage);
 
 const prev = () => {
@@ -77,7 +98,7 @@ const visibleImages = images.slice(
 const page = Math.floor(index / itemsPerPage);
 
   return (
-    <div className="w-full h-screen flex flex-col gap-[100px] overflow-auto p-20 bg-black overflow-auto px-6">
+    <div className="w-full flex flex-col gap-16 md:gap-24 bg-black px-5 py-10 md:px-20 md:py-16">
       <section className="bg-black flex items-center">
       <div className=" mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-12">
 
@@ -88,19 +109,19 @@ const page = Math.floor(index / itemsPerPage);
             Full Stack Project
           </p>
 
-          <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white leading-tight font-bold text-white leading-tight">
             Restaurants{" "}
             <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
               Reviews & Rating
             </span>
           </h1>
 
-          <p className="mt-6 text-gray-300 text-lg max-w-xl">
+          <p className="mt-6 text-base md:text-lg text-gray-300 max-w-xl mx-auto md:mx-0">
             A full-stack web application that allows users to discover restaurants,
             share reviews, rate their experiences and explore top-rated places.
           </p>
 
-          <div className="mt-8 flex gap-4 justify-center md:justify-start">
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
              <a href="https://www.youtube.com/watch?v=mWvquhIx6nQ" target="_blank" rel="noopener noreferrer">
                <button className="px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-medium transition">
               Live Demo
@@ -126,7 +147,7 @@ const page = Math.floor(index / itemsPerPage);
             <img
               src={restaurantRating1}
               alt="Project preview"
-              className="relative w-[300px] md:w-[420px] rounded-xl shadow-2xl border border-orange-500/30"
+              className="relative w-full max-w-[420px] rounded-xl shadow-2xl border border-orange-500/30"
             />
           </div>
         </div>
@@ -136,8 +157,8 @@ const page = Math.floor(index / itemsPerPage);
 
     <section className=" bg-black flex flex-col gap-1 items-center p-4 border border-orange-500/30 bg-orange-500/5 rounded-xl">
       <span className="text-sm font-bold text-gray-300 mb-6">Technologies Used</span>
-      <div className="w-full flex flex-row items-center justify-between gap-6">
-      <div className="flex flex-row gap-2 center items-center">
+      <div className="w-full flex flex-wrap justify-center md:justify-between gap-6">
+      <div className="flex items-center gap-2 w-[140px] justify-center">
         <img
               src={react}
               alt="Project preview"
@@ -145,7 +166,7 @@ const page = Math.floor(index / itemsPerPage);
             />
       <span className="text-white text-md font-bold">React Native</span>
       </div>
-      <div className="flex flex-row gap-2 center items-center">
+      <div className="flex items-center gap-2 w-[140px] justify-center">
         <img
               src={js}
               alt="Project preview"
@@ -153,7 +174,7 @@ const page = Math.floor(index / itemsPerPage);
             />
       <span className="text-white text-md font-bold">JavaScript</span>
       </div>
-      <div className="flex flex-row gap-2 center items-center">
+      <div className="flex items-center gap-2 w-[140px] justify-center">
         <img
               src={python}
               alt="Project preview"
@@ -161,7 +182,7 @@ const page = Math.floor(index / itemsPerPage);
             />
       <span className="text-white text-md font-bold">Python</span>
       </div>
-      <div className="flex flex-row gap-2 center items-center">
+      <div className="flex items-center gap-2 w-[140px] justify-center">
         <img
               src={firestore}
               alt="Project preview"
@@ -189,33 +210,46 @@ const page = Math.floor(index / itemsPerPage);
         </button>
 
         {/* Viewport */}
-        <div className="overflow-hidden w-full">
-          <div
-            className="flex transition-transform duration-500 ease-out"
-            style={{
-              transform: `translateX(-${index * 100}%)`,
-            }}
-          >
-            {images.map((image) => (
-              <div
-                key={image.id}
-                className="flex justify-center px-10"
-              >
-                <div
-                  className="w-[200px] h-[200px] rounded-2xl overflow-hidden
-                             bg-white/5 border border-white/10 shadow-2xl"
-                >
-                  <img
-                    src={image.url}
-                    alt={image.title}
-                    className=" h-full object-cover"
-                    draggable="false"
-                  />
-                </div>
-              </div>
-            ))}
+      <div className="overflow-hidden w-full">
+  <AnimatePresence mode="wait">
+    <motion.div
+      key={index}
+      className="flex flex-wrap justify-center"
+      initial={{ opacity: 0, x: 40 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -40 }}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
+    >
+      {visibleImages.map((image, i) => (
+        <motion.div
+          key={image.id}
+          className={`px-3 flex justify-center ${
+            itemsPerPage === 1
+              ? "w-full"
+              : itemsPerPage === 2
+              ? "w-1/2"
+              : "w-1/4"
+          }`}
+          initial={{ opacity: 0, y: 25, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{
+            delay: i * 0.08,
+            duration: 0.35,
+          }}
+        >
+          <div className="w-full max-w-[220px] aspect-square rounded-2xl overflow-hidden bg-white/5 border border-white/10 shadow-2xl">
+            <img
+              src={image.url}
+              alt={image.title}
+              className="w-full h-full object-cover"
+              draggable={false}
+            />
           </div>
-        </div>
+        </motion.div>
+      ))}
+    </motion.div>
+  </AnimatePresence>
+</div>
 
         {/* Right Arrow */}
         <button
@@ -230,83 +264,99 @@ const page = Math.floor(index / itemsPerPage);
 
       {/* Dots */}
 
-      <div className="flex gap-2 mt-8">
-        {Array.from({ length: totalPages }).map((_, i)  => (
-          <button
-            key={i}
-            onClick={() => setIndex(i)}
-            className={`h-2 rounded-full transition-all ${
-              i === index
-                ? "w-6 bg-orange-400"
-                : "w-2 bg-white/30"
-            }`}
+     <div className="flex justify-center gap-2 mt-8">
+  {Array.from({ length: totalPages }).map((_, page) => (
+    <button
+      key={page}
+      onClick={() => setIndex(page)}
+      className={`transition-all duration-300 rounded-full ${
+        page === index
+          ? "w-6 h-2 bg-orange-400"
+          : "w-2 h-2 bg-white/30"
+      }`}
+    />
+  ))}
+</div>
+        </section>
+
+       <section className="bg-black w-full flex flex-col gap-8 items-center">
+  <span className="text-sm md:text-base font-bold text-gray-300">
+    Key Features
+  </span>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 w-full">
+
+    {/* Feature 1 */}
+    <div className="border border-orange-400/20 rounded-xl bg-orange-500/5 shadow-md p-6 hover:border-orange-400 transition">
+      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5">
+        <div className="w-12 h-12 rounded-xl bg-orange-400 flex items-center justify-center shrink-0">
+          <FontAwesomeIcon
+            className="text-white text-lg"
+            icon={faMagnifyingGlass}
           />
-        ))}
+        </div>
+
+        <div className="text-center sm:text-left">
+          <h3 className="text-lg font-semibold text-orange-400">
+            Explore Restaurants
+          </h3>
+
+          <p className="mt-2 text-sm text-gray-300">
+            Browse restaurants by cuisine, location, ratings, and discover new
+            places to eat.
+          </p>
+        </div>
       </div>
-        </section>
+    </div>
 
-        <section className="bg-black w-full flex flex-col gap-4 items-center">
-          <span className="text-sm font-bold text-gray-300 mb-6">Key Features</span>
-          <div className="w-full flex flex-row gap-6 items-center justify-between">
-          <div className="w-full flex flex-row gap-6 items-center justify-between border border-orange-400/20 p-4 rounded-xl bg-orange-500/5 shadow-md">
-            <div className="w-full flex flex-col md:flex-row gap-6 items-center justify-center">
-              <div className="p-2 items-center justify-center bg-orange-400 rounded-xl shadow-md">
-              <FontAwesomeIcon className="text-white text-lg" icon={faMagnifyingGlass} />
-              </div>
-              <div className="w-full flex flex-col gap-1 justify-center">
-                <span className="text-md text-center md:text-start font-bold text-orange-400">Explore Restaurants</span>
-                <span className="text-sm text-center md:text-start text-gray-200">Browse by cuisine, location, and ratings</span>
-              </div>
-            </div>
-          </div>
+    {/* Feature 2 */}
+    <div className="border border-orange-400/20 rounded-xl bg-orange-500/5 shadow-md p-6 hover:border-orange-400 transition">
+      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5">
+        <div className="w-12 h-12 rounded-xl bg-orange-400 flex items-center justify-center shrink-0">
+          <FontAwesomeIcon
+            className="text-white text-lg"
+            icon={faStar}
+          />
+        </div>
 
-          <div className="w-full flex flex-row gap-6 items-center justify-between border border-orange-400/20 p-4 rounded-xl bg-orange-500/5 shadow-md">
-          <div className="w-full flex flex-col md:flex-row gap-6 items-center justify-center">
-          <div className="p-2 items-center justify-center bg-orange-400 rounded-xl shadow-md">
-              <FontAwesomeIcon className="text-white text-lg" icon={faStar} />
-              </div>
-          <div className="w-full flex flex-col gap-1 justify-center">
-          <span className="text-md text-center md:text-start font-bold text-orange-400">Explore Restaurants</span>
-          <span className="text-sm text-center md:text-start text-gray-200">Browse by cuisine, location, and ratings</span>
-          </div>
-          </div>
-          </div>
+        <div className="text-center sm:text-left">
+          <h3 className="text-lg font-semibold text-orange-400">
+            Rate & Review
+          </h3>
 
-          <div className="w-full flex flex-row gap-6 items-center justify-between border border-orange-400/20 p-4 rounded-xl bg-orange-500/5 shadow-md">
-          <div className="w-full flex flex-col md:flex-row gap-6 items-center justify-center">
-          <div className="p-2 items-center justify-center bg-orange-400 rounded-xl shadow-md">
-              <FontAwesomeIcon className="text-white text-lg" icon={faArrowLeft} />
-              </div>
-          <div className="w-full flex flex-col gap-1 justify-center">
-          <span className="text-md text-center md:text-start font-bold text-orange-400">Explore Restaurants</span>
-          <span className="text-sm text-center md:text-start text-gray-200">Browse by cuisine, location, and ratings</span>
-          </div>
-          </div>
-          </div>
-                </div>
+          <p className="mt-2 text-sm text-gray-300">
+            Leave ratings and detailed reviews to help others choose the best
+            restaurants.
+          </p>
+        </div>
+      </div>
+    </div>
 
-        </section>
+    {/* Feature 3 */}
+    <div className="border border-orange-400/20 rounded-xl bg-orange-500/5 shadow-md p-6 hover:border-orange-400 transition">
+      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5">
+        <div className="w-12 h-12 rounded-xl bg-orange-400 flex items-center justify-center shrink-0">
+          <FontAwesomeIcon
+            className="text-white text-lg"
+            icon={faArrowLeft}
+          />
+        </div>
 
-        <section className="bg-black w-full flex flex-row gap-4 items-center">
-          <div className="w-full flex  items-center justify-center">
-          <img
-                src={restaurantRating2}
-                alt="Project preview"
-                className="relative w-[400px] md:w-[400px] shadow-2xl "
-              />
-          </div>
-          <div className="w-full flex flex-col items-start justify-center gap-2">
-          <span className="text-md text-start font-bold text-orange-400">About the project</span>
-          <span className="text-sm text-start text-gray-200">Text</span>
+        <div className="text-center sm:text-left">
+          <h3 className="text-lg font-semibold text-orange-400">
+            Personalized Recommendations
+          </h3>
 
-          <div className="w-full flex flex-row gap-1 items-start justify-center">
-            <div className="w-full flex flex-row gap-1 items-center">
-              <FontAwesomeIcon className="text-orange-400 text-xs " icon={faCheck} />
-              <span className="text-sm text-start text-gray-200">Feature 1</span>
-            </div>
-          </div>
-          </div>
-        </section>
+          <p className="mt-2 text-sm text-gray-300">
+            Get restaurant suggestions based on ratings, reviews, and your food
+            preferences.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
     </div>
   );
 }

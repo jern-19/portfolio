@@ -92,183 +92,206 @@ export default function Calculator() {
   const accentDark = "oklch(70% 0.13 211.53)";
 
   return (
-    <div className="w-full h-screen flex flex-col gap-[100px] overflow-auto bg-black p-20 px-6">
-      <section className="flex items-center bg-black">
-        <div className="mx-auto flex flex-col items-center justify-between gap-12 md:flex-row">
-          <div className="px-8 md:px-16 flex flex-col flex-1.5">
-            {/* Title */}
-            <div className="mt-8 flex flex-row items-center gap-4">
-              <h1 className="text-5xl font-extrabold leading-none tracking-tight md:text-6xl">
-                <span className="text-white">Calculator</span>
-              </h1>
-            </div>
+    <div className="w-full flex flex-col gap-[100px] bg-black p-20 px-6">
+     <section className="w-full">
+  <div className="mx-auto flex max-w-7xl flex-col-reverse items-center gap-12 lg:flex-row">
+    {/* Left */}
+    <div className="w-full lg:flex-1">
+      <div className="flex items-center gap-4">
+        <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
+          Calculator
+        </h1>
+      </div>
 
-            {/* Description */}
-            <p className="mt-8 max-w-xl leading-8 text-gray-400">
-              ChatOn allows users to create accounts, find friends, exchange
-              messages, and share images instantly. The project was built to
-              learn Firebase authentication, realtime synchronization, and
-              Android application architecture.
-            </p>
+      <p className="mt-6 max-w-xl leading-7 text-gray-400">
+        ChatOn allows users to create accounts, find friends, exchange
+        messages, and share images instantly. The project was built to
+        learn Firebase authentication, realtime synchronization, and
+        Android application architecture.
+      </p>
 
-            {/* Buttons */}
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <a
-                href="https://www.youtube.com/watch?v=niV8MlfizxU&t=3s"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-1 items-center justify-center gap-2 rounded-xl px-5 py-3 font-semibold text-white transition hover:scale-105"
-                style={{
-                  background: `linear-gradient(to right, ${accent}, ${accentDark})`,
-                }}
-              >
-                <i className="fa-solid fa-rocket"></i>
-                Live Demo
-                <i className="fa-solid fa-arrow-up-right-from-square text-sm"></i>
-              </a>
+      <div className="mt-8 flex w-full max-w-xl flex-col gap-4 sm:flex-row">
+        <a
+          href="https://www.youtube.com/watch?v=niV8MlfizxU&t=3s"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 rounded-xl px-5 py-3 font-semibold text-white transition hover:scale-105 sm:flex-1"
+          style={{
+            background: `linear-gradient(to right, ${accent}, ${accentDark})`,
+          }}
+        >
+          <i className="fa-solid fa-rocket"></i>
+          Live Demo
+          <i className="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+        </a>
 
-              <a
-                href="https://github.com/jern-19/chatOn"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-gray-700 px-5 py-3 font-semibold text-white transition"
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = accent;
-                  e.currentTarget.style.color = accent;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = "";
-                  e.currentTarget.style.color = "";
-                }}
-              >
-                View on GitHub
-                <i className="fa-brands fa-github text-lg"></i>
-              </a>
-            </div>
+        <a
+          href="https://github.com/jern-19/chatOn"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 rounded-xl border border-gray-700 px-5 py-3 font-semibold text-white transition sm:flex-1"
+          onMouseEnter={(e) => {
+            e.currentTarget.style.borderColor = accent;
+            e.currentTarget.style.color = accent;
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.borderColor = "";
+            e.currentTarget.style.color = "";
+          }}
+        >
+          View on GitHub
+          <i className="fa-brands fa-github text-lg"></i>
+        </a>
+      </div>
 
-            {/* Details */}
-            <div className="mt-10 space-y-6">
-              {details.map((item) => (
-                <div
-                  key={item.label}
-                  className="flex items-center justify-between"
-                >
-                  <div className="flex items-center gap-3 text-gray-400">
-                    <FontAwesomeIcon className="text-[oklch(78.9%_0.154_211.53)] text-lg" icon={item.icon} />
-                    <span>{item.label}</span>
-                  </div>
-
-                  <span className="text-gray-100">{item.value}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="items-center justify-center flex flex-2">
-            <img
-              src={Calculator1}
-              alt="Project preview"
-              className="relative w-[900px] rounded-xl shadow-2xl"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="flex flex-col items-center">
-<div className="w-full h-[1px] bg-gray-600"></div>
-<div className="flex flex-row items-center justify-center gap-20 w-full">
-<div className="flex flex-col items-start gap-4">
-    <div className="flex flex-col items-start gap-1">
-<span className="text-xl font-semibold text-white">About the Project</span>
-    <div className="w-[50px] h-[2px] bg-cyan-400"></div>
-    </div>
-    
-    <span className="text-gray-400">Details</span>  
-</div>
-
-<div className="flex flex-row items-center justify-center gap-8 border border-gray-800 bg-[#111111] p-8 shadow-xl mt-8 rounded-2xl">
-<div className="flex flex-col items-center gap-2">
-<FontAwesomeIcon icon={faDesktop} className="text-cyan-400" />
-<span className="text-lg font-semibold text-white">Frontend</span>
-</div>
-<div className="flex flex-col items-center gap-2">
-<FontAwesomeIcon icon={faDesktop} className="text-cyan-400" />
-<span className="text-lg font-semibold text-white">Frontend</span>
-</div>
-<div className="flex flex-col items-center gap-2">
-<FontAwesomeIcon icon={faDesktop} className="text-cyan-400" />
-<span className="text-lg font-semibold text-white">Frontend</span>
-</div>
-</div>
-</div>
-      </section>
-
-      <section className="flex flex-col items-center">
-        <div className="mx-auto grid max-w-7xl gap-8 px-6 md:grid-cols-3">
-        {featureData.map((card, index) => (
+      <div className="mt-10 space-y-5">
+        {details.map((item) => (
           <div
-            key={index}
-            className="group relative overflow-hidden rounded-2xl border border-zinc-800 bg-[#0B0B0B]/90 p-8 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/40"
+            key={item.label}
+            className="flex items-center justify-between border-b border-zinc-800 pb-4"
           >
-            {/* Background Glow */}
-            <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-cyan-500/5 blur-3xl" />
+            <div className="flex items-center gap-3 text-gray-400">
+              <FontAwesomeIcon
+                icon={item.icon}
+                className="text-lg text-cyan-400"
+              />
+              <span>{item.label}</span>
+            </div>
 
-            {/* Title */}
-            <h3 className="text-3xl font-semibold text-white">
-              {card.title}
-            </h3>
-
-            {/* Cyan underline */}
-            <div className="mt-4 mb-8 h-1 w-12 rounded-full bg-cyan-400" />
-
-            {/* LIST */}
-            {card.type === "list" && (
-              <div className="space-y-6">
-                {(card.items as string[]).map((item, i) => (
-                  <div key={i} className="flex gap-4">
-                    <div className="mt-1 flex h-6 w-6 items-center justify-center rounded-full border border-cyan-400 text-cyan-400">
-                      <i className="fa-solid fa-check text-[11px]" />
-                    </div>
-
-                    <p className="leading-7 text-zinc-300">{item}</p>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/* TECH STACK */}
-            {card.type === "tech" && (
-              <div className="space-y-8">
-                {(card.items as any[]).map((tech, i) => (
-                  <div key={i} className="flex items-center gap-5">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-zinc-900">
-                      <i className={`${tech.icon} text-5xl ${tech.color}`} />
-                    </div>
-
-                    <div>
-                      <h4 className="text-xl font-semibold text-white">
-                        {tech.title}
-                      </h4>
-
-                      <p className="text-zinc-400">{tech.subtitle}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/* Decorative Calculator Icon */}
-            {index === 0 && (
-              <div className="absolute bottom-5 right-5 opacity-20">
-                <div className="flex h-16 w-16 items-center justify-center rounded-xl border border-zinc-700">
-                  <i className="fa-solid fa-calculator text-4xl text-zinc-500" />
-                </div>
-              </div>
-            )}
+            <span className="text-right text-white">{item.value}</span>
           </div>
         ))}
       </div>
-        </section>
+    </div>
+
+    {/* Image */}
+    <div className="flex w-full justify-center lg:flex-1">
+      <img
+        src={Calculator1}
+        alt="Project preview"
+        className="w-full max-w-2xl rounded-2xl shadow-2xl"
+      />
+    </div>
+  </div>
+</section>
+
+  <section className="w-full">
+  <div className="mx-auto flex max-w-7xl flex-col gap-10">
+    <div className="h-px w-full bg-gray-700"></div>
+
+    <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-center">
+      <div>
+        <div className="flex flex-col gap-2">
+          <span className="text-2xl font-semibold text-white">
+            About the Project
+          </span>
+
+          <div className="h-[2px] w-16 bg-cyan-400"></div>
+        </div>
+
+        <p className="mt-4 max-w-lg text-gray-400">
+          Details
+        </p>
+      </div>
+
+      <div className="grid w-full grid-cols-1 gap-6 rounded-2xl border border-gray-800 bg-[#111111] p-6 sm:grid-cols-3 lg:w-auto">
+        <div className="flex flex-col items-center gap-3 text-center">
+          <FontAwesomeIcon
+            icon={faDesktop}
+            className="text-3xl text-cyan-400"
+          />
+
+          <span className="font-semibold text-white">
+            Frontend
+          </span>
+        </div>
+
+        <div className="flex flex-col items-center gap-3 text-center">
+          <FontAwesomeIcon
+            icon={faServer}
+            className="text-3xl text-cyan-400"
+          />
+
+          <span className="font-semibold text-white">
+            Backend
+          </span>
+        </div>
+
+        <div className="flex flex-col items-center gap-3 text-center">
+          <FontAwesomeIcon
+            icon={faDatabase}
+            className="text-3xl text-cyan-400"
+          />
+
+          <span className="font-semibold text-white">
+            Database
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section className="w-full">
+  <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
+    {featureData.map((card, index) => (
+      <div
+        key={index}
+        className="group relative overflow-hidden rounded-2xl border border-zinc-800 bg-[#0B0B0B]/90 p-6 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/40 lg:p-8"
+      >
+        <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-cyan-500/5 blur-3xl"></div>
+
+        <h3 className="text-2xl font-semibold text-white lg:text-3xl">
+          {card.title}
+        </h3>
+
+        <div className="mb-8 mt-4 h-1 w-12 rounded-full bg-cyan-400"></div>
+
+        {card.type === "list" && (
+          <div className="space-y-5">
+            {(card.items as string[]).map((item, i) => (
+              <div key={i} className="flex gap-4">
+                <div className="mt-1 flex h-6 w-6 items-center justify-center rounded-full border border-cyan-400 text-cyan-400">
+                  <i className="fa-solid fa-check text-[11px]" />
+                </div>
+
+                <p className="leading-7 text-zinc-300">{item}</p>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {card.type === "tech" && (
+          <div className="space-y-8">
+            {(card.items as any[]).map((tech, i) => (
+              <div key={i} className="flex items-center gap-5">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-900 lg:h-14 lg:w-14">
+                  <i className={`${tech.icon} ${tech.color} text-4xl`} />
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-semibold text-white lg:text-xl">
+                    {tech.title}
+                  </h4>
+
+                  <p className="text-zinc-400">{tech.subtitle}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {index === 0 && (
+          <div className="absolute bottom-5 right-5 opacity-20">
+            <div className="flex h-16 w-16 items-center justify-center rounded-xl border border-zinc-700">
+              <i className="fa-solid fa-calculator text-4xl text-zinc-500"></i>
+            </div>
+          </div>
+        )}
+      </div>
+    ))}
+  </div>
+</section>
     </div>
   );
 }
