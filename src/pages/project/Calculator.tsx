@@ -1,92 +1,75 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { IconProp } from "@fortawesome/fontawesome-svg-core";
 import Calculator1 from "../../assets/projects/calculator1.png";
 import {
-  faCalendar,
   faDatabase,
-  faScaleBalanced,
-  faBrain,
   faCode,
   faClock,
   faDesktop,
   faServer,
+  faCloud
 } from "@fortawesome/free-solid-svg-icons";
+import { useLanguage } from "../../contex/LanguageContext";
 
 export default function Calculator() {
-  const details = [
-    // {
-    //   icon: faCalendar,
-    //   label: "Date",
-    //   value: "May 2024",
-    // },
+  const {t} = useLanguage();
+  
+  const icons = {
+    desktop: faDesktop,
+    server: faServer,
+    database: faDatabase,
+    cloud: faCloud,
+    code: faCode,
+    clock: faClock,
+  };
+
+
+  const projectDetails = t.calculator.details.map((detail) => ({
+    icon: icons[detail.icon] ?? faDatabase,
+    label: detail.label,
+    value: detail.value,
+  }));
+
+
+  type FeatureCard =
+    | {
+        title: string;
+        type: "list";
+        items: readonly string[];
+      }
+    | {
+        title: string;
+        type: "tech";
+        items: {
+          icon: keyof typeof icons;
+          color: string;
+          title: string;
+          subtitle: string;
+        }[];
+      };
+
+  const featureData: FeatureCard[] = [
     {
-      icon: faDatabase,
-      label: "Category",
-      value: "Web Application",
+      title: t.calculator.keyFeatures.title,
+      type: "list",
+      items: t.calculator.keyFeatures.items,
     },
     {
-      icon: faCode,
-      label: "Role",
-      value: "Frontend Developer",
+      title: t.calculator.techStack.title,
+      type: "tech",
+      items: t.calculator.techStack.items.map((tech) => ({
+        icon: tech.icon as keyof typeof icons,
+        color: tech.color,
+        title: tech.title,
+        subtitle: tech.subtitle,
+      })),
     },
-    // {
-    //   icon: faBrain,
-    //   label: "Tech",
-    //   value: "HTML, CSS, JavaScript",
-    // },
     {
-      icon: faClock,
-      label: "Time Spent",
-      value: "~1 week",
+      title: t.calculator.whatILearned.title,
+      type: "list",
+      items: t.calculator.whatILearned.items,
     },
   ];
-
-  const featureData = [
-  {
-    title: "Key Features",
-    type: "list",
-    items: [
-      "Basic operations: +, −, ×, ÷",
-      "History of calculations",
-      "Delete & clear functionality",
-      "Responsive for all devices",
-      "Clean and intuitive UI/UX",
-    ],
-  },
-  {
-    title: "Tech Stack",
-    type: "tech",
-    items: [
-      {
-        icon: "fa-brands fa-js",
-        color: "text-yellow-400",
-        title: "JavaScript",
-        subtitle: "Logic & Functionality",
-      },
-      {
-        icon: "fa-brands fa-html5",
-        color: "text-orange-500",
-        title: "HTML",
-        subtitle: "Structure",
-      },
-      {
-        icon: "fa-brands fa-css3-alt",
-        color: "text-blue-500",
-        title: "CSS",
-        subtitle: "Styling & Layout",
-      },
-    ],
-  },
-  {
-    title: "What I Learned",
-    type: "list",
-    items: [
-      "DOM manipulation and event handling",
-      "Implementing complex mathematical logic",
-      "Designing responsive and user-friendly interfaces",
-      "Improving problem-solving and debugging skills",
-    ],
-  },
-];
 
   const accent = "oklch(78.9% 0.154 211.53)";
   const accentDark = "oklch(70% 0.13 211.53)";
@@ -99,15 +82,12 @@ export default function Calculator() {
     <div className="w-full lg:flex-1">
       <div className="flex items-center gap-4">
         <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
-          Calculator
+          {t.calculator.title}
         </h1>
       </div>
 
       <p className="mt-6 max-w-xl leading-7 text-gray-400">
-        ChatOn allows users to create accounts, find friends, exchange
-        messages, and share images instantly. The project was built to
-        learn Firebase authentication, realtime synchronization, and
-        Android application architecture.
+        {t.calculator.description}
       </p>
 
       <div className="mt-8 flex w-full max-w-xl flex-col gap-4 sm:flex-row">
@@ -121,7 +101,7 @@ export default function Calculator() {
           }}
         >
           <i className="fa-solid fa-rocket"></i>
-          Live Demo
+          {t.calculator.button}
           <i className="fa-solid fa-arrow-up-right-from-square text-sm"></i>
         </a>
 
@@ -139,13 +119,13 @@ export default function Calculator() {
             e.currentTarget.style.color = "";
           }}
         >
-          View on GitHub
+          {t.calculator.viewOnGitHub}
           <i className="fa-brands fa-github text-lg"></i>
         </a>
       </div>
 
       <div className="mt-10 space-y-5">
-        {details.map((item) => (
+        {projectDetails.map((item) => (
           <div
             key={item.label}
             className="flex items-center justify-between border-b border-zinc-800 pb-4"
@@ -183,51 +163,31 @@ export default function Calculator() {
       <div>
         <div className="flex flex-col gap-2">
           <span className="text-2xl font-semibold text-white">
-            About the Project
+            {t.calculator.aboutTheProject.title}
           </span>
 
           <div className="h-[2px] w-16 bg-cyan-400"></div>
         </div>
 
         <p className="mt-4 max-w-lg text-gray-400">
-          Details
+          {t.calculator.aboutTheProject.description}
         </p>
       </div>
 
-      <div className="grid w-full grid-cols-1 gap-6 rounded-2xl border border-gray-800 bg-[#111111] p-6 sm:grid-cols-3 lg:w-auto">
-        <div className="flex flex-col items-center gap-3 text-center">
-          <FontAwesomeIcon
-            icon={faDesktop}
-            className="text-3xl text-cyan-400"
-          />
+     {t.calculator.aboutTheProject.tools.map(
+  (tool: { label: string; icon: keyof typeof icons }) => (
+    <div key={tool.label} className="flex flex-col items-center gap-3 text-center">
+      <FontAwesomeIcon
+        icon={icons[tool.icon]}
+        className="text-3xl text-cyan-400"
+      />
 
-          <span className="font-semibold text-white">
-            Frontend
-          </span>
-        </div>
-
-        <div className="flex flex-col items-center gap-3 text-center">
-          <FontAwesomeIcon
-            icon={faServer}
-            className="text-3xl text-cyan-400"
-          />
-
-          <span className="font-semibold text-white">
-            Backend
-          </span>
-        </div>
-
-        <div className="flex flex-col items-center gap-3 text-center">
-          <FontAwesomeIcon
-            icon={faDatabase}
-            className="text-3xl text-cyan-400"
-          />
-
-          <span className="font-semibold text-white">
-            Database
-          </span>
-        </div>
-      </div>
+      <span className="font-semibold text-white">
+        {tool.label}
+      </span>
+    </div>
+  )
+)}
     </div>
   </div>
 </section>
@@ -249,7 +209,7 @@ export default function Calculator() {
 
         {card.type === "list" && (
           <div className="space-y-5">
-            {(card.items as string[]).map((item, i) => (
+            {(card.items as unknown as string[]).map((item, i) => (
               <div key={i} className="flex gap-4">
                 <div className="mt-1 flex h-6 w-6 items-center justify-center rounded-full border border-cyan-400 text-cyan-400">
                   <i className="fa-solid fa-check text-[11px]" />
@@ -263,10 +223,11 @@ export default function Calculator() {
 
         {card.type === "tech" && (
           <div className="space-y-8">
-            {(card.items as any[]).map((tech, i) => (
+            {card.items.map((tech, i) => (
               <div key={i} className="flex items-center gap-5">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-900 lg:h-14 lg:w-14">
-                  <i className={`${tech.icon} ${tech.color} text-4xl`} />
+                  <FontAwesomeIcon icon={icons[tech.icon]} className=" text-4xl text-cyan-400" />
+                 
                 </div>
 
                 <div>

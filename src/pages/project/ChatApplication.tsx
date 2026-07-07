@@ -24,15 +24,8 @@ import {
 
 import { useState } from 'react';
 import InfoCard from '../../components/InfoCard';
+import { useLanguage } from '../../contex/LanguageContext';
 
-
-const gallery = [
-  { image: chatOnSS1, label: "Login/Register", description: "Users can create an account or log in to access the app's features." },
-  { image: chatOnSS2, label: "Create Profile", description: "Users can create a profile to personalize their experience." },
-  { image: chatOnSS3, label: "Find Friends", description: "Users can search for and add friends to their contact list." },
-  { image: chatOnSS4, label: "Send Messages", description: "Users can send text messages in real-time to their friends." },
-  { image: chatOnSS5, label: "Send Images", description: "Users can share images with their friends instantly." },
-];
 
 const steps = [
   {
@@ -90,6 +83,7 @@ const learned = [
 
 
 export default function ChatApplication() {
+  const {t} = useLanguage();
     const [active, setActive] = useState(0);
   return (
     <div className="w-full flex flex-col gap-[100px] p-20 bg-black  px-6">
@@ -99,24 +93,20 @@ export default function ChatApplication() {
     <div className="w-full lg:flex-1">
       <div className="inline-flex items-center rounded-full border border-cyan-500/60 bg-cyan-500/10 px-5 py-2">
         <span className="text-xs font-semibold uppercase tracking-widest text-cyan-400">
-          Android App
+          {t.chatOn.tag}
         </span>
       </div>
 
       <h1 className="mt-8 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
-        Chat<span className="text-cyan-400">On</span>
+        {t.chatOn.title1}<span className="text-cyan-400">{t.chatOn.title2}</span>
       </h1>
 
       <p className="mt-6 max-w-xl text-lg leading-8 text-gray-200">
-        A real-time Android messaging application built with Firebase
-        Realtime Database.
+        {t.chatOn.subTitle}
       </p>
 
       <p className="mt-6 max-w-xl leading-8 text-gray-400">
-        ChatOn allows users to create accounts, find friends, exchange
-        messages, and share images instantly. The project was built to learn
-        Firebase Authentication, Realtime Database synchronization, and Android
-        application architecture.
+        {t.chatOn.description}
       </p>
 
       <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -126,7 +116,7 @@ export default function ChatApplication() {
           rel="noreferrer"
           className="rounded-xl bg-cyan-500 px-6 py-3 text-center font-semibold text-white transition hover:bg-cyan-600"
         >
-          Live Demo
+          {t.chatOn.button}
         </a>
 
         <a
@@ -135,7 +125,7 @@ export default function ChatApplication() {
           rel="noreferrer"
           className="rounded-xl border border-cyan-500 px-6 py-3 text-center font-semibold text-cyan-400 transition hover:bg-cyan-500/10"
         >
-          GitHub
+          {t.chatOn.viewOnGitHub}
         </a>
       </div>
 
@@ -170,21 +160,16 @@ export default function ChatApplication() {
   <div className="mx-auto max-w-7xl">
     <div className="mb-10 text-center">
       <p className="text-sm font-bold uppercase tracking-widest text-gray-400">
-        Features
+        {t.chatOn.features.title}
       </p>
 
       <div className="mx-auto mt-4 h-1 w-16 rounded bg-cyan-400"></div>
     </div>
 
     <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-      {[
-        "User Authentication",
-        "Realtime Messaging",
-        "Image Sharing",
-        "Friend Management",
-      ].map((feature) => (
+      {t.chatOn.features.items.map((feature, index) => (
         <div
-          key={feature}
+          key={index}
           className="rounded-2xl border border-zinc-800 bg-[#111] p-6 text-center transition hover:border-cyan-400"
         >
           <FontAwesomeIcon
@@ -193,12 +178,11 @@ export default function ChatApplication() {
           />
 
           <h3 className="text-lg font-semibold text-white">
-            {feature}
+            {feature.title}
           </h3>
 
           <p className="mt-3 text-sm leading-7 text-gray-400">
-            Secure login and registration system with Firebase and realtime
-            synchronization.
+            {feature.description}
           </p>
         </div>
       ))}
@@ -231,15 +215,15 @@ export default function ChatApplication() {
           </p>
 
           <h2 className="mt-2 text-3xl font-bold text-white">
-            {steps[active].title}
+            {t.chatOn.workflow[active].title}
           </h2>
 
           <p className="mt-4 max-w-xl leading-8 text-zinc-400">
-            {steps[active].description}
+            {t.chatOn.workflow[active].description}
           </p>
 
           <div className="mt-8 space-y-4">
-            {steps.map((step, index) => (
+            {t.chatOn.workflow.map((step, index) => (
               <button
                 key={step.title}
                 onClick={() => setActive(index)}
@@ -280,13 +264,6 @@ export default function ChatApplication() {
 
     <section className="w-full">
   <div className="mx-auto max-w-7xl">
-    <div className="mb-10 text-center">
-      <p className="text-sm font-bold uppercase tracking-widest text-gray-400">
-        Tech Stack
-      </p>
-
-      <div className="mx-auto mt-4 h-1 w-16 rounded bg-cyan-400"></div>
-    </div>
 
     <div className="grid gap-8 lg:grid-cols-2">
       <InfoCard title="Challenges" items={challenges} />

@@ -21,10 +21,14 @@ import {
   faCode,
   faDesktop,
   faServer,
+  faChartLine
 } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence, motion } from 'framer-motion';
+import { useLanguage } from '../../contex/LanguageContext';
+import FeatureCard from '../../components/projects/FeatureCard';
 
 export default function RestaurantRatings() {
+  const { t } = useLanguage();
   const images = [
   { id: 1, title: "1", url: restaurantRatingGallery1},
   { id: 2, title: "2", url: restaurantRatingGallery2 },
@@ -56,6 +60,9 @@ const topNodes = [
     icon: faBrain,
   },
 ];
+
+const icons = [faMagnifyingGlass, faStar, faChartLine];
+
 
 const [index, setIndex] = useState(0);
 
@@ -106,31 +113,30 @@ const page = Math.floor(index / itemsPerPage);
         <div className="flex-1 text-center md:text-left">
 
           <p className="text-orange-400 uppercase tracking-widest text-sm mb-4">
-            Full Stack Project
+            {t.restaurantRatings.hero.tag}
           </p>
 
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white leading-tight font-bold text-white leading-tight">
-            Restaurants{" "}
+            {t.restaurantRatings.hero.title1}{" "}
             <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
-              Reviews & Rating
+              {t.restaurantRatings.hero.title2}
             </span>
           </h1>
 
           <p className="mt-6 text-base md:text-lg text-gray-300 max-w-xl mx-auto md:mx-0">
-            A full-stack web application that allows users to discover restaurants,
-            share reviews, rate their experiences and explore top-rated places.
+            {t.restaurantRatings.hero.description}
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
              <a href="https://www.youtube.com/watch?v=mWvquhIx6nQ" target="_blank" rel="noopener noreferrer">
                <button className="px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-medium transition">
-              Live Demo
+              {t.restaurantRatings.hero.button}
             </button>
             </a>
 
             <a href="https://github.com/jern-19/Restaurants_Reviews_Rating" target="_blank" rel="noopener noreferrer">
                  <button className="px-6 py-3 rounded-lg border border-orange-500 text-orange-400 hover:bg-orange-500/10 transition">
-              GitHub
+              {t.common.github}
             </button>
             </a>
 
@@ -156,7 +162,7 @@ const page = Math.floor(index / itemsPerPage);
     </section>
 
     <section className=" bg-black flex flex-col gap-1 items-center p-4 border border-orange-500/30 bg-orange-500/5 rounded-xl">
-      <span className="text-sm font-bold text-gray-300 mb-6">Technologies Used</span>
+      <span className="text-sm font-bold text-gray-300 mb-6">{t.restaurantRatings.technologies.title}</span>
       <div className="w-full flex flex-wrap justify-center md:justify-between gap-6">
       <div className="flex items-center gap-2 w-[140px] justify-center">
         <img
@@ -164,7 +170,7 @@ const page = Math.floor(index / itemsPerPage);
               alt="Project preview"
               className="relative w-[30px] md:w-[30px] rounded-xl shadow-2xl "
             />
-      <span className="text-white text-md font-bold">React Native</span>
+      <span className="text-white text-md font-bold">{t.common.technologies.react}</span>
       </div>
       <div className="flex items-center gap-2 w-[140px] justify-center">
         <img
@@ -172,7 +178,7 @@ const page = Math.floor(index / itemsPerPage);
               alt="Project preview"
               className="relative w-[30px] md:w-[30px] rounded-xl shadow-2xl "
             />
-      <span className="text-white text-md font-bold">JavaScript</span>
+      <span className="text-white text-md font-bold">{t.common.technologies.javascript}</span>
       </div>
       <div className="flex items-center gap-2 w-[140px] justify-center">
         <img
@@ -180,7 +186,7 @@ const page = Math.floor(index / itemsPerPage);
               alt="Project preview"
               className="relative w-[30px] md:w-[30px] rounded-xl shadow-2xl "
             />
-      <span className="text-white text-md font-bold">Python</span>
+      <span className="text-white text-md font-bold">{t.common.technologies.python}</span>
       </div>
       <div className="flex items-center gap-2 w-[140px] justify-center">
         <img
@@ -188,13 +194,13 @@ const page = Math.floor(index / itemsPerPage);
               alt="Project preview"
               className="relative w-[30px] md:w-[30px] rounded-xl shadow-2xl "
             />
-      <span className="text-white text-md font-bold">Cloud Firestore</span>
+      <span className="text-white text-md font-bold">{t.common.technologies.firebase}</span>
       </div>
         </div>
       </section>
 
       <section className="bg-black flex flex-col gap-4 items-center">
-      <span className="text-md font-bold text-gray-300 mb-6"> Project Gallery</span>
+      <span className="text-md font-bold text-gray-300 mb-6">{t.restaurantRatings.gallery.title}</span>
 
       {/* Carousel Wrapper */}
       <div className="relative w-full max-w-6xl flex items-center justify-center">
@@ -284,78 +290,21 @@ const page = Math.floor(index / itemsPerPage);
     Key Features
   </span>
 
-  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 w-full">
-
-    {/* Feature 1 */}
-    <div className="border border-orange-400/20 rounded-xl bg-orange-500/5 shadow-md p-6 hover:border-orange-400 transition">
-      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5">
-        <div className="w-12 h-12 rounded-xl bg-orange-400 flex items-center justify-center shrink-0">
-          <FontAwesomeIcon
-            className="text-white text-lg"
-            icon={faMagnifyingGlass}
-          />
-        </div>
-
-        <div className="text-center sm:text-left">
-          <h3 className="text-lg font-semibold text-orange-400">
-            Explore Restaurants
-          </h3>
-
-          <p className="mt-2 text-sm text-gray-300">
-            Browse restaurants by cuisine, location, ratings, and discover new
-            places to eat.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    {/* Feature 2 */}
-    <div className="border border-orange-400/20 rounded-xl bg-orange-500/5 shadow-md p-6 hover:border-orange-400 transition">
-      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5">
-        <div className="w-12 h-12 rounded-xl bg-orange-400 flex items-center justify-center shrink-0">
-          <FontAwesomeIcon
-            className="text-white text-lg"
-            icon={faStar}
-          />
-        </div>
-
-        <div className="text-center sm:text-left">
-          <h3 className="text-lg font-semibold text-orange-400">
-            Rate & Review
-          </h3>
-
-          <p className="mt-2 text-sm text-gray-300">
-            Leave ratings and detailed reviews to help others choose the best
-            restaurants.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    {/* Feature 3 */}
-    <div className="border border-orange-400/20 rounded-xl bg-orange-500/5 shadow-md p-6 hover:border-orange-400 transition">
-      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5">
-        <div className="w-12 h-12 rounded-xl bg-orange-400 flex items-center justify-center shrink-0">
-          <FontAwesomeIcon
-            className="text-white text-lg"
-            icon={faArrowLeft}
-          />
-        </div>
-
-        <div className="text-center sm:text-left">
-          <h3 className="text-lg font-semibold text-orange-400">
-            Personalized Recommendations
-          </h3>
-
-          <p className="mt-2 text-sm text-gray-300">
-            Get restaurant suggestions based on ratings, reviews, and your food
-            preferences.
-          </p>
-        </div>
-      </div>
-    </div>
-
-  </div>
+  <div className="grid gap-6 md:grid-cols-3">
+  {t.restaurantRatings.keyFeatures.items.map(
+    (
+      feature: { title: string; description: string },
+      index: number
+    ) => (
+      <FeatureCard
+        key={feature.title}
+        icon={icons[index]}
+        title={feature.title}
+        description={feature.description}
+      />
+    )
+  )}
+</div>
 </section>
     </div>
   );

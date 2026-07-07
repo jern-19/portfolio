@@ -4,78 +4,64 @@ import ProjectCard from '../components/ProjectCard';
 import ChatOnCard from '../assets/projects/chatOnCard.png';
 import CalculatorCard from '../assets/projects/calculatorCard.png';
 import ClassificationOfRecyclingCard from '../assets/projects/classificationOfRecyclingCard.png';
+import { useLanguage } from '../contex/LanguageContext';
 
 
-export const projects = [
+type ProjectId = "restaurant-ratings" | "calculator" | "chat-on" | "classification-of-recycling";
+
+type Project = {
+  id: ProjectId;
+  image: string;
+  technologies: string[];
+  color: string;
+  link: string;
+  title?: string;
+  description?: string;
+};
+
+const projects: Project[] = [
   {
-    title: "Restaurants Reviews & Rating",
-    description:
-      "Discover restaurants, compare ratings and share reviews with a modern full-stack platform.",
+    id: "restaurant-ratings",
     image: restaurantRatingCard,
-    technologies: [
-      "React Native",
-      "JavaScript",
-      "Python",
-      "Firebase",
-    ],
+    technologies: ["React Native", "JavaScript", "Python", "Firebase"],
     color: "#f97316",
-    //featured: true,
     link: "/project/restaurant-ratings",
   },
   {
-    title: "Calculator",
-    description:
-      "Real-time messaging application with authentication and Socket.io.",
+    id: "calculator",
     image: CalculatorCard,
-    technologies: [
-      "React",
-      "Node",
-      "Socket.io",
-    ],
+    technologies: ["React", "Node", "Socket.io"],
     color: "#22d3ee",
-    github: "#",
-    demo: "#",
     link: "/project/calculator",
   },
-{
-    title: "ChatOn",
-    description:
-      "Interactive portfolio with animations and custom components.",
+  {
+    id: "chat-on",
     image: ChatOnCard,
-    technologies: [
-      "React",
-      "Tailwind",
-      "Framer Motion",
-    ],
+    technologies: ["React", "Tailwind", "Framer Motion"],
     color: "#0891b2",
-    github: "#",
-    demo: "#",
     link: "/project/chat-application",
   },
   {
-    title: "Classification of Recycling",
-    description:
-      "Interactive portfolio with animations and custom components.",
+    id: "classification-of-recycling",
     image: ClassificationOfRecyclingCard,
-    technologies: [
-      "React",
-      "Tailwind",
-      "Framer Motion",
-    ],
+    technologies: ["React", "Tailwind", "Framer Motion"],
     color: "#8b5cf6",
-    github: "#",
-    demo: "#",
     link: "/project/classification-of-recycling",
   },
-
-   
 ];
 
 function Projects() {
+  const { t } = useLanguage();
+
+const localizedProjects = projects.map((project) => ({
+  ...project,
+  title:t.projects[project.id]?.title || project.title,
+  description: t.projects[project.id]?.description || project.description,
+}));
   return (
     <div className="w-full h-full flex flex-col gap-4 ">
  <div className="grid gap-8 lg:grid-cols-2 h-full ">
-        {projects.map((project, index) => (
+        {localizedProjects.map((project, index) => (
           <Link
             to={project.link}
             key={project.title}

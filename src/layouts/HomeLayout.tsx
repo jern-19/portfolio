@@ -2,9 +2,12 @@ import { NavLink, Outlet } from "react-router-dom";
 import bg from "../assets/bg.png";
 import Jern from "../assets/Jern.png";
 import { useEffect, useState } from "react";
+import { useLanguage } from "../contex/LanguageContext";
+
 
 function HomeLayout() {
   const [scrollY, setScrollY] = useState(0);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const onScroll = () => setScrollY(window.scrollY);
@@ -53,17 +56,16 @@ function HomeLayout() {
             </h1>
 
             <p className="text-gray-200 text-base sm:text-lg md:text-xl">
-              Full Stack Software Engineer 💼
+              {t.home.title}
             </p>
 
             <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-              Moderne Webanwendungen entwickeln und Altsysteme in skalierbare
-              Lösungen transformieren.
+              {t.home.description}
             </p>
 
             <div className="flex flex-col sm:flex-row sm:justify-end gap-2 sm:gap-6 pt-4 text-gray-300 text-sm">
-              <span>📅 Joined 2016</span>
-              <span>📍 München</span>
+              <span>📅 {t.home.joined}</span>
+              <span>📍 {t.home.location}</span>
             </div>
           </div>
         </div>
@@ -82,7 +84,7 @@ function HomeLayout() {
                 }`
               }
             >
-              About
+              {t.navbar.me}
             </NavLink>
 
             <NavLink
@@ -95,7 +97,7 @@ function HomeLayout() {
                 }`
               }
             >
-              Experience
+              {t.navbar.experience}
             </NavLink>
 
             <NavLink
@@ -108,7 +110,7 @@ function HomeLayout() {
                 }`
               }
             >
-              Projects
+              {t.navbar.projects}
             </NavLink>
 {/* 
             <NavLink
