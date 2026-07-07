@@ -21,6 +21,7 @@ import {
   faCube,
   faStar,
 } from '@fortawesome/free-solid-svg-icons';
+import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import {
@@ -34,6 +35,7 @@ import {
   Line,
   CartesianGrid,
 } from 'recharts';
+import { useLanguage } from '../../contex/LanguageContext';
 
 const chartData = [
   { name: 'trash', value: 140 },
@@ -253,9 +255,10 @@ const predictions = [
 ];
 
 export default function ClassificationOfRecycling() {
+  const {t} = useLanguage()
   return (
     <div className="h-full w-full  pr-2 sm:pr-4 lg:pr-8 ">
-      <section className="relative overflow-hidden bg-[#050608] py-12 sm:py-16 lg:py-24">
+      <section className="relative overflow-hidden bg-[#050608]">
         {/* Background Glow */}
         <div className="absolute left-0 top-1/2 h-[250px] w-[250px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-green-500/5 blur-[80px] sm:h-[350px] sm:w-[350px] lg:h-[500px] lg:w-[500px] lg:blur-[140px]" />
 
@@ -266,36 +269,28 @@ export default function ClassificationOfRecycling() {
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-green-500/20 bg-green-500/10 px-3 py-2 sm:px-4">
               <div className="h-2 w-2 rounded-full bg-green-400" />
               <span className="text-xs font-medium text-green-400 sm:text-sm">
-                Research Project
+                {t.classificationOfRecycling.tag}
               </span>
             </div>
 
             {/* Title */}
             <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
-              Recycling Material
+              {t.classificationOfRecycling.title1}
               <br />
-              Classification
+              {t.classificationOfRecycling.title2}
             </h1>
 
             <h2 className="mt-4 text-xl font-semibold text-green-400 sm:text-2xl lg:mt-5 lg:text-3xl">
-              Using Deep Learning
+              {t.classificationOfRecycling.subTitle}
             </h2>
 
             <p className="mt-5 text-base leading-7 text-gray-400 sm:text-lg sm:leading-8">
-              A comparative study of VGG16, MobileNet and ResNet50 for six-class
-              recyclable waste classification.
+              {t.classificationOfRecycling.description}
             </p>
 
             {/* Technologies */}
             <div className="relative z-10 mt-8 flex flex-wrap gap-2 sm:gap-3">
-              {[
-                'Computer Vision',
-                'Deep Learning',
-                'CNN',
-                'Transfer Learning',
-                'TensorFlow',
-                'Keras',
-              ].map((tech) => (
+              {t.classificationOfRecycling.techStack.map((tech) => (
                 <span
                   key={tech}
                   className="rounded-lg border border-zinc-700 bg-[#161616] px-3 py-2 text-xs text-gray-300 transition-all hover:border-green-400 hover:bg-[#1b221d] hover:text-green-300 hover:shadow-[0_0_12px_rgba(74,222,128,0.35)] sm:px-4 sm:text-sm"
@@ -309,12 +304,12 @@ export default function ClassificationOfRecycling() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
               <button className="flex w-full items-center justify-center gap-3 rounded-xl bg-green-500 px-5 py-3 font-medium text-black transition hover:bg-green-400 sm:w-auto sm:px-6 sm:py-4">
                 <i className="fa-brands fa-github text-lg sm:text-xl"></i>
-                View on GitHub
+               {t.classificationOfRecycling.buttonViewOnGitHub}
               </button>
 
               <button className="flex w-full items-center justify-center gap-3 rounded-xl border border-zinc-700 bg-[#111] px-5 py-3 font-medium text-white transition hover:border-green-400 sm:w-auto sm:px-6 sm:py-4">
                 <i className="fa-regular fa-file-lines text-green-400"></i>
-                Paper / Report
+                {t.classificationOfRecycling.buttonDemo}
               </button>
             </div>
           </div>
@@ -344,7 +339,7 @@ export default function ClassificationOfRecycling() {
       <section className="mx-auto mt-12 sm:mt-16">
         <div className="w-full rounded-2xl border border-gray-700 bg-[#0d1117] shadow-lg overflow-hidden">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
-            {stats.map((item, index) => (
+            {t.classificationOfRecycling.summaryPart.map((item, index) => (
               <div
                 key={index}
                 className={`flex flex-col items-center justify-center py-8 px-6 ${
@@ -355,7 +350,7 @@ export default function ClassificationOfRecycling() {
               >
                 <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-green-500/30 bg-green-500/10">
                   <FontAwesomeIcon
-                    icon={item.icon}
+                    icon={item.icon as IconProp}
                     className={`text-2xl ${item.color}`}
                   />
                 </div>
@@ -372,7 +367,7 @@ export default function ClassificationOfRecycling() {
       <section className="mx-auto mt-12 sm:mt-16">
         <div className="w-full rounded-2xl border border-gray-700 bg-[#0d1117] shadow-lg overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-3">
-            {cards.map((card, index) => (
+            {t.classificationOfRecycling.projectDetails.map((card, index) => (
               <div
                 key={index}
                 className={`flex gap-5 p-8 ${
@@ -384,7 +379,7 @@ export default function ClassificationOfRecycling() {
                 {/* Icon */}
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-purple-500/10 border border-purple-500/30">
                   <FontAwesomeIcon
-                    icon={card.icon}
+                    icon={card.icon as IconProp}
                     className="text-xl text-purple-400"
                   />
                 </div>
@@ -415,14 +410,14 @@ export default function ClassificationOfRecycling() {
                 className="text-purple-400 text-2xl"
               />
               <h2 className="text-2xl font-semibold text-white">
-                Dataset Overview
+                {t.classificationOfRecycling.datasetOverview.title}
               </h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               {/* Overview */}
               <div className="space-y-5">
-                {overview.map((item, i) => (
+                {t.classificationOfRecycling.datasetOverview.items.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <FontAwesomeIcon
                       icon={faCheck}
@@ -437,13 +432,13 @@ export default function ClassificationOfRecycling() {
               {/* Chart */}
               <div>
                 <h4 className="text-center text-white font-semibold uppercase text-sm tracking-wide mb-5">
-                  Total Images Per Class
+                  {t.classificationOfRecycling.datasetOverview.totalImagePerClass}
                 </h4>
 
                 <div className="h-[280px] sm:h-[320px] w-full">
                   <ResponsiveContainer width="100%" height="100%">
                     <BarChart
-                      data={chartData}
+                      data={t.classificationOfRecycling.datasetOverview.chartData}
                       margin={{
                         top: 10,
                         right: 10,
@@ -490,11 +485,13 @@ export default function ClassificationOfRecycling() {
                 className="text-purple-400 text-2xl"
               />
 
-              <h2 className="text-2xl font-semibold text-white">Methodology</h2>
+              <h2 className="text-2xl font-semibold text-white">
+                {t.classificationOfRecycling.methodology.title}
+              </h2>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
-              {methodology.map((step, index) => (
+              {t.classificationOfRecycling.methodology.items.map((step, index) => (
                 <div
                   key={index}
                   className="flex flex-col items-center text-center"
@@ -508,7 +505,7 @@ export default function ClassificationOfRecycling() {
                     </div>
 
                     {/* Connector (Desktop only) */}
-                    {index !== methodology.length - 1 &&
+                    {index !== t.classificationOfRecycling.methodology.items.length - 1 &&
                       (index + 1) % 3 !== 0 && (
                         <div className="hidden sm:block absolute top-1/2 left-full w-8 h-[2px] bg-green-500/40 -translate-y-1/2" />
                       )}
@@ -524,22 +521,14 @@ export default function ClassificationOfRecycling() {
             {/* Optional Summary */}
             <div className="mt-8 rounded-xl border border-green-500/20 bg-green-500/5 p-4">
               <p className="text-center text-gray-300 text-sm leading-7">
-                The images are preprocessed, augmented, and trained using three
-                deep learning architectures (
-                <span className="text-green-400 font-medium">VGG16</span>,
-                <span className="text-green-400 font-medium"> MobileNet</span>,
-                and
-                <span className="text-green-400 font-medium"> ResNet50</span>)
-                to compare classification performance on recyclable waste
-                images.
+                {t.classificationOfRecycling.methodology.summary}
               </p>
             </div>
           </div>
         </div>
       </section>
-      <section className="mx-auto mt-12 sm:mt-16">
-        <div className="bg-[#0b0b0d] min-h-screen flex items-center justify-center p-8">
-          <div className="w-full max-w-6xl rounded-2xl border border-gray-800 bg-[#111214] p-6">
+      <section className="w-full mx-auto mt-12 sm:mt-16">
+        <div className="w-full rounded-2xl border border-gray-800 bg-[#111214] p-6">
             {/* Header */}
             <div className="flex items-center gap-2 mb-6">
               <FontAwesomeIcon
@@ -547,12 +536,12 @@ export default function ClassificationOfRecycling() {
                 className="text-purple-400 text-lg"
               />
               <h2 className="text-white text-xl font-semibold">
-                Models Compared
+                {t.classificationOfRecycling.modelsCompared.title}
               </h2>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
-              {models.map((model) => (
+              {t.classificationOfRecycling.modelsCompared.items.map((model) => (
                 <div
                   key={model.name}
                   className={`rounded-xl border ${colors[model.color as keyof typeof colors].border} bg-[#18191d] p-6 flex flex-col justify-between`}
@@ -604,7 +593,6 @@ export default function ClassificationOfRecycling() {
               ))}
             </div>
           </div>
-        </div>
       </section>
       <section className="mx-auto mt-12 sm:mt-16">
         <div className="grid lg:grid-cols-2 gap-6 mt-8">
@@ -616,14 +604,14 @@ export default function ClassificationOfRecycling() {
                 className="text-green-400 text-xl"
               />
               <h2 className="text-white text-xl font-semibold">
-                Training Results (Test Accuracy)
+                {t.classificationOfRecycling.trainingResults.title}
               </h2>
             </div>
 
             <div className="flex gap-4">
               <div className="flex-1 h-80">
                 <ResponsiveContainer width="100%" height="100%">
-                  <LineChart data={chartDataTrainingResults}>
+                  <LineChart data={t.classificationOfRecycling.trainingResults.chartData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                     <CartesianGrid stroke="#2a2a2a" />
                     <XAxis
                       dataKey="epoch"
@@ -670,33 +658,14 @@ export default function ClassificationOfRecycling() {
                 </ResponsiveContainer>
               </div>
 
-              {/* Accuracy Boxes */}
-              <div className="w-32 flex flex-col gap-4">
-                <div className="rounded-xl border border-green-500/40 bg-green-500/10 p-4 text-center">
-                  <h3 className="text-5xl font-bold text-green-400">97%</h3>
-                  <p className="text-green-400 mt-2 font-semibold">MobileNet</p>
-                  <p className="text-gray-400 text-sm">Best Accuracy</p>
-                </div>
-
-                <div className="rounded-xl border border-blue-500/40 bg-blue-500/10 p-4 text-center">
-                  <h3 className="text-5xl font-bold text-blue-400">96%</h3>
-                  <p className="text-blue-400 mt-2 font-semibold">ResNet50</p>
-                  <p className="text-gray-400 text-sm">Best Accuracy</p>
-                </div>
-
-                <div className="rounded-xl border border-purple-500/40 bg-purple-500/10 p-4 text-center">
-                  <h3 className="text-5xl font-bold text-purple-400">75%</h3>
-                  <p className="text-purple-400 mt-2 font-semibold">VGG16</p>
-                  <p className="text-gray-400 text-sm">Best Accuracy</p>
-                </div>
-              </div>
+              
             </div>
           </div>
 
           {/* Right Card */}
-          <div className="bg-[#111214] border border-gray-800 rounded-2xl p-6">
-            <h2 className="text-white text-xl font-semibold mb-6">
-              Accuracy Comparison Table
+          <div className="bg-[#111214] flex flex-col border border-gray-800 rounded-2xl p-6 gap-4">
+            <h2 className="text-white text-xl font-semibold">
+              {t.classificationOfRecycling.trainingResults.title}
             </h2>
 
             <div className="overflow-hidden rounded-xl border border-gray-800">
@@ -735,8 +704,31 @@ export default function ClassificationOfRecycling() {
                     </tr>
                   ))}
                 </tbody>
+                
               </table>
+              
             </div>
+
+            <div className="w-full flex flex-row gap-4 justify-center ">
+                <div className="rounded-xl border border-green-500/40 bg-green-500/10 p-4 text-center">
+                  <h3 className="text-2xl font-bold text-green-400">{t.classificationOfRecycling.accuracyComparisonTable.mobileNet.title}</h3>
+                  <p className="text-green-400 mt-2 font-semibold">{t.classificationOfRecycling.accuracyComparisonTable.mobileNet.accuracy}</p>
+                  <p className="text-gray-400 text-sm">{t.classificationOfRecycling.accuracyComparisonTable.bestAccuracy}</p>
+                </div>
+
+                <div className="rounded-xl border border-blue-500/40 bg-blue-500/10 p-4 text-center">
+                  <h3 className="text-2xl font-bold text-blue-400">{t.classificationOfRecycling.accuracyComparisonTable.resNet50.title}</h3>
+                  <p className="text-blue-400 mt-2 font-semibold">{t.classificationOfRecycling.accuracyComparisonTable.resNet50.accuracy}</p>
+                  <p className="text-gray-400 text-sm">{t.classificationOfRecycling.accuracyComparisonTable.bestAccuracy}</p>
+                </div>
+
+                <div className="rounded-xl border border-purple-500/40 bg-purple-500/10 p-4 text-center">
+                  <h3 className="text-2xl font-bold text-purple-400">{t.classificationOfRecycling.accuracyComparisonTable.vgg16.title}</h3>
+                  <p className="text-purple-400 mt-2 font-semibold">{t.classificationOfRecycling.accuracyComparisonTable.vgg16.accuracy}</p>
+                  <p className="text-gray-400 text-sm">{t.classificationOfRecycling.accuracyComparisonTable.bestAccuracy}</p>
+                </div>
+              </div>
+
           </div>
         </div>
       </section>
@@ -752,13 +744,13 @@ export default function ClassificationOfRecycling() {
             </div>
 
             <h2 className="text-2xl font-semibold text-white">
-              Prediction Examples
+              {t.classificationOfRecycling.predictions.title}
             </h2>
           </div>
 
           {/* Cards */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {predictions.map((item) => (
+            {t.classificationOfRecycling.predictions.items.map((item) => (
               <div
                 key={item.actual}
                 className="bg-[#18191d] border border-gray-800 rounded-xl p-3 hover:border-green-500/30 transition"
