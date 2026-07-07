@@ -9,7 +9,13 @@ interface ProfileCardProps {
   alt?: string;
 }
 
-export function ProfileCard({ title, subtitle, description, image, alt = "Profile" }: ProfileCardProps) {
+export function ProfileCard({
+  title,
+  subtitle,
+  description,
+  image,
+  alt = 'Profile',
+}: ProfileCardProps) {
   return (
     <div className="w-full rounded-3xl bg-zinc-800 p-5 flex flex-col justify-start border border-white/20 rounded-xl p-4 bg-[#2B2A2A] gap-4 shadow-md">
       <div className="flex gap-4 items-center">
@@ -25,7 +31,9 @@ export function ProfileCard({ title, subtitle, description, image, alt = "Profil
 
       <div className="flex flex-col">
         {description.title && (
-          <span className="text-xl font-bold text-white">{description.title}</span>
+          <span className="text-xl font-bold text-white">
+            {description.title}
+          </span>
         )}
         <span className="text-white opacity-90">{description.text}</span>
       </div>

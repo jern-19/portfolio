@@ -1,17 +1,14 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faArrowLeft,
-  faEnvelope,
-} from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
-import { useLanguage } from "../contex/LanguageContext";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '../contex/LanguageContext';
 
 export default function Navbar() {
   const { language, setLanguage } = useLanguage();
   const navigate = useNavigate();
 
   const handleContact = () => {
-   navigate("/contact");
+    navigate('/contact');
   };
 
   return (
@@ -26,10 +23,10 @@ export default function Navbar() {
         </button>
 
         <div className="flex items-center gap-4">
- {/* Contact Button */}
-        <button
-          onClick={handleContact}
-          className="
+          {/* Contact Button */}
+          <button
+            onClick={handleContact}
+            className="
             flex items-center gap-2
             rounded-md
             border border-gray-700
@@ -40,19 +37,17 @@ export default function Navbar() {
             hover:bg-white
             hover:text-black
           "
-        >
-          <FontAwesomeIcon icon={faEnvelope} />
-          Contact Me
-        </button>
+          >
+            <FontAwesomeIcon icon={faEnvelope} />
+            Contact Me
+          </button>
 
-        {/* Language */}
-        <div className="relative">
-          <select
-            value={language}
-            onChange={(e) =>
-              setLanguage(e.target.value as "en" | "de")
-            }
-            className="
+          {/* Language */}
+          <div className="relative">
+            <select
+              value={language}
+              onChange={(e) => setLanguage(e.target.value as 'en' | 'de')}
+              className="
               appearance-none
               rounded-md
               border border-gray-700
@@ -64,29 +59,27 @@ export default function Navbar() {
               hover:border-gray-500
               focus:border-gray-500
             "
-          >
-            <option value="en">🇬🇧 EN</option>
-            <option value="de">🇩🇪 DE</option>
-          </select>
+            >
+              <option value="en">🇬🇧 EN</option>
+              <option value="de">🇩🇪 DE</option>
+            </select>
 
-          <svg
-            className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
+            <svg
+              className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </div>
         </div>
-        </div>
-
-       
       </div>
     </header>
   );

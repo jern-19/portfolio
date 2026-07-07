@@ -1,35 +1,35 @@
 trigger:
-- main
+  - main
 
 pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '20.x'
-  displayName: 'Install Node.js'
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '20.x'
+    displayName: 'Install Node.js'
 
-- script: |
-    echo "Current directory:"
-    pwd
+  - script: |
+      echo "Current directory:"
+      pwd
 
-    echo "Repository root:"
-    ls -la
+      echo "Repository root:"
+      ls -la
 
-    npm install
-    npm run build
+      npm install
+      npm run build
 
-    echo "Searching for build folder..."
-    find . -type d -name build
+      echo "Searching for build folder..."
+      find . -type d -name build
 
-    echo "Searching for index.html..."
-    find . -name index.html
-  displayName: 'Debug build'
+      echo "Searching for index.html..."
+      find . -name index.html
+    displayName: 'Debug build'
 
-- task: AzureStaticWebApp@0
-  displayName: 'Deploy to Azure Static Web App'
-  inputs:
-    app_location: '.'
-    output_location: 'build'
-    azure_static_web_apps_api_token: $(azure_static_web_apps_api_token)
+  - task: AzureStaticWebApp@0
+    displayName: 'Deploy to Azure Static Web App'
+    inputs:
+      app_location: '.'
+      output_location: 'build'
+      azure_static_web_apps_api_token: $(azure_static_web_apps_api_token)

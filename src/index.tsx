@@ -10,10 +10,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <BrowserRouter>
-  <LanguageProvider>
-    <AppRouter/>
-  </LanguageProvider>
+    <LanguageProvider>
+      <AppRouter />
+    </LanguageProvider>
   </BrowserRouter>
 );
-
-

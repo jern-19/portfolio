@@ -1,8 +1,8 @@
-import { useSortable } from "@dnd-kit/sortable";
-import { CSS } from "@dnd-kit/utilities";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGripVertical } from "@fortawesome/free-solid-svg-icons";
-import { ProfileCard } from "./ProfileCard";
+import { useSortable } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGripVertical } from '@fortawesome/free-solid-svg-icons';
+import { ProfileCard } from './ProfileCard';
 
 export function SortableProfileCard({ card }: { card: any }) {
   const {
@@ -29,7 +29,7 @@ export function SortableProfileCard({ card }: { card: any }) {
         relative
         transition-all
         duration-200
-        ${isDragging ? "scale-[1.02] rotate-1  shadow-2xl opacity-90" : ""}
+        ${isDragging ? 'scale-[1.02] rotate-1  shadow-2xl opacity-90' : ''}
       `}
     >
       {/* Drag Handle */}

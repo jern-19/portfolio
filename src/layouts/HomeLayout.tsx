@@ -1,9 +1,8 @@
-import { NavLink, Outlet } from "react-router-dom";
-import bg from "../assets/bg.png";
-import Jern from "../assets/Jern.png";
-import { useEffect, useState } from "react";
-import { useLanguage } from "../contex/LanguageContext";
-
+import { NavLink, Outlet } from 'react-router-dom';
+import bg from '../assets/bg.png';
+import Jern from '../assets/Jern.png';
+import { useEffect, useState } from 'react';
+import { useLanguage } from '../contex/LanguageContext';
 
 function HomeLayout() {
   const [scrollY, setScrollY] = useState(0);
@@ -12,9 +11,9 @@ function HomeLayout() {
   useEffect(() => {
     const onScroll = () => setScrollY(window.scrollY);
 
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener('scroll', onScroll);
 
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   const progress = Math.min(scrollY / 200, 1);
@@ -37,7 +36,7 @@ function HomeLayout() {
           style={{
             opacity: 1 - progress,
             transform: `translateY(-${progress * 60}px)`,
-            transition: "opacity .1s linear",
+            transition: 'opacity .1s linear',
           }}
         >
           <div className="-mt-16 sm:-mt-20">
@@ -79,8 +78,8 @@ function HomeLayout() {
               className={({ isActive }) =>
                 `flex-1 min-w-[90px] text-center pb-3 sm:pb-4 transition-all ${
                   isActive
-                    ? "text-white border-b-2 border-white"
-                    : "text-gray-400 hover:text-white"
+                    ? 'text-white border-b-2 border-white'
+                    : 'text-gray-400 hover:text-white'
                 }`
               }
             >
@@ -92,8 +91,8 @@ function HomeLayout() {
               className={({ isActive }) =>
                 `flex-1 min-w-[90px] text-center pb-3 sm:pb-4 transition-all ${
                   isActive
-                    ? "text-white border-b-2 border-white"
-                    : "text-gray-400 hover:text-white"
+                    ? 'text-white border-b-2 border-white'
+                    : 'text-gray-400 hover:text-white'
                 }`
               }
             >
@@ -105,14 +104,14 @@ function HomeLayout() {
               className={({ isActive }) =>
                 `flex-1 min-w-[90px] text-center pb-3 sm:pb-4 transition-all ${
                   isActive
-                    ? "text-white border-b-2 border-white"
-                    : "text-gray-400 hover:text-white"
+                    ? 'text-white border-b-2 border-white'
+                    : 'text-gray-400 hover:text-white'
                 }`
               }
             >
               {t.navbar.projects}
             </NavLink>
-{/* 
+            {/* 
             <NavLink
               to="/articles"
               className={({ isActive }) =>

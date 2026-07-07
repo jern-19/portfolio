@@ -1,10 +1,7 @@
-import { useState } from "react";
-import emailjs from "@emailjs/browser";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faEnvelope,
-  faPaperPlane,
-} from "@fortawesome/free-solid-svg-icons";
+import { useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 export default function Contact() {
   // Workaround for TypeScript error: Property 'env' does not exist on type 'ImportMeta'
@@ -14,13 +11,13 @@ export default function Contact() {
     VITE_EMAILJS_PUBLIC_KEY,
   } = (import.meta as any).env || {};
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
+    name: '',
+    email: '',
+    message: '',
   });
 
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState('');
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -35,30 +32,30 @@ export default function Contact() {
     e.preventDefault();
 
     setLoading(true);
-    setStatus("");
+    setStatus('');
 
     try {
       await emailjs.send(
-        "service_bgv6sno",
-        "template_kwypwak",
+        'service_bgv6sno',
+        'template_kwypwak',
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
         },
-        "KwYZ3LTIZIDwcXety"
+        'KwYZ3LTIZIDwcXety'
       );
 
-      setStatus("✅ Your message has been sent successfully!");
+      setStatus('✅ Your message has been sent successfully!');
 
       setFormData({
-        name: "",
-        email: "",
-        message: "",
+        name: '',
+        email: '',
+        message: '',
       });
     } catch (err) {
       console.error(err);
-      setStatus("❌ Failed to send your message. Please try again.");
+      setStatus('❌ Failed to send your message. Please try again.');
     }
 
     setLoading(false);
@@ -88,9 +85,7 @@ export default function Contact() {
         >
           <div className="space-y-6">
             <div>
-              <label className="mb-2 block text-sm text-gray-300">
-                Name
-              </label>
+              <label className="mb-2 block text-sm text-gray-300">Name</label>
 
               <input
                 type="text"
@@ -104,9 +99,7 @@ export default function Contact() {
             </div>
 
             <div>
-              <label className="mb-2 block text-sm text-gray-300">
-                Email
-              </label>
+              <label className="mb-2 block text-sm text-gray-300">Email</label>
 
               <input
                 type="email"
@@ -142,13 +135,11 @@ export default function Contact() {
             >
               <FontAwesomeIcon icon={faPaperPlane} />
 
-              {loading ? "Sending..." : "Send Message"}
+              {loading ? 'Sending...' : 'Send Message'}
             </button>
 
             {status && (
-              <p className="text-center text-sm text-gray-300">
-                {status}
-              </p>
+              <p className="text-center text-sm text-gray-300">{status}</p>
             )}
           </div>
         </form>

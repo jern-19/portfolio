@@ -1,12 +1,10 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faArrowRight,
   faArrowUpRightFromSquare,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 
-import {
-  faGithub,
-} from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 interface Props {
   project: any;
@@ -23,7 +21,7 @@ export default function ProjectCard({ project }: Props) {
         e.currentTarget.style.boxShadow = `0 0 40px ${project.color}25`;
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.boxShadow = "0 0 0 transparent";
+        e.currentTarget.style.boxShadow = '0 0 0 transparent';
       }}
     >
       {/* IMAGE */}
@@ -48,26 +46,24 @@ export default function ProjectCard({ project }: Props) {
           {project.title}
         </h3>
 
-        <p className="leading-relaxed text-zinc-400">
-          {project.description}
-        </p>
+        <p className="leading-relaxed text-zinc-400">{project.description}</p>
 
         <div className="flex flex-row justify-between items-center">
-          <div  className="flex flex-wrap gap-3">
-          {project.technologies.map((tech: string) => (
-            <span
-              key={tech}
-              className="rounded-full border border-zinc-700 px-4 py-2 text-sm text-zinc-300 transition-all"
-              style={{
-                borderColor: `${project.color}55`,
-              }}
-            >
-              {tech}
-            </span>
-          ))}
+          <div className="flex flex-wrap gap-3">
+            {project.technologies.map((tech: string) => (
+              <span
+                key={tech}
+                className="rounded-full border border-zinc-700 px-4 py-2 text-sm text-zinc-300 transition-all"
+                style={{
+                  borderColor: `${project.color}55`,
+                }}
+              >
+                {tech}
+              </span>
+            ))}
           </div>
-          
-           <FontAwesomeIcon
+
+          <FontAwesomeIcon
             icon={faArrowRight}
             className="translate-x-0 text-xl transition-transform duration-300 group-hover:translate-x-2"
             style={{

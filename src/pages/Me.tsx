@@ -1,23 +1,23 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState } from 'react';
 import {
   DndContext,
   PointerSensor,
   useSensor,
   useSensors,
   closestCenter,
-} from "@dnd-kit/core";
+} from '@dnd-kit/core';
 
 import {
   SortableContext,
   verticalListSortingStrategy,
   arrayMove,
-} from "@dnd-kit/sortable";
+} from '@dnd-kit/sortable';
 
-import { ProfileCard } from "../components/ProfileCard";
-import { SortableProfileCard } from "../components/SortableProfileCard";
+import { ProfileCard } from '../components/ProfileCard';
+import { SortableProfileCard } from '../components/SortableProfileCard';
 
-import Jern from "../assets/Jern.png";
-import { useLanguage } from "../contex/LanguageContext";
+import Jern from '../assets/Jern.png';
+import { useLanguage } from '../contex/LanguageContext';
 
 export default function Me() {
   const { t } = useLanguage();
@@ -59,10 +59,7 @@ export default function Me() {
       collisionDetection={closestCenter}
       onDragEnd={handleDragEnd}
     >
-      <SortableContext
-        items={cards}
-        strategy={verticalListSortingStrategy}
-      >
+      <SortableContext items={cards} strategy={verticalListSortingStrategy}>
         <div className="flex flex-col gap-4 w-full">
           {cards.map((card) => (
             <SortableProfileCard key={card.id} card={card} />
