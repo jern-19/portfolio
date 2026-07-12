@@ -1,7 +1,7 @@
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGripVertical } from '@fortawesome/free-solid-svg-icons';
+import { faArrowsUpDownLeftRight } from '@fortawesome/free-solid-svg-icons';
 import { ProfileCard } from './ProfileCard';
 
 export function SortableProfileCard({ card }: { card: any }) {
@@ -49,7 +49,7 @@ export function SortableProfileCard({ card }: { card: any }) {
           hover:bg-neutral-600
         "
       >
-        <FontAwesomeIcon icon={faGripVertical} size="lg" />
+        <FontAwesomeIcon icon={faArrowsUpDownLeftRight} size="lg" />
       </button>
 
       <ProfileCard {...card} />

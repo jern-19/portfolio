@@ -2,6 +2,9 @@ import { faBorderAll, faChartLine, faCube, faFolderOpen, faImage, faLaptopCode, 
 
 export const de = {
     common: {
+        admin: {
+name: "Jern",
+        },
       technologies: {
         react: 'React',
         python: 'Python',
@@ -20,93 +23,121 @@ export const de = {
       projects: 'Projekte',
     },
     home: {
-      title: 'Full Stack Software Engineer 💼',
+      title: 'Full-Stack-Softwareentwickler',
       description:
-        'Moderne Webanwendungen entwickeln und Altsysteme in skalierbare Lösungen transformieren.',
-      joined: 'Joined 2016',
+        'Ich entwickle moderne und skalierbare Software mit intuitiven Benutzererlebnissen und zuverlässigen Backend-Systemen. Mein Fokus liegt auf sauberem Code und wartbaren Lösungen.',
+      joined: 'Beigetreten 2016',
       location: 'München, Deutschland',
     },
-    me: {
-      cards: [
-        {
-          title: 'Hi!',
-          text: 'DE.',
-        },
-        {
-          title: 'My Journey',
-          text: 'DE.',
-        },
-      ],
+   me: {
+  cards: [
+    {
+      title: "Hallo! 👋🏾",
+      text: "Ich bin Jern. Willkommen in meinem Portfolio! Hier teile ich meinen Werdegang, meine Erfahrungen und die Projekte, die ich auf meiner Reise durch die Welt der Softwareentwicklung umgesetzt habe."
     },
-    experience: {
-      items: [
-        {
-          year: 'Heute',
-          icon: '🚀',
-          title: 'Senior Full-Stack-Entwickler',
-          subtitle: 'Aktuelle Position',
-          description:
-            'Entwicklung skalierbarer Webanwendungen, Gestaltung moderner Benutzererlebnisse und Bereitstellung hochwertiger Softwarelösungen.',
-        },
-        {
-          year: '2023',
-          icon: '💼',
-          title: 'Softwareentwickler',
-          subtitle: 'Berufserfahrung',
-          description:
-            'Entwicklung produktionsreifer Anwendungen mit React, .NET und Cloud-Technologien sowie Zusammenarbeit in agilen Teams.',
-        },
-        {
-          year: '2021',
-          icon: '🖥️',
-          title: 'Erste Vollzeitstelle',
-          subtitle: 'Softwareentwickler',
-          description:
-            'Beginn meiner Karriere als Full-Stack-Entwickler mit der Arbeit an Unternehmenssoftware und dem Erlernen bewährter Methoden der Softwareentwicklung.',
-        },
-        {
-          year: '2020',
-          icon: '🤝',
-          title: 'Praktikum',
-          subtitle: 'Erste Berufserfahrung',
-          description:
-            'Zusammenarbeit mit erfahrenen Entwicklern, Mitwirkung an neuen Funktionen und praktische Erfahrungen in der realen Softwareentwicklung gesammelt.',
-        },
-        {
-          year: '2020',
-          icon: '🎓',
-          title: 'Bachelor in Informatik',
-          subtitle: 'Universität',
-          description:
-            'Abschluss meines Studiums, während ich persönliche Projekte entwickelte und meine Grundlagen der Softwareentwicklung weiter vertiefte.',
-        },
-      ],
+    {
+      title: "Alltag 🌱",
+      text: "Programmieren, Bugs lösen, Neues lernen, gutes Essen genießen, ausreichend schlafen und eine gesunde Balance zwischen Arbeit und Erholung finden."
     },
+    {
+      text: "Ich löse gerne anspruchsvolle Probleme, lerne neue Technologien kennen und entwickle Software, die Ideen in nützliche und sinnvolle Lösungen verwandelt."
+    },
+    {
+      title: "Fun Fact ☕",
+      text: "Was vor fünf Jahren als kurzes Praktikum begann, wurde zu einem neuen Kapitel meines Lebens. Ich habe mich entschieden, in München zu bleiben, die Stadt zu meinem Zuhause zu machen und mich sowohl persönlich als auch beruflich weiterzuentwickeln."
+    },
+    {
+      title: "Außerhalb des Programmierens 🌍",
+      text: "Ich entdecke gerne neue Orte, finde versteckte Highlights, lerne ständig Neues und achte auf eine gute Balance zwischen Beruf und Privatleben."
+    }
+  ],
+},
+
+experience: {
+  items: [
+    {
+      year: "2022 – Heute",
+      icon: "👩🏽‍💻",
+      title: "Full-Stack Software Engineer",
+      subtitle: "Aktuelle Position",
+      description:
+        "Ich entwickle und betreue Full-Stack-Webanwendungen. Dabei implementiere ich Backend-Services mit C#, REST-APIs, BFFs und Endpunkten sowie responsive Frontends mit JavaScript, jQuery, Kendo UI und Webpack. Außerdem arbeite ich mit Azure DevOps und CI/CD-Pipelines und habe meine Kenntnisse in React kontinuierlich erweitert."
+    },
+    {
+      year: "Jul 2021 – Okt 2021",
+      icon: "📱",
+      title: "Mobile Developer Erasmus+",
+      subtitle: "Praktikum",
+      description:
+        "Ich entwickelte plattformübergreifende mobile Anwendungen für Android und iOS mit Flutter."
+    },
+    {
+      year: "Nov 2020 – Jun 2021",
+      icon: "💼",
+      title: "Mobile Developer",
+      subtitle: "Werkstudent",
+      description:
+        "Ich entwickelte mobile Anwendungen für Android und iOS mit React Native, arbeitete eng mit Designern zusammen, um benutzerfreundliche Oberflächen zu gestalten, und veröffentlichte die Apps im App Store und bei Google Play."
+    },
+    {
+      year: "2020",
+      icon: "📲",
+      title: "Android Development Bootcamp (Turkcell)",
+      subtitle: "Android-App-Entwicklung",
+      description:
+        "Ich nahm an einem Android-Entwicklungswettbewerb teil und entwickelte eine Android-Anwendung mit Java und Android Studio. Als Abschlussprojekt erstellte und veröffentlichte ich eine App für die türkische Gebärdensprache."
+    },
+    {
+      year: "2019",
+      icon: "🤖",
+      title: "KI-Sommercamp",
+      subtitle: "Deep Learning & Image Processing",
+      description:
+        "Ich nahm an einem KI-Sommercamp mit Schwerpunkt Machine Learning und Bildverarbeitung teil. Gemeinsam mit einem Team entwickelte ich ein Deep-Learning-Modell zur Klassifizierung von Wertstoffen und Abfallarten und präsentierte unser Projekt."
+    },
+    {
+      year: "Juli 2019 – Okt. 2019",
+      icon: "📊",
+      title: "Softwareentwickler",
+      subtitle: "Sommerpraktikum",
+      description:
+        "Ich entwickelte Geschäftsanwendungen mit ABAP in der SAP-Umgebung."
+    },
+    {
+      year: "2016 – 2021",
+      icon: "🎓",
+      title: "Bachelor of Computer Science and Engineer",
+      subtitle: "Universität",
+      description:
+        "Ich studierte Informatik und schloss mein Studium als Zweitbester meines Jahrgangs mit einem Notendurchschnitt von 3,29/4,00 ab."
+    }
+  ],
+},
     projects: {
-      'restaurant-ratings': {
-        title: 'Restaurantbewertungen',
-        description:
-          'Entdecke Restaurants, vergleiche Bewertungen und teile deine eigenen Erfahrungen auf einer modernen Full-Stack-Plattform.',
-      },
+  'restaurant-ratings': {
+    title: 'Restaurant Ratings & Reviews',
+    description:
+      'Eine Full-Stack-Plattform, die Restaurantbewertungen aus verschiedenen Quellen wie Zomato, TripAdvisor und Google aggregiert und Nutzern sowie Restaurantbesitzern eine einheitliche Ansicht von Bewertungen, Vergleichen und statistischen Analysen bietet.',
+  },
 
-      calculator: {
-        title: 'Taschenrechner',
-        description:
-          'Eine moderne Taschenrechner-Anwendung mit einer intuitiven und benutzerfreundlichen Oberfläche.',
-      },
+  calculator: {
+    title: 'Calculator',
+    description:
+      'Eine Bot-basierte Taschenrechner-Anwendung, die mathematische Operationen über Befehle ausführt und Zugriff auf die letzten 10 berechneten Vorgänge ermöglicht.',
+  },
 
-      'chat-on': {
-        title: 'ChatOn',
-        description:
-          'Eine Echtzeit-Chat-Anwendung mit Benutzerauthentifizierung und sofortiger Nachrichtenübertragung.',
-      },
+  'chat-on': {
+    title: 'ChatOn',
+    description:
+      'Eine Echtzeit-Messaging-Anwendung, die es Nutzern ermöglicht, über Textnachrichten zu kommunizieren, Fotos zu teilen, Bildfilter anzuwenden und Profileinstellungen mit sicherer Authentifizierung zu verwalten.',
+  },
 
-      'classification-of-recycling': {
-        title: 'Müllklassifizierung',
-        description:
-          'Eine KI-gestützte Anwendung zur Klassifizierung von Abfällen, um das Recycling einfacher und effizienter zu gestalten.',
-      },
-    },
+  'classification-of-recycling': {
+    title: 'Classification of Recycling',
+    description:
+      'Ein KI-gestütztes Bildklassifizierungsprojekt, das Deep-Learning- und Bildverarbeitungstechniken nutzt, um recycelbare Materialien und Abfallarten zu erkennen und dabei eine Genauigkeit von bis zu 97 % auf Testdaten erreicht.',
+  },
+},
     restaurantRatings: {
       hero: {
         title1: 'Restaurants',

@@ -1,98 +1,143 @@
 import { faChartLine, faCube, faFolderOpen, faImage, faLaptopCode, faLayerGroup, faTableCells } from "@fortawesome/free-solid-svg-icons";
 
 export const en = {
+    common: {
+        admin: {
+name: "Jern",
+        },
+      technologies: {
+        react: 'React',
+        python: 'Python',
+        firebase: 'Firebase',
+        javascript: 'JavaScript',
+        android: 'Android',
+        java: 'Java',
+        firestore: 'Firestore',
+        authentication: 'Authentication',
+      },
+      github: 'GitHub',
+    },
     navbar: {
       me: 'Me',
       experience: 'Experience',
       projects: 'Projects',
     },
     home: {
-      title: 'Full Stack Software Engineer 💼',
+      title: 'Full Stack Software Engineer',
       description:
-        'Building modern web applications and transforming legacy systems into scalable solutions.',
+        'I build modern, scalable software with intuitive user experiences and reliable backend systems. My focus is on clean code and maintainable solutions.',
       joined: 'Joined 2016',
       location: 'Munich, Germany',
     },
     me: {
-      cards: [
+      cards: [ 
         {
-          title: 'Hi!',
-          text: 'EN',
+          title: "Hi! 👋🏾",
+          text: "I'm Jern, welcome to my portfolio. This is a collection of my journey, experiences, and the projects I've built while exploring the world of software development."
         },
         {
-          title: 'My Journey',
-          text: 'EN',
+          title: "Daily life 🌱",
+          text: "Coding, solving bugs, learning new things, enjoying good food, sleeping well, and finding a healthy balance between building and recharging."
         },
+         {
+          text: "I enjoy solving challenging problems, learning new technologies, and creating software that turns ideas into useful and meaningful experiences."
+        },
+        {
+          title: "Fun fact ☕",
+          text: "What started as a short internship 5 years ago became a new chapter of my life. I decided to stay, make Munich my home, and continue growing both personally and professionally."
+        },
+        {
+          title: "Outside of coding 🌍",
+          text: "I enjoy exploring new places, discovering hidden gems, learning new things, and finding the right balance between work and life."
+        }
       ],
     },
     experience: {
       items: [
         {
-          year: 'Present',
-          icon: '🚀',
-          title: 'Senior Full Stack Engineer',
+          year: '2022 - Now',
+          icon: '👩🏽‍💻',
+          title: 'Full Stack Software Engineer',
           subtitle: 'Current Position',
           description:
-            'Building scalable web applications, designing modern user experiences, and delivering high-quality software solutions.',
+            'I developed and maintained full-stack web applications, implementing backend services with C#, REST APIs, BFF, and endpoint development, while building responsive frontends with JavaScript, jQuery, Kendo UI, and Webpack. I also worked with Azure DevOps and CI/CD pipelines and expanded my expertise in React.',
         },
         {
-          year: '2023',
+          year: 'Jul 2021 - Okt 2021',
+          icon: '📱',
+          title: 'Mobile Developer Erasmus+',
+          subtitle: 'Internship',
+          description:
+            'I developed cross-platform mobile applications for Android and iOS using Flutter.',
+        },
+        {
+          year: 'Nov 2020 - Jun 2021',
           icon: '💼',
-          title: 'Software Engineer',
-          subtitle: 'Professional Experience',
+          title: 'Mobile Developer',
+          subtitle: 'Working Student',
           description:
-            'Developed production-ready applications using React, .NET, and cloud technologies while collaborating in agile teams.',
+            'I developed mobile applications for Android and iOS using React Native, worked with designers to create easy-to-use interfaces, and published the apps to the App Store and Google Play.',
         },
-        {
-          year: '2021',
-          icon: '🖥️',
-          title: 'First Full-Time Job',
-          subtitle: 'Software Engineer',
-          description:
-            'Started my career as a Full Stack Developer, working on enterprise software and learning software engineering best practices.',
-        },
-        {
+         {
           year: '2020',
-          icon: '🤝',
-          title: 'Internship',
-          subtitle: 'First Industry Experience',
+          icon: '📲',
+          title: 'Android Development Bootcamp Turkcell',
+          subtitle: 'Android application development',
           description:
-            'Worked alongside experienced developers, contributing features and gaining hands-on experience with real-world software development.',
+            'I participated in an Android Development competition, where I developed an Android application using Java and Android Studio. As my final project, I created and published a Turkish Sign Language application.',
         },
         {
-          year: '2020',
+          year: '2019',
+          icon: '🤖',
+          title: 'AI Summer Camp',
+          subtitle: 'Deep Learning & Image Processing',
+          description:
+            'I participated in an AI summer camp focused on machine learning and image processing, where I worked as part of a team to develop a deep learning model for classifying recyclable materials and waste types, and presented our project.',
+        },
+        {
+          year: 'Jul 2019 - Okt 2019',
+          icon: '📊',
+          title: 'Software Developer',
+          subtitle: 'Summer Internship',
+          description:
+            'I developed business applications using ABAP in the SAP environment.',
+        },
+        {
+          year: '2016 - 2021',
           icon: '🎓',
-          title: 'Bachelor of Computer Science',
+          title: 'Bachelor of Computer Science and Engineer',
           subtitle: 'University',
           description:
-            'Completed my degree while building personal projects and strengthening my software engineering fundamentals.',
+            'I studied Computer Science and Engineering, achieving second place in my program with a GPA of 3.29/4.',
         },
       ],
     },
 
-    projects: {
-      'restaurant-ratings': {
-        title: 'Restaurant Reviews & Rating',
-        description:
-          'Discover restaurants, compare ratings and share reviews with a modern full-stack platform.',
-      },
+   projects: {
+  'restaurant-ratings': {
+    title: 'Restaurant Ratings & Reviews',
+    description:
+      'A full-stack platform that aggregates restaurant ratings from multiple sources such as Zomato, TripAdvisor, and Google, providing users and restaurant owners with unified reviews, comparisons, and statistical insights.',
+  },
 
-      calculator: {
-        title: 'Calculator',
-        description: 'A modern calculator application with...',
-      },
+  calculator: {
+    title: 'Calculator',
+    description:
+      'A bot-based calculator application that performs mathematical operations through commands and provides access to the 10 most recent calculation histories.',
+  },
 
-      'chat-on': {
-        title: 'ChatOn',
-        description: 'A real-time chat application...',
-      },
+  'chat-on': {
+    title: 'ChatOn',
+    description:
+      'A real-time messaging application that enables users to communicate through text messages, share photos, apply image filters, and manage profile settings with secure authentication.',
+  },
 
-      'classification-of-recycling': {
-        title: 'Classification of Recycling',
-        description:
-          'An AI-powered application for classifying waste materials to facilitate recycling.',
-      },
-    },
+  'classification-of-recycling': {
+    title: 'Classification of Recycling',
+    description:
+      'An AI-powered image classification project that uses deep learning and image processing techniques to identify recyclable materials and waste types, achieving up to 97% accuracy on test data.',
+  },
+},
     restaurantRatings: {
       hero: {
         title1: 'Restaurants',
@@ -128,19 +173,6 @@ export const en = {
           },
         ],
       },
-    },
-    common: {
-      technologies: {
-        react: 'React',
-        python: 'Python',
-        firebase: 'Firebase',
-        javascript: 'JavaScript',
-        android: 'Android',
-        java: 'Java',
-        firestore: 'Firestore',
-        authentication: 'Authentication',
-      },
-      github: 'GitHub',
     },
     calculator: {
       title: 'Calculator',

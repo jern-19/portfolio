@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import {
   DndContext,
   PointerSensor,
@@ -12,8 +12,6 @@ import {
   verticalListSortingStrategy,
   arrayMove,
 } from '@dnd-kit/sortable';
-
-import { ProfileCard } from '../components/ProfileCard';
 import { SortableProfileCard } from '../components/SortableProfileCard';
 
 import Jern from '../assets/Jern.png';
@@ -22,15 +20,19 @@ import { useLanguage } from '../contex/LanguageContext';
 export default function Me() {
   const { t } = useLanguage();
 
-  const [cards, setCards] = useState(() =>
-    t.me.cards.map((card, index) => ({
-      id: String(index + 1),
-      title: t.home.title,
-      subtitle: t.home.description,
-      description: card,
-      image: Jern,
-    }))
-  );
+ const [cards, setCards] = useState<any[]>([]);
+
+  useEffect(() => {
+    setCards(
+      t.me.cards.map((card, index) => ({
+        id: String(index + 1),
+        title: t.common.admin.name,
+        subtitle: t.home.title,
+        description: card,
+        image: Jern,
+      }))
+    );
+  }, [t]);
 
   const sensors = useSensors(
     useSensor(PointerSensor, {

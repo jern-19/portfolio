@@ -6,7 +6,8 @@ import { useLanguage } from '../contex/LanguageContext';
 
 function HomeLayout() {
   const [scrollY, setScrollY] = useState(0);
-  const { t } = useLanguage();
+
+  const { t, language } = useLanguage();
 
   useEffect(() => {
     const onScroll = () => setScrollY(window.scrollY);
@@ -51,11 +52,11 @@ function HomeLayout() {
 
           <div className="mt-5 space-y-3">
             <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold">
-              Jern
+              {t.common.admin.name}
             </h1>
 
             <p className="text-gray-200 text-base sm:text-lg md:text-xl">
-              {t.home.title}
+              {t.home.title} 💼
             </p>
 
             <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
@@ -70,8 +71,11 @@ function HomeLayout() {
         </div>
 
         {/* Sticky Navigation */}
+      
         <div className="sticky top-14 z-40 bg-black/90 backdrop-blur-lg border-b border-zinc-800">
-          <nav className="h-14 sm:h-16 flex items-center overflow-x-auto">
+          <nav
+          key={language}
+          className="h-14 sm:h-16 flex items-center overflow-x-auto">
             <NavLink
               to="/"
               end

@@ -29,8 +29,8 @@ export function TimelineItem({
     >
       {/* Timeline */}
 
-      <div className="flex w-28 flex-col items-center">
-        <span className="rounded-full bg-violet-500/10 px-3 py-1 text-sm font-semibold text-violet-300">
+      <div className="flex w-[162px] flex-col items-center">
+        <span className="w-full bg-violet-500/10 px-3 py-1 text-sm font-semibold text-violet-300 text-center">
           {year}
         </span>
 
