@@ -21,26 +21,25 @@ export function TimelineItem({
 }: Props) {
   return (
     <motion.div
-      className="relative flex gap-8 pb-10"
+      className="relative flex flex-col gap-4 pb-10 sm:flex-row sm:gap-8"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5 }}
     >
       {/* Timeline */}
-
-      <div className="flex w-[162px] flex-col items-center">
-        <span className="w-full bg-violet-500/10 px-3 py-1 text-sm font-semibold text-violet-300 text-center">
+      <div className="flex w-full flex-row items-center gap-4 sm:w-[162px] sm:flex-col">
+        <span className="flex-1 bg-violet-500/10 px-3 py-1 text-center text-sm font-semibold text-violet-300 sm:w-full sm:flex-none">
           {year}
         </span>
 
-        <div className="my-4 flex h-12 w-12 items-center justify-center rounded-full border border-violet-500 bg-zinc-900 text-2xl shadow-lg shadow-violet-500/20">
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-violet-500 bg-zinc-900 text-2xl shadow-lg shadow-violet-500/20">
           {icon}
         </div>
 
         {!isLast && (
           <motion.div
-            className="w-px flex-1 bg-gradient-to-b from-violet-500 to-zinc-700 origin-top"
+            className="hidden h-full w-px flex-1 bg-gradient-to-b from-violet-500 to-zinc-700 origin-top sm:block"
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true }}
@@ -50,9 +49,8 @@ export function TimelineItem({
       </div>
 
       {/* Card */}
-
-      <div className="flex-1 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-violet-500 hover:shadow-xl hover:shadow-violet-500/10">
-        <div className="flex items-center gap-3">
+      <div className="w-full rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-violet-500 hover:shadow-xl hover:shadow-violet-500/10 sm:flex-1 sm:p-6">
+        <div className="flex flex-wrap items-center gap-3">
           <p className="text-sm font-medium text-violet-400">{subtitle}</p>
 
           {isCurrent && (
@@ -62,9 +60,13 @@ export function TimelineItem({
           )}
         </div>
 
-        <h3 className="mt-2 text-2xl font-bold text-white">{title}</h3>
+        <h3 className="mt-2 text-xl font-bold text-white sm:text-2xl">
+          {title}
+        </h3>
 
-        <p className="mt-4 leading-7 text-zinc-400">{description}</p>
+        <p className="mt-4 leading-7 text-zinc-400">
+          {description}
+        </p>
       </div>
     </motion.div>
   );

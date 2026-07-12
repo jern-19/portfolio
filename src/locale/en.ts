@@ -1,4 +1,4 @@
-import { faChartLine, faCube, faFolderOpen, faImage, faLaptopCode, faLayerGroup, faTableCells } from "@fortawesome/free-solid-svg-icons";
+import { faChartLine, faCube, faDatabase, faFolderOpen, faImage, faLaptopCode, faLayerGroup, faRobot, faTableCells } from "@fortawesome/free-solid-svg-icons";
 
 export const en = {
     common: {
@@ -7,6 +7,8 @@ name: "Jern",
         },
       technologies: {
         react: 'React',
+        reactNative: 'React Native',
+        angular: 'Angular',
         python: 'Python',
         firebase: 'Firebase',
         javascript: 'JavaScript',
@@ -143,8 +145,7 @@ name: "Jern",
         title1: 'Restaurants',
         title2: 'Reviews & Ratings',
         description:
-          'A web application that allows users to rate and review restaurants.',
-        button: 'Live Demo',
+'An analytics web application that aggregates restaurant ratings from multiple sources, providing unified insights, comparisons, and performance trends through interactive visualizations.',        button: 'Live Demo',
         tag: 'Full Stack Project',
       },
       technologies: {
@@ -157,19 +158,22 @@ name: "Jern",
         title: 'Key Features',
         items: [
           {
-            title: 'Explore Restaurants',
+            title: 'Multi-Platform Rating Aggregation',
+            icon: faDatabase,
             description:
-              'Discover a wide range of restaurants, view their ratings and reviews, and find the perfect dining experience.',
+              'Collects and combines restaurant ratings from multiple sources into a unified analytics platform.',
           },
           {
-            title: 'Rate & Review',
+            title: 'Interactive Analytics Dashboard',
+            icon: faChartLine,
             description:
-              'Share your dining experiences by rating restaurants and writing reviews to help others make informed decisions.',
+              'Provides rating comparisons, performance insights, and visualizations to understand restaurant trends.',
           },
           {
-            title: 'Analytics Dashboard',
+            title: 'AI-Powered Rating Prediction & Recommendations',
+            icon: faRobot,
             description:
-              'Gain insights into restaurant performance with an analytics dashboard that provides valuable data and trends.',
+              'Uses machine learning models to predict ratings and recommend restaurants based on collected data.',
           },
         ],
       },

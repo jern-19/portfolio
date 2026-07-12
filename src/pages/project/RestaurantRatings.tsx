@@ -3,29 +3,23 @@ import react from '../../assets/react.png';
 import js from '../../assets/js.png';
 import python from '../../assets/python.png';
 import firestore from '../../assets/firestore.svg';
+import angular from '../../assets/angular.png';
 import restaurantRatingGallery1 from '../../assets/restaurantRatingGallery1.png';
 import restaurantRatingGallery2 from '../../assets/restaurantRatingGallery2.png';
 import restaurantRatingGallery3 from '../../assets/restaurantRatingGallery3.png';
 import restaurantRatingGallery4 from '../../assets/restaurantRatingGallery4.png';
 import restaurantRatingGallery5 from '../../assets/restaurantRatingGallery5.png';
 import restaurantRatingGallery6 from '../../assets/restaurantRatingGallery6.png';
-import restaurantRating2 from '../../assets/restaurantRating2.png';
-import { useEffect, useRef, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useEffect, useState } from 'react';
 import {
   faMagnifyingGlass,
   faStar,
-  faArrowLeft,
-  faCheck,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faGlobe,
   faDatabase,
   faScaleBalanced,
   faBrain,
-  faCode,
-  faDesktop,
-  faServer,
   faChartLine,
 } from '@fortawesome/free-solid-svg-icons';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -41,29 +35,6 @@ export default function RestaurantRatings() {
     { id: 4, title: '4', url: restaurantRatingGallery4 },
     { id: 5, title: '5', url: restaurantRatingGallery5 },
     { id: 6, title: '6', url: restaurantRatingGallery6 },
-  ];
-
-  const topNodes = [
-    {
-      title: 'Web Crawling',
-      description: 'Collect restaurant data',
-      icon: faGlobe,
-    },
-    {
-      title: 'Normalization',
-      description: 'Min-Max Scaling',
-      icon: faScaleBalanced,
-    },
-    {
-      title: 'Grading Data',
-      description: 'Prepare dataset',
-      icon: faDatabase,
-    },
-    {
-      title: 'ML Model',
-      description: 'Train prediction model',
-      icon: faBrain,
-    },
   ];
 
   const icons = [faMagnifyingGlass, faStar, faChartLine];
@@ -105,84 +76,97 @@ export default function RestaurantRatings() {
     index * itemsPerPage + itemsPerPage
   );
 
-  const page = Math.floor(index / itemsPerPage);
-
   return (
-    <div className="w-full flex flex-col gap-16 md:gap-24 bg-black px-5 py-10 md:px-20 md:py-16">
+    <div className="w-full min-h-screen overflow-x-hidden flex flex-col gap-16 md:gap-24 bg-black px-4 sm:px-6 lg:px-20 py-10 md:py-16">
       <section className="bg-black flex items-center">
-        <div className=" mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-12">
-          {/* LEFT SIDE - TEXT */}
-          <div className="flex-1 text-center md:text-left">
-            <p className="text-orange-400 uppercase tracking-widest text-sm mb-4">
-              {t.restaurantRatings.hero.tag}
-            </p>
+      <div className="mx-auto w-full max-w-7xl flex flex-col lg:flex-row items-center justify-between gap-12">
 
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white leading-tight font-bold text-white leading-tight">
-              {t.restaurantRatings.hero.title1}{' '}
-              <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
-                {t.restaurantRatings.hero.title2}
-              </span>
-            </h1>
+        {/* TEXT */}
+        <div className="flex-1 text-center lg:text-left">
 
-            <p className="mt-6 text-base md:text-lg text-gray-300 max-w-xl mx-auto md:mx-0">
-              {t.restaurantRatings.hero.description}
-            </p>
+          <p className="text-orange-400 uppercase tracking-widest text-sm mb-4">
+            {t.restaurantRatings.hero.tag}
+          </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <a
-                href="https://www.youtube.com/watch?v=mWvquhIx6nQ"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button className="px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-medium transition">
-                  {t.restaurantRatings.hero.button}
-                </button>
-              </a>
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white leading-tight">
+            {t.restaurantRatings.hero.title1}{' '}
+            <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
+              {t.restaurantRatings.hero.title2}
+            </span>
+          </h1>
 
-              <a
-                href="https://github.com/jern-19/Restaurants_Reviews_Rating"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button className="px-6 py-3 rounded-lg border border-orange-500 text-orange-400 hover:bg-orange-500/10 transition">
-                  {t.common.github}
-                </button>
-              </a>
-            </div>
+
+          <p className="mt-6 text-base md:text-lg text-gray-300 max-w-xl mx-auto lg:mx-0">
+            {t.restaurantRatings.hero.description}
+          </p>
+
+
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+
+            <a
+              href="https://www.youtube.com/watch?v=mWvquhIx6nQ"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="w-full sm:w-auto px-6 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-medium transition">
+                {t.restaurantRatings.hero.button}
+              </button>
+            </a>
+
+
+            <a
+              href="https://github.com/jern-19/Restaurants_Reviews_Rating"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="w-full sm:w-auto px-6 py-3 rounded-lg border border-orange-500 text-orange-400 hover:bg-orange-500/10 transition">
+                {t.common.github}
+              </button>
+            </a>
+
           </div>
 
-          {/* RIGHT SIDE - IMAGE */}
-          <div className="flex-1 flex justify-center">
-            <div className="relative">
-              {/* glow effect */}
-              <div className="absolute -inset-4 bg-orange-500/20 blur-3xl rounded-full"></div>
-
-              <img
-                src={restaurantRating1}
-                alt="Project preview"
-                className="relative w-full max-w-[420px] rounded-xl shadow-2xl border border-orange-500/30"
-              />
-            </div>
-          </div>
         </div>
-      </section>
+
+
+
+        {/* IMAGE */}
+        <div className="flex-1 flex justify-center">
+
+          <div className="relative">
+
+            <div className="absolute -inset-4 bg-orange-500/20 blur-3xl rounded-full" />
+
+            <img
+              src={restaurantRating1}
+              alt="Restaurant rating preview"
+              className="relative w-full max-w-xs sm:max-w-sm md:max-w-md rounded-xl shadow-2xl border border-orange-500/30"
+            />
+
+          </div>
+
+        </div>
+
+
+      </div>
+    </section>
 
       <section className=" bg-black flex flex-col gap-1 items-center p-4 border border-orange-500/30 bg-orange-500/5 rounded-xl">
         <span className="text-sm font-bold text-gray-300 mb-6">
           {t.restaurantRatings.technologies.title}
         </span>
         <div className="w-full flex flex-wrap justify-center md:justify-between gap-6">
-          <div className="flex items-center gap-2 w-[140px] justify-center">
+          <div className="flex items-center gap-2 w-full sm:w-[140px] justify-center">
             <img
               src={react}
               alt="Project preview"
               className="relative w-[30px] md:w-[30px] rounded-xl shadow-2xl "
             />
             <span className="text-white text-md font-bold">
-              {t.common.technologies.react}
+              {t.common.technologies.reactNative}
             </span>
           </div>
-          <div className="flex items-center gap-2 w-[140px] justify-center">
+          <div className="flex items-center gap-2 w-full sm:w-[140px] justify-center">
             <img
               src={js}
               alt="Project preview"
@@ -210,6 +194,16 @@ export default function RestaurantRatings() {
             />
             <span className="text-white text-md font-bold">
               {t.common.technologies.firebase}
+            </span>
+          </div>
+          <div className="flex items-center gap-2 w-[140px] justify-center">
+            <img
+              src={angular}
+              alt="Project preview"
+              className="relative w-[30px] md:w-[30px] rounded-xl shadow-2xl "
+            />
+            <span className="text-white text-md font-bold">
+              {t.common.technologies.angular}
             </span>
           </div>
         </div>
@@ -300,27 +294,41 @@ export default function RestaurantRatings() {
         </div>
       </section>
 
-      <section className="bg-black w-full flex flex-col gap-8 items-center">
-        <span className="text-sm md:text-base font-bold text-gray-300">
-          Key Features
-        </span>
+    <section className="bg-black w-full flex flex-col gap-8 items-center px-2 sm:px-4">
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {t.restaurantRatings.keyFeatures.items.map(
-            (
-              feature: { title: string; description: string },
-              index: number
-            ) => (
-              <FeatureCard
-                key={feature.title}
-                icon={icons[index]}
-                title={feature.title}
-                description={feature.description}
-              />
-            )
-          )}
-        </div>
-      </section>
+  <span className="text-sm md:text-base font-bold text-gray-300 text-center">
+    Key Features
+  </span>
+
+  <div className="
+    w-full
+    max-w-6xl
+    grid
+    grid-cols-1
+    sm:grid-cols-2
+    lg:grid-cols-3
+    gap-4
+    sm:gap-6
+  ">
+    {t.restaurantRatings.keyFeatures.items.map(
+      (
+        feature: { 
+          title: string; 
+          description: string; 
+          icon: any 
+        }
+      ) => (
+        <FeatureCard
+          key={feature.title}
+          icon={feature.icon}
+          title={feature.title}
+          description={feature.description}
+        />
+      )
+    )}
+  </div>
+
+</section>
     </div>
   );
 }

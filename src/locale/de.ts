@@ -1,4 +1,4 @@
-import { faBorderAll, faChartLine, faCube, faFolderOpen, faImage, faLaptopCode, faLayerGroup, faShareNodes, faTableCells } from "@fortawesome/free-solid-svg-icons";
+import { faBorderAll, faChartLine, faCube, faDatabase, faFolderOpen, faImage, faLaptopCode, faLayerGroup, faRobot, faShareNodes, faTableCells } from "@fortawesome/free-solid-svg-icons";
 
 export const de = {
     common: {
@@ -7,6 +7,8 @@ name: "Jern",
         },
       technologies: {
         react: 'React',
+        reactNative: 'React Native',
+        angular: 'Angular',
         python: 'Python',
         firebase: 'Firebase',
         javascript: 'JavaScript',
@@ -139,41 +141,44 @@ experience: {
   },
 },
     restaurantRatings: {
-      hero: {
-        title1: 'Restaurants',
-        title2: 'Rezensionen und Bewertungen',
+  hero: {
+    title1: 'Restaurants',
+    title2: 'Reviews & Ratings',
+    description:
+      'Eine Analyse-Webanwendung, die Restaurantbewertungen aus mehreren Quellen zusammenführt und einheitliche Einblicke, Vergleiche und Leistungstrends durch interaktive Visualisierungen bietet.',
+    button: 'Live-Demo',
+    tag: 'Full-Stack-Projekt',
+  },
+  technologies: {
+    title: 'Verwendete Technologien',
+  },
+  gallery: {
+    title: 'Galerie',
+  },
+  keyFeatures: {
+    title: 'Hauptfunktionen',
+    items: [
+      {
+        title: 'Bewertungsaggregation über mehrere Plattformen',
+        icon: faDatabase,
         description:
-          'Eine Webanwendung, mit der Benutzer Restaurants bewerten und Rezensionen schreiben können.',
-        button: 'Live-Demo',
-        tag: 'Full-Stack-Projekt',
+          'Sammelt und kombiniert Restaurantbewertungen aus verschiedenen Quellen in einer einheitlichen Analyseplattform.',
       },
-      technologies: {
-        title: 'Verwendete Technologien',
+      {
+        title: 'Interaktives Analyse-Dashboard',
+        icon: faChartLine,
+        description:
+          'Bietet Bewertungsvergleiche, Leistungsanalysen und Visualisierungen, um Restauranttrends zu verstehen.',
       },
-      gallery: {
-        title: 'Galerie',
+      {
+        title: 'KI-gestützte Bewertungsvorhersage & Empfehlungen',
+        icon: faRobot,
+        description:
+          'Nutzt Machine-Learning-Modelle, um Bewertungen vorherzusagen und Restaurants basierend auf gesammelten Daten zu empfehlen.',
       },
-      keyFeatures: {
-        title: 'Hauptfunktionen',
-        items: [
-          {
-            title: 'Restaurants entdecken',
-            description:
-              'Entdecke eine große Auswahl an Restaurants, sieh dir Bewertungen und Rezensionen an und finde das perfekte kulinarische Erlebnis.',
-          },
-          {
-            title: 'Bewerten & Rezensionen schreiben',
-            description:
-              'Teile deine Restaurantbesuche, indem du Restaurants bewertest und Rezensionen schreibst, um anderen bei ihrer Entscheidung zu helfen.',
-          },
-          {
-            title: 'Analyse-Dashboard',
-            description:
-              'Erhalte Einblicke in die Leistung von Restaurants mit einem Analyse-Dashboard, das wertvolle Daten und Trends bereitstellt.',
-          },
-        ],
-      },
-    },
+    ],
+  },
+},
     calculator: {
       title: 'Rechner',
       description:
