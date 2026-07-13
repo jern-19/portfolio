@@ -1,5 +1,4 @@
 import ReactDOM from 'react-dom/client';
-import App from './layouts/HomeLayout';
 import './index.css';
 import { BrowserRouter } from 'react-router';
 import AppRouter from './router/AppRouter';
