@@ -472,7 +472,7 @@ export default function ClassificationOfRecycling() {
           </div>
       </section>
       <section className="mx-auto mt-12 sm:mt-16">
-        <div className="grid lg:grid-cols-2 gap-6 mt-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
           {/* Left Card */}
           <div className="bg-[#111214] border border-gray-800 rounded-2xl p-6">
             <div className="flex items-center gap-2 mb-6">
@@ -545,7 +545,7 @@ export default function ClassificationOfRecycling() {
               {t.classificationOfRecycling.trainingResults.title}
             </h2>
 
-            <div className="overflow-hidden rounded-xl border border-gray-800">
+            <div className="overflow-hidden flex rounded-xl border border-gray-800">
               <table className="w-full">
                 <thead className="bg-[#18191d]">
                   <tr>
@@ -586,7 +586,7 @@ export default function ClassificationOfRecycling() {
               
             </div>
 
-            <div className="w-full flex flex-row gap-4 justify-center ">
+            <div className="w-full flex-row gap-4 justify-center hidden sm:flex">
                 <div className="rounded-xl border border-green-500/40 bg-green-500/10 p-4 text-center">
                   <h3 className="text-2xl font-bold text-green-400">{t.classificationOfRecycling.accuracyComparisonTable.mobileNet.title}</h3>
                   <p className="text-green-400 mt-2 font-semibold">{t.classificationOfRecycling.accuracyComparisonTable.mobileNet.accuracy}</p>
@@ -626,7 +626,7 @@ export default function ClassificationOfRecycling() {
           </div>
 
           {/* Cards */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             {t.classificationOfRecycling.predictions.items.map((item) => (
               <div
                 key={item.actual}
