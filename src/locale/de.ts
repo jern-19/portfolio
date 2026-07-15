@@ -126,7 +126,7 @@ experience: {
   ],
 },
     projects: {
-  'restaurant-ratings': {
+  restaurantRatings: {
     title: 'Restaurant Ratings & Reviews',
     description:
       'Eine Full-Stack-Plattform, die Restaurantbewertungen aus verschiedenen Quellen wie Zomato, TripAdvisor und Google aggregiert und Nutzern sowie Restaurantbesitzern eine einheitliche Ansicht von Bewertungen, Vergleichen und statistischen Analysen bietet.',
@@ -138,13 +138,13 @@ experience: {
       'Eine Bot-basierte Taschenrechner-Anwendung, die mathematische Operationen über Befehle ausführt und Zugriff auf die letzten 10 berechneten Vorgänge ermöglicht.',
   },
 
-  'chat-on': {
+  chatOn: {
     title: 'ChatOn',
     description:
       'Eine Echtzeit-Messaging-Anwendung, die es Nutzern ermöglicht, über Textnachrichten zu kommunizieren, Fotos zu teilen, Bildfilter anzuwenden und Profileinstellungen mit sicherer Authentifizierung zu verwalten.',
   },
 
-  'classification-of-recycling': {
+  classificationOfRecycling: {
     title: 'Classification of Recycling',
     description:
       'Ein KI-gestütztes Bildklassifizierungsprojekt, das Deep-Learning- und Bildverarbeitungstechniken nutzt, um recycelbare Materialien und Abfallarten zu erkennen und dabei eine Genauigkeit von bis zu 97 % auf Testdaten erreicht.',

@@ -10,6 +10,7 @@ import ChatApplication from '../pages/project/ChatApplication';
 import ClassificationOfRecycling from '../pages/project/ClassificationOfRecycling';
 import Calculator from '../pages/project/Calculator';
 import Contact from '../pages/Contact';
+import Report from '../pages/restaurantRatings/Report';
 
 export default function AppRouter() {
   return (
@@ -23,15 +24,17 @@ export default function AppRouter() {
         </Route>
 
         <Route path="project" element={<ProjectLayout />}>
-          <Route path="restaurant-ratings" element={<RestaurantRatings />} />
-          <Route path="chat-application" element={<ChatApplication />} />
+          <Route path="restaurantRatings" element={<RestaurantRatings />} > </Route>
+          <Route path="chatApplication" element={<ChatApplication />} />
           <Route
-            path="classification-of-recycling"
+            path="classificationOfRecycling"
             element={<ClassificationOfRecycling />}
           />
           <Route path="calculator" element={<Calculator />} />
+          <Route path="restaurantRatings/report" element={<Report />} />
         </Route>
 
+          
         <Route path="contact" element={<Contact />} />
       </Route>
     </Routes>

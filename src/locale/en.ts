@@ -126,7 +126,7 @@ name: "Jern",
     },
 
    projects: {
-  'restaurant-ratings': {
+  restaurantRratings: {
     title: 'Restaurant Ratings & Reviews',
     description:
       'A full-stack platform that aggregates restaurant ratings from multiple sources such as Zomato, TripAdvisor, and Google, providing users and restaurant owners with unified reviews, comparisons, and statistical insights.',
@@ -138,13 +138,13 @@ name: "Jern",
       'A bot-based calculator application that performs mathematical operations through commands and provides access to the 10 most recent calculation histories.',
   },
 
-  'chat-on': {
+  chatOn: {
     title: 'ChatOn',
     description:
       'A real-time messaging application that enables users to communicate through text messages, share photos, apply image filters, and manage profile settings with secure authentication.',
   },
 
-  'classification-of-recycling': {
+  classificationOfRecycling: {
     title: 'Classification of Recycling',
     description:
       'An AI-powered image classification project that uses deep learning and image processing techniques to identify recyclable materials and waste types, achieving up to 97% accuracy on test data.',
