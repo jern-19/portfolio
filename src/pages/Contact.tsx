@@ -4,12 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 export default function Contact() {
-  // Workaround for TypeScript error: Property 'env' does not exist on type 'ImportMeta'
-  const {
-    VITE_EMAILJS_SERVICE_ID,
-    VITE_EMAILJS_TEMPLATE_ID,
-    VITE_EMAILJS_PUBLIC_KEY,
-  } = (import.meta as any).env || {};
+  const EMAILJS_SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID as string;
+  const EMAILJS_TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID as string;
+  const EMAILJS_PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY as string;
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -36,14 +34,14 @@ export default function Contact() {
 
     try {
       await emailjs.send(
-        'service_bgv6sno',
-        'template_kwypwak',
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
         },
-        'KwYZ3LTIZIDwcXety'
+        EMAILJS_PUBLIC_KEY
       );
 
       setStatus('✅ Your message has been sent successfully!');
