@@ -30,17 +30,17 @@ const projects: Project[] = [
     color: '#f97316',
     link: '/project/restaurant-ratings',
   },
-  {
-    id: 'calculator',
-    image: CalculatorCard,
-    technologies: ['React', 'Node', 'Socket.io'],
-    color: '#22d3ee',
-    link: '/project/calculator',
-  },
+  // {
+  //   id: 'calculator',
+  //   image: CalculatorCard,
+  //   technologies: ['React', 'Node', 'Socket.io'],
+  //   color: '#22d3ee',
+  //   link: '/project/calculator',
+  // },
   {
     id: 'chat-on',
     image: ChatOnCard,
-    technologies: ['React', 'Tailwind', 'Framer Motion'],
+    technologies: ['Android', 'Android Studio', 'Java'],
     color: '#0891b2',
     link: '/project/chat-application',
   },
@@ -68,7 +68,7 @@ function Projects() {
           <Link
             to={project.link}
             key={project.title}
-            className={index % 3 === 0 ? 'lg:col-span-2' : ''}
+            className='lg:col-span-2'
           >
             <ProjectCard project={project} />
           </Link>

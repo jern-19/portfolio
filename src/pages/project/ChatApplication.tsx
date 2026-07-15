@@ -1,62 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import chatOn1 from '../../assets/projects/chatOn1.png';
-import chatOnSS1 from '../../assets/projects/chatOnSS1.png';
-import chatOnSS2 from '../../assets/projects/ChatOnSS2.png';
-import chatOnSS3 from '../../assets/projects/ChatOnSS3.png';
-import chatOnSS4 from '../../assets/projects/chatOnSS4.png';
-import chatOnSS5 from '../../assets/projects/chatOnSS5.png';
-import chatOnLogo from '../../assets/projects/chatOnLogoNoTitle.png';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
+
 import { AnimatePresence, motion } from 'framer-motion';
 
-import {
-  faUserPlus,
-  faLock,
-  faMagnifyingGlass,
-  faComments,
-  faMessage,
-  faImage,
-  faArrowRight,
-  faCommentDots,
-  faChevronRight,
-} from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight} from '@fortawesome/free-solid-svg-icons';
 
 import { useState } from 'react';
 import InfoCard from '../../components/InfoCard';
 import { useLanguage } from '../../contex/LanguageContext';
 
-const steps = [
-  {
-    title: 'Create Account',
-    description: 'Create an account securely using Firebase Authentication.',
-    image: chatOnSS1,
-    icon: faUserPlus,
-  },
-  {
-    title: 'Login',
-    description: 'Authenticate and access your conversations instantly.',
-    image: chatOnSS2,
-    icon: faLock,
-  },
-  {
-    title: 'Find Friends',
-    description: 'Search users and connect with new friends.',
-    image: chatOnSS3,
-    icon: faMagnifyingGlass,
-  },
-  {
-    title: 'Open Chat',
-    description: 'Start private conversations in real time.',
-    image: chatOnSS4,
-    icon: faComments,
-  },
-  {
-    title: 'Send Message',
-    description: 'Exchange text messages instantly.',
-    image: chatOnSS5,
-    icon: faCommentDots,
-  },
-];
 
 const challenges = [
   'Synchronizing messages in real time across multiple devices.',
@@ -123,7 +75,7 @@ export default function ChatApplication() {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              {['Android', 'Java', 'Firestore', 'Authentication'].map(
+              {t.chatOn.techStack.map(
                 (item) => (
                   <span
                     key={item}
@@ -168,7 +120,7 @@ export default function ChatApplication() {
                 className="rounded-2xl border border-zinc-800 bg-[#111] p-6 text-center transition hover:border-cyan-400"
               >
                 <FontAwesomeIcon
-                  icon={faCheck}
+                  icon={feature.icon as any}
                   className="mb-5 text-3xl text-cyan-400"
                 />
 
@@ -192,8 +144,8 @@ export default function ChatApplication() {
               <div className="flex justify-center">
                 <AnimatePresence mode="wait">
                   <motion.img
-                    key={steps[active].image}
-                    src={steps[active].image}
+                    key={t.chatOn.workflow[active].image}
+                    src={t.chatOn.workflow[active].image}
                     alt=""
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -258,8 +210,8 @@ export default function ChatApplication() {
       <section className="w-full">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-2">
-            <InfoCard title="Challenges" items={challenges} />
-            <InfoCard title="What I Learned" items={learned} />
+            <InfoCard title="Challenges" items={t.chatOn.challenges} />
+            <InfoCard title="What I Learned" items={t.chatOn.learned} />
           </div>
         </div>
       </section>

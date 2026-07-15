@@ -1,4 +1,14 @@
-import { faBorderAll, faChartLine, faCube, faDatabase, faFolderOpen, faImage, faLaptopCode, faLayerGroup, faRobot, faShareNodes, faTableCells } from "@fortawesome/free-solid-svg-icons";
+import { faClaude, faDeskpro } from "@fortawesome/free-brands-svg-icons";
+import { faArrowTrendUp, faBorderAll, faBullseye, faChartLine, faCircleQuestion, faComputer, faCube, faDatabase, faDesktop, faFolderOpen, faImage, faLaptopCode, faLayerGroup, faLightbulb, faLock, faMessage, faMicrochip, faRobot, faServer, faShareNodes, faTableCells, faUsers } from "@fortawesome/free-solid-svg-icons";
+import chatOnSS1 from '../assets/projects/chatOnSS1.png';
+import chatOnSS2 from '../assets/projects/ChatOnSS2.png';
+import chatOnSS3 from '../assets/projects/ChatOnSS3.png';
+import chatOnSS4 from '../assets/projects/chatOnSS4.png';
+import chatOnSS5 from '../assets/projects/chatOnSS5.png';
+import papier from "../assets/projects/paper.png"
+import plastic from "../assets/projects/plastic.jpg"
+import cardboard from "../assets/projects/cardboard.png"
+import glass from "../assets/projects/glass.png"
 
 export const de = {
     common: {
@@ -209,19 +219,19 @@ experience: {
         tools: [
           {
             label: 'Frontend',
-            icon: 'desktop',
+            icon: faDesktop,
           },
           {
             label: 'Backend',
-            icon: 'server',
+            icon: faServer,
           },
           {
             label: 'Datenbank',
-            icon: 'database',
+            icon: faDatabase,
           },
           {
             label: 'Hosting',
-            icon: 'cloud',
+            icon: faClaude,
           },
         ],
       },
@@ -269,300 +279,297 @@ experience: {
       },
     },
     chatOn: {
-      tag: 'Android App',
-      title1: 'Chat',
-      title2: 'On',
-      subTitle:
-        'Eine Echtzeit-Chat-Anwendung mit Benutzerauthentifizierung und Sofortnachrichten.',
-      description:
-        'Eine Echtzeit-Chatanwendung mit Benutzerauthentifizierung und Sofortnachrichten.',
-      button: 'Live-Demo',
-      viewOnGitHub: 'Auf GitHub ansehen',
-      features: {
-        title: 'Hauptfunktionen',
-        items: [
-          {
-            icon: 'checked',
-            title: 'Benutzerauthentifizierung',
-            description:
-              'Sichere Benutzerauthentifizierung mit E-Mail und Passwort, sodass Nutzer Konten erstellen und sich in der Chatanwendung anmelden können.',
-          },
-          {
-            icon: 'checked',
-            title: 'Echtzeit-Nachrichten',
-            description:
-              'Sicheres Anmelde- und Registrierungssystem mit Firebase sowie Echtzeit-Synchronisierung.',
-          },
-          {
-            icon: 'checked',
-            title: 'Bilder teilen',
-            description:
-              'Bilder sicher hochladen und direkt mit anderen Nutzern im Chat teilen.',
-          },
-          {
-            icon: 'checked',
-            title: 'Freundesverwaltung',
-            description:
-              'Freunde hinzufügen, verwalten und private Unterhaltungen mit ihnen starten.',
-          },
-        ],
+  tag: 'Android-App',
+  title1: 'Chat',
+  title2: 'On',
+  subTitle: 'Echtzeit-Messaging-Plattform',
+
+  description:
+    'ChatOn ist eine moderne Android-Messaging-App, mit der Nutzer über Echtzeit-Textnachrichten und das Teilen von Fotos sofort miteinander kommunizieren können. Die Anwendung bietet eine sichere Authentifizierung, anpassbare Benutzerprofile, Bildfreigabe sowie eine benutzerfreundliche Oberfläche, die auf Firebase-Diensten basiert.',
+
+  button: 'Demo',
+  viewOnGitHub: 'Auf GitHub ansehen',
+
+  techStack: [
+    'Android',
+    'Android Studio',
+    'Java',
+    'Firebase',
+    'Firebase Authentication',
+    'Firebase Realtime Database',
+    'Firebase Storage',
+  ],
+
+  features: {
+    title: 'Hauptfunktionen',
+    items: [
+      {
+        icon: faLock,
+        title: 'Benutzerauthentifizierung',
+        description:
+          'Sichere Registrierung und Anmeldung mit Firebase Authentication sowie dauerhafte Benutzersitzungen.',
       },
-      workflow: [
-        {
-          title: 'Konto erstellen',
-          description: 'Erstelle sicher ein Konto mit Firebase Authentication.',
-          image: 'chatOnSS1',
-          icon: 'userPlus',
-        },
-        {
-          title: 'Anmelden',
-          description:
-            'Authentifiziere dich und greife sofort auf deine Unterhaltungen zu.',
-          image: 'chatOnSS2',
-          icon: 'lock',
-        },
-        {
-          title: 'Freunde finden',
-          description:
-            'Suche nach Nutzern und verbinde dich mit neuen Freunden.',
-          image: 'chatOnSS3',
-          icon: 'magnifyingGlass',
-        },
-        {
-          title: 'Chat öffnen',
-          description: 'Starte private Unterhaltungen in Echtzeit.',
-          image: 'chatOnSS4',
-          icon: 'comments',
-        },
-        {
-          title: 'Nachricht senden',
-          description:
-            'Tausche Textnachrichten sofort mit anderen Nutzern aus.',
-          image: 'chatOnSS5',
-          icon: 'commentDots',
-        },
-      ],
-      challenges: [
-        'Synchronisierung von Nachrichten in Echtzeit über mehrere Geräte hinweg.',
-        'Entwicklung einer einfachen und skalierbaren Firebase-Datenstruktur.',
-        'Effizientes und sicheres Verwalten von Bild-Uploads.',
-        'Verwaltung der Benutzerauthentifizierung und Sitzungsverwaltung.',
-        'Sicherstellung einer flüssigen UI/UX auf verschiedenen Android-Geräten.',
-      ],
-      learned: [
-        'Firebase Authentication und Benutzerverwaltung.',
-        'Realtime Database und Synchronisierung von Live-Daten.',
-        'Hochladen und Abrufen von Bildern mit Firebase Storage.',
-        'RecyclerView und moderne Android-UI-Muster.',
-        'Android-App-Lebenszyklus und Activity-Verwaltung.',
-      ],
+      {
+        icon: faMessage,
+        title: 'Echtzeit-Messaging',
+        description:
+          'Sofortiger Nachrichtenaustausch mit Freunden durch Echtzeit-Synchronisierung über Firebase Realtime Database.',
+      },
+      {
+        icon: faImage,
+        title: 'Bilder teilen',
+        description:
+          'Fotos direkt in Unterhaltungen hochladen und über Firebase Storage mit anderen teilen.',
+      },
+      {
+        icon: faUsers,
+        title: 'Freundesverwaltung',
+        description:
+          'Nach Benutzern suchen, Freunde hinzufügen und private oder Gruppenunterhaltungen starten.',
+      },
+    ],
+  },
+
+  workflow: [
+    {
+      title: 'Anmelden / Registrieren',
+      description:
+        'Ein Konto erstellen oder sich sicher mit Firebase Authentication anmelden.',
+      image: chatOnSS1,
     },
+    {
+      title: 'Profileinstellungen',
+      description:
+        'Profilinformationen anpassen und das Benutzerkonto verwalten.',
+      image: chatOnSS2,
+    },
+    {
+      title: 'Freunde finden',
+      description:
+        'Nach Benutzern suchen und sie zur Freundesliste hinzufügen.',
+      image: chatOnSS3,
+    },
+    {
+      title: 'Privater Chat',
+      description:
+        'Private Unterhaltungen mit Echtzeit-Synchronisierung starten.',
+      image: chatOnSS4,
+    },
+    {
+      title: 'Gruppenchats',
+      description:
+        'Gruppen erstellen und gleichzeitig mit mehreren Freunden kommunizieren.',
+      image: chatOnSS5,
+    },
+  ],
+
+  challenges: [
+    'Synchronisierung von Nachrichten in Echtzeit zwischen mehreren Benutzern.',
+    'Entwicklung einer skalierbaren Datenstruktur für Firebase Realtime Database.',
+    'Effizientes Hochladen und Anzeigen von Bildern.',
+    'Verwaltung der Benutzerauthentifizierung und dauerhafter Sitzungen.',
+    'Sicherstellung einer flüssigen Benutzererfahrung auf verschiedenen Android-Geräten.',
+  ],
+
+  learned: [
+    'Implementierung einer sicheren Benutzerauthentifizierung mit Firebase Authentication.',
+    'Entwicklung von Echtzeit-Funktionen mit Firebase Realtime Database.',
+    'Hochladen und Abrufen von Mediendateien mit Firebase Storage.',
+    'Erstellung dynamischer Benutzeroberflächen mit RecyclerView.',
+    'Verwaltung des Android-Lebenszyklus sowie von Activities und Fragments.',
+  ],
+},
     classificationOfRecycling: {
-  tag: "Forschungsprojekt",
-  title1: "Klassifizierung von",
-  title2: "Recyclingmaterialien",
-  subTitle: "Mithilfe von Deep Learning",
-  description: "Ein Forschungsprojekt zur Klassifizierung von Abfallmaterialien mithilfe von Deep-Learning-Techniken.",
-  techStack: ["Computer Vision", "Deep Learning", "Python", "TensorFlow", "Keras"],
-  buttonViewOnGitHub: "Auf GitHub ansehen",
-  buttonDemo: "Demo",
-  summaryPart: [
-    {
-      icon: faImage,
-      value: "2527",
-      label: "Bilder gesamt",
-      color: "text-green-500",
-    },
-    {
-      icon: faBorderAll,
-      value: "6",
-      label: "Klassen",
-      color: "text-green-500",
-    },
-    {
-      icon: faShareNodes,
-      value: "3",
-      label: "CNN-Modelle",
-      color: "text-green-500",
-    },
-    {
-      icon: "faArrowTrendUp",
-      value: "97%",
-      label: "Beste Genauigkeit",
-      color: "text-green-500",
-    },
-    {
-      icon: "faMicrochip",
-      value: "TensorFlow",
-      label: "Framework",
-      color: "text-orange-500",
-    },
-    {
-      icon: "faComputer",
-      value: "GPU",
-      label: "Training",
-      color: "text-green-500",
-    },
-  ],
-  projectDetails: [
-    {
-      icon: "faCircleQuestion",
-      title: "Problem",
-      description:
-        "Die herkömmliche Mülltrennung erfolgt manuell, ist kostenintensiv und fehleranfällig, was zu ineffizienten Recyclingprozessen führt.",
-    },
-    {
-      icon: "faBullseye",
-      title: "Ziel",
-      description:
-        "Entwicklung eines präzisen und effizienten Deep-Learning-Modells zur Klassifizierung von sechs Arten recycelbarer Materialien.",
-    },
-    {
-      icon: "faLightbulb",
-      title: "Forschungsfrage",
-      description:
-        "Welche vortrainierte CNN-Architektur bietet das beste Verhältnis zwischen Genauigkeit und Rechenaufwand?",
-    },
-  ],
-  datasetOverview: {
-    title: "Datensatzübersicht",
-    items: [
-      "2537 Bilder insgesamt",
-      "6 Klassen recycelbarer Materialien",
-      "70 % Training / 13 % Validierung / 17 % Testdaten",
-      "Bilder aus realen Szenarien gesammelt",
-      "Klassenungleichgewicht vorhanden (Trash besitzt weniger Beispiele)",
+    tag: "Forschungsprojekt",
+    title1: "Classification of",
+    title2: "Recycling",
+    subTitle: "Mit Deep Learning",
+    description: "Ein Forschungsprojekt zur Klassifizierung von Abfallmaterialien mithilfe von Deep-Learning-Techniken.",
+    techStack: ["Deep Learning", "Bildverarbeitung", "Python", "TensorFlow", "Keras"],
+    buttonViewOnGitHub: "Auf GitHub ansehen",
+    buttonResearch: "Forschung",
+    summaryPart: [
+        {
+            icon: faImage,
+            value: '2527',
+            label: 'Bilder gesamt',
+            color: 'text-green-500',
+        },
+        {
+            icon: faBorderAll,
+            value: '6',
+            label: 'Klassen',
+            color: 'text-green-500',
+        },
+        {
+            icon: faShareNodes,
+            value: '3',
+            label: 'CNN-Modelle',
+            color: 'text-green-500',
+        },
+        {
+            icon: faArrowTrendUp,
+            value: '97%',
+            label: 'Beste Genauigkeit',
+            color: 'text-green-500',
+        },
+        {
+            icon: faMicrochip,
+            value: '100',
+            label: 'Epochen',
+            color: 'text-green-500',
+        },
+        {
+            icon: faComputer,
+            value: 'GPU',
+            label: 'Training',
+            color: 'text-green-500',
+        },
     ],
-    totalImagePerClass: "Gesamtzahl der Bilder pro Klasse",
-    chartData: [
-      { name: "trash", value: 140 },
-      { name: "glass", value: 500 },
-      { name: "plastic", value: 480 },
-      { name: "cardboard", value: 400 },
-      { name: "paper", value: 560 },
-      { name: "metal", value: 400 },
+    projectDetails: [
+        {
+            icon: faCircleQuestion,
+            title: 'Problem',
+            description:
+                'Die herkömmliche Mülltrennung erfolgt manuell, ist kostspielig und fehleranfällig, was zu ineffizienten Recyclingprozessen führt.',
+        },
+        {
+            icon: faBullseye,
+            title: 'Ziel',
+            description:
+                'Entwicklung eines präzisen und effizienten Deep-Learning-Modells zur Klassifizierung von sechs Arten recycelbarer Materialien.',
+        },
+        {
+            icon: faLightbulb,
+            title: 'Forschungsfrage',
+            description:
+                'Welche vortrainierte CNN-Architektur bietet das beste Verhältnis zwischen Genauigkeit und Rechenaufwand?',
+        },
     ],
-  },
-  methodology: {
-    title: "Methodik",
-    items: [
-      { icon: faFolderOpen, label: "Datensatz-\nerfassung" },
-      { icon: faImage, label: "Bild-\nvorverarbeitung" },
-      { icon: faTableCells, label: "Train/Val/Test-\nAufteilung (70/13/17)" },
-      { icon: faLayerGroup, label: "Transfer\nLearning" },
-      { icon: faLaptopCode, label: "Modell-\ntraining" },
-      { icon: faChartLine, label: "Auswertung" },
-    ],
-    summary:
-      "Die Methodik umfasst die Sammlung eines Datensatzes mit recycelbaren Materialien, die Bildvorverarbeitung, die Aufteilung in Trainings-, Validierungs- und Testdaten, den Einsatz von Transfer Learning mit vortrainierten CNN-Architekturen, das Training der Modelle sowie deren Auswertung, um das leistungsfähigste Modell zu bestimmen.",
-  },
-  modelsCompared: {
-    title: "Verglichene Modelle",
-    items: [
-      {
-        name: "VGG16",
-        subtitle: "Klassische CNN-Architektur",
-        color: "purple",
-        icon: faLayerGroup,
-        accuracy: "75%",
-        points: [
-          "Tiefe und einfache Architektur",
-          "Mehr Parameter",
-          "Höherer Rechenaufwand",
+    datasetOverview: {
+        title: "Datensatzübersicht",
+        items: [
+            '2537 Bilder insgesamt',
+            '6 Klassen recycelbarer Materialien',
+            '70 % Training / 13 % Validierung / 17 % Test',
+            'Bilder aus realen Anwendungsszenarien',
+            'Klassenungleichgewicht vorhanden (Trash hat weniger Beispiele)',
         ],
-      },
-      {
-        name: "MobileNet",
-        subtitle: "Leichtgewichtiges CNN",
-        color: "green",
-        icon: faCube,
-        accuracy: "97%",
-        featured: true,
-        points: [
-          "Für hohe Effizienz entwickelt",
-          "Weniger Parameter",
-          "Schnelleres Training und schnellere Inferenz",
+        totalImagePerClass: "Gesamtzahl der Bilder pro Klasse",
+        chartData: [
+            { name: 'trash', value: 137 },
+            { name: 'glass', value: 501 },
+            { name: 'plastic', value: 482 },
+            { name: 'cardboard', value: 403 },
+            { name: 'paper', value: 594 },
+            { name: 'metal', value: 410 },
+        ]
+    },
+    methodology: {
+        title: "Methodik",
+        items: [
+            { icon: faFolderOpen, label: 'Datensatz-\nerfassung' },
+            { icon: faImage, label: 'Bild-\nvorverarbeitung' },
+            { icon: faLaptopCode, label: 'Modell-\ntraining' },
+            { icon: faChartLine, label: 'Evaluierung' },
         ],
-      },
-      {
-        name: "ResNet50",
-        subtitle: "Residual-Learning-Architektur",
-        color: "blue",
-        icon: faCube,
-        accuracy: "96%",
-        points: [
-          "Sehr tiefes Netzwerk mit Skip-Connections",
-          "Hohe Genauigkeit und Stabilität",
-          "Gute Generalisierungsfähigkeit",
-        ],
-      },
-    ],
-  },
-  trainingResults: {
-    title: "Trainingsergebnisse (Testgenauigkeit)",
-    chartData: [
-      { epoch: "20 Epochen", ResNet50: 0.89, MobileNet: 0.83, VGG16: 0.63 },
-      { epoch: "40 Epochen", ResNet50: 0.89, MobileNet: 0.84, VGG16: 0.56 },
-      { epoch: "60 Epochen", ResNet50: 0.83, MobileNet: 0.95, VGG16: 0.57 },
-      { epoch: "100 Epochen", ResNet50: 0.93, MobileNet: 0.97, VGG16: 0.55 },
-    ],
-  },
-  accuracyComparisonTable: {
-    title: "Vergleich der Modellgenauigkeit",
-    bestAccuracy: "Beste Genauigkeit",
-    mobileNet: {
-      title: "MobileNet",
-      accuracy: "97%",
+        summary: "Die Methodik umfasst die Erfassung eines Datensatzes mit recycelbaren Materialien, die Vorverarbeitung der Bilder, die Aufteilung in Trainings-, Validierungs- und Testdaten, den Einsatz von Transfer Learning mit vortrainierten CNN-Architekturen, das Training der Modelle sowie deren Evaluierung, um das leistungsstärkste Modell für die Klassifizierung zu bestimmen."
     },
-    resNet50: {
-      title: "ResNet50",
-      accuracy: "96%",
+    modelsCompared: {
+        title: "Verglichene Modelle",
+        items: [
+            {
+                name: 'VGG16',
+                subtitle: 'Klassische CNN-Architektur',
+                color: 'purple',
+                icon: faLayerGroup,
+                accuracy: '75%',
+                points: [
+                    'Tiefe und einfache Architektur',
+                    'Mehr Parameter',
+                    'Höherer Rechenaufwand',
+                ],
+            },
+            {
+                name: 'MobileNet',
+                subtitle: 'Leichtgewichtiges CNN',
+                color: 'green',
+                icon: faCube,
+                accuracy: '97%',
+                featured: true,
+                points: [
+                    'Für hohe Effizienz entwickelt',
+                    'Weniger Parameter',
+                    'Schnelleres Training und Inferenz',
+                ],
+            },
+            {
+                name: 'ResNet50',
+                subtitle: 'Residual-Learning-Architektur',
+                color: 'blue',
+                icon: faCube,
+                accuracy: '96%',
+                points: [
+                    'Sehr tiefes Netzwerk mit Skip Connections',
+                    'Hohe Genauigkeit und Stabilität',
+                    'Gute Generalisierungsfähigkeit',
+                ],
+            },
+        ]
     },
-    vgg16: {
-      title: "VGG16",
-      accuracy: "75%",
+    trainingResults: {
+        title: "Trainingsergebnisse (Testgenauigkeit)",
+        chartData: [
+            { epoch: '20 Epochen', ResNet50: 0.90, MobileNet: 0.89, VGG16: 0.75 },
+            { epoch: '40 Epochen', ResNet50: 0.91, MobileNet: 0.90, VGG16: 0.69 },
+            { epoch: '60 Epochen', ResNet50: 0.88, MobileNet: 0.95, VGG16: 0.70 },
+            { epoch: '100 Epochen', ResNet50: 0.96, MobileNet: 0.97, VGG16: 0.69 },
+        ]
     },
-  },
-  predictions: {
-    title: "Vorhersagen",
-    items: [
-      {
-        image: "/images/paper.png",
-        actual: "Papier",
-        predicted: "Papier",
-        confidence: "98.6%",
-      },
-      {
-        image: "/images/glass.png",
-        actual: "Glas",
-        predicted: "Glas",
-        confidence: "97.3%",
-      },
-      {
-        image: "/images/plastic.png",
-        actual: "Kunststoff",
-        predicted: "Kunststoff",
-        confidence: "98.4%",
-      },
-      {
-        image: "/images/cardboard.png",
-        actual: "Karton",
-        predicted: "Karton",
-        confidence: "97.7%",
-      },
-      {
-        image: "/images/metal.png",
-        actual: "Metall",
-        predicted: "Metall",
-        confidence: "98.2%",
-      },
-      {
-        image: "/images/trash.png",
-        actual: "Restmüll",
-        predicted: "Restmüll",
-        confidence: "94.7%",
-      },
-    ],
-  },
+    accuracyComparisonTable: {
+        title: "Vergleich der Genauigkeit",
+        bestAccuracy: "Beste Genauigkeit",
+        mobileNet: {
+            title: 'MobileNet',
+            accuracy: '97%',
+        },
+        resNet50: {
+            title: 'ResNet50',
+            accuracy: '96%',
+        },
+        vgg16: {
+            title: 'VGG16',
+            accuracy: '75%',
+        }
+    },
+    predictions: {
+        title: "Vorhersagen",
+        items: [
+            {
+                image: papier,
+                actual: 'Papier',
+                predicted: 'Papier',
+                confidence: '98.6%',
+            },
+            {
+                image: glass,
+                actual: 'Glas',
+                predicted: 'Glas',
+                confidence: '97.3%',
+            },
+            {
+                image: plastic,
+                actual: 'Kunststoff',
+                predicted: 'Kunststoff',
+                confidence: '98.4%',
+            },
+            {
+                image: cardboard,
+                actual: 'Karton',
+                predicted: 'Karton',
+                confidence: '97.7%',
+            },
+        ]
+    }
 }
   }

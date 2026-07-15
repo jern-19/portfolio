@@ -37,31 +37,6 @@ import {
 } from 'recharts';
 import { useLanguage } from '../../contex/LanguageContext';
 
-const chartData = [
-  { name: 'trash', value: 140 },
-  { name: 'glass', value: 500 },
-  { name: 'plastic', value: 480 },
-  { name: 'cardboard', value: 400 },
-  { name: 'paper', value: 560 },
-  { name: 'metal', value: 400 },
-];
-
-const overview = [
-  '2537 total images',
-  '6 recyclable material classes',
-  '70% Training / 13% Validation / 17% Test split',
-  'Images collected from real-world scenarios',
-  'Class imbalance exists (Trash has fewer samples)',
-];
-
-const methodology = [
-  { icon: faFolderOpen, label: 'Dataset\nCollection' },
-  { icon: faImage, label: 'Image\nPreprocessing' },
-  { icon: faTableCells, label: 'Train/Val/Test\nSplit (70/13/17)' },
-  { icon: faLayerGroup, label: 'Transfer\nLearning' },
-  { icon: faLaptopCode, label: 'Model\nTraining' },
-  { icon: faChartLine, label: 'Evaluation' },
-];
 
 const stats = [
   {
@@ -102,67 +77,6 @@ const stats = [
   },
 ];
 
-const cards = [
-  {
-    icon: faCircleQuestion,
-    title: 'Problem',
-    description:
-      'Traditional waste sorting is manual, expensive and error-prone, leading to inefficient recycling processes.',
-  },
-  {
-    icon: faBullseye,
-    title: 'Goal',
-    description:
-      'Build an accurate and efficient deep learning model that can classify six types of recyclable materials.',
-  },
-  {
-    icon: faLightbulb,
-    title: 'Research Question',
-    description:
-      'Which pretrained CNN architecture provides the best balance between accuracy and computational cost?',
-  },
-];
-
-const models = [
-  {
-    name: 'VGG16',
-    subtitle: 'Classic CNN Architecture',
-    color: 'purple',
-    icon: faLayerGroup,
-    accuracy: '75%',
-    points: [
-      'Deep and simple architecture',
-      'More parameters',
-      'Higher computational cost',
-    ],
-  },
-  {
-    name: 'MobileNet',
-    subtitle: 'Lightweight CNN',
-    color: 'green',
-    icon: faCube,
-    accuracy: '97%',
-    featured: true,
-    points: [
-      'Designed for efficiency',
-      'Fewer parameters',
-      'Faster training & inference',
-    ],
-  },
-  {
-    name: 'ResNet50',
-    subtitle: 'Residual Learning Framework',
-    color: 'blue',
-    icon: faCube,
-    accuracy: '96%',
-    points: [
-      'Very deep with skip connections',
-      'High accuracy and stability',
-      'Good generalization',
-    ],
-  },
-];
-
 const colors = {
   purple: {
     border: 'border-purple-500/30',
@@ -180,13 +94,6 @@ const colors = {
     badge: 'bg-blue-500/20 text-blue-300',
   },
 };
-
-const chartDataTrainingResults = [
-  { epoch: '20 Epoch', ResNet50: 0.89, MobileNet: 0.83, VGG16: 0.63 },
-  { epoch: '40 Epoch', ResNet50: 0.89, MobileNet: 0.84, VGG16: 0.56 },
-  { epoch: '60 Epoch', ResNet50: 0.83, MobileNet: 0.95, VGG16: 0.57 },
-  { epoch: '100 Epoch', ResNet50: 0.93, MobileNet: 0.97, VGG16: 0.55 },
-];
 
 const tableData = [
   {
@@ -212,45 +119,6 @@ const tableData = [
     e60: '70%',
     e100: '69%',
     color: 'text-purple-400',
-  },
-];
-
-const predictions = [
-  {
-    image: '/images/paper.png',
-    actual: 'Paper',
-    predicted: 'Paper',
-    confidence: '98.6%',
-  },
-  {
-    image: '/images/glass.png',
-    actual: 'Glass',
-    predicted: 'Glass',
-    confidence: '97.3%',
-  },
-  {
-    image: '/images/plastic.png',
-    actual: 'Plastic',
-    predicted: 'Plastic',
-    confidence: '98.4%',
-  },
-  {
-    image: '/images/cardboard.png',
-    actual: 'Cardboard',
-    predicted: 'Cardboard',
-    confidence: '97.7%',
-  },
-  {
-    image: '/images/metal.png',
-    actual: 'Metal',
-    predicted: 'Metal',
-    confidence: '98.2%',
-  },
-  {
-    image: '/images/trash.png',
-    actual: 'Trash',
-    predicted: 'Trash',
-    confidence: '94.7%',
   },
 ];
 
@@ -302,15 +170,23 @@ export default function ClassificationOfRecycling() {
 
             {/* Buttons */}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
-              <button className="flex w-full items-center justify-center gap-3 rounded-xl bg-green-500 px-5 py-3 font-medium text-black transition hover:bg-green-400 sm:w-auto sm:px-6 sm:py-4">
-                <i className="fa-brands fa-github text-lg sm:text-xl"></i>
-               {t.classificationOfRecycling.buttonViewOnGitHub}
-              </button>
+              <a
+                href="https://www.youtube.com/watch?v=niV8MlfizxU&t=3s"
+                target="_blank"
+                rel="noreferrer"
+                className="flex w-full items-center justify-center gap-3 rounded-xl bg-green-500 px-5 py-3 font-medium text-black transition hover:bg-green-400 sm:w-auto sm:px-6 sm:py-4"
+              >
+                {t.classificationOfRecycling.buttonViewOnGitHub}
+              </a>
 
-              <button className="flex w-full items-center justify-center gap-3 rounded-xl border border-zinc-700 bg-[#111] px-5 py-3 font-medium text-white transition hover:border-green-400 sm:w-auto sm:px-6 sm:py-4">
-                <i className="fa-regular fa-file-lines text-green-400"></i>
-                {t.classificationOfRecycling.buttonDemo}
-              </button>
+              <a
+                href="https://ieeexplore.ieee.org/abstract/document/8466276"
+                target="_blank"
+                rel="noreferrer"
+                className="flex w-full items-center justify-center gap-3 rounded-xl border border-zinc-700 bg-[#111] px-5 py-3 font-medium text-white transition hover:border-green-400 sm:w-auto sm:px-6 sm:py-4"
+              >
+                {t.classificationOfRecycling.buttonResearch}
+              </a>
             </div>
           </div>
 
@@ -371,7 +247,7 @@ export default function ClassificationOfRecycling() {
               <div
                 key={index}
                 className={`flex gap-5 p-8 ${
-                  index !== cards.length - 1
+                  index !== t.classificationOfRecycling.projectDetails.length - 1
                     ? 'lg:border-r border-gray-700'
                     : ''
                 }`}
@@ -401,9 +277,7 @@ export default function ClassificationOfRecycling() {
       </section>
 
       <section className="mx-auto mt-12 sm:mt-16">
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
-          {/* ================= Dataset Overview ================= */}
-          <div className="rounded-2xl border border-gray-700 bg-[#0d1117] p-6">
+         <div className="rounded-2xl border border-gray-700 bg-[#0d1117] p-6 gap-8">
             <div className="flex items-center gap-3 mb-8">
               <FontAwesomeIcon
                 icon={faDatabase}
@@ -476,57 +350,60 @@ export default function ClassificationOfRecycling() {
               </div>
             </div>
           </div>
+      </section>
 
-          {/* ================= Methodology ================= */}
-          <div className="rounded-2xl border border-gray-700 bg-[#0d1117] p-6">
-            <div className="flex items-center gap-3 mb-8">
-              <FontAwesomeIcon
-                icon={faFlask}
-                className="text-purple-400 text-2xl"
-              />
+     <section className="mx-auto mt-12 sm:mt-16">
+  {/* ================= Methodology ================= */}
+  <div className="rounded-2xl border border-gray-700 bg-[#0d1117] p-6">
+    <div className="mb-8 flex items-center gap-3">
+      <FontAwesomeIcon
+        icon={faFlask}
+        className="text-2xl text-purple-400"
+      />
 
-              <h2 className="text-2xl font-semibold text-white">
-                {t.classificationOfRecycling.methodology.title}
-              </h2>
-            </div>
+      <h2 className="text-2xl font-semibold text-white">
+        {t.classificationOfRecycling.methodology.title}
+      </h2>
+    </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
-              {t.classificationOfRecycling.methodology.items.map((step, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center text-center"
-                >
-                  <div className="relative">
-                    <div className="w-16 h-16 rounded-full border border-green-500/40 bg-green-500/10 flex items-center justify-center">
-                      <FontAwesomeIcon
-                        icon={step.icon}
-                        className="text-green-400 text-xl"
-                      />
-                    </div>
-
-                    {/* Connector (Desktop only) */}
-                    {index !== t.classificationOfRecycling.methodology.items.length - 1 &&
-                      (index + 1) % 3 !== 0 && (
-                        <div className="hidden sm:block absolute top-1/2 left-full w-8 h-[2px] bg-green-500/40 -translate-y-1/2" />
-                      )}
-                  </div>
-
-                  <p className="mt-4 text-sm text-gray-300 leading-6 whitespace-pre-line">
-                    {step.label}
-                  </p>
+    <div className="flex flex-col gap-10 lg:flex-row">
+      {/* Steps */}
+      <div className="flex-1">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-4">
+          {t.classificationOfRecycling.methodology.items.map((step, index) => (
+            <div
+              key={index}
+              className="relative flex flex-col items-center text-center"
+            >
+              <div className="relative">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full border border-green-500/40 bg-green-500/10">
+                  <FontAwesomeIcon
+                    icon={step.icon}
+                    className="text-xl text-green-400"
+                  />
                 </div>
-              ))}
-            </div>
+              </div>
 
-            {/* Optional Summary */}
-            <div className="mt-8 rounded-xl border border-green-500/20 bg-green-500/5 p-4">
-              <p className="text-center text-gray-300 text-sm leading-7">
-                {t.classificationOfRecycling.methodology.summary}
+              <p className="mt-4 whitespace-pre-line text-sm leading-6 text-gray-300">
+                {step.label}
               </p>
             </div>
-          </div>
+          ))}
         </div>
-      </section>
+      </div>
+
+      {/* Summary */}
+      <div className="flex flex-1 items-center rounded-xl border border-green-500/20 bg-green-500/5 p-6 lg:w-80">
+        <p className="text-center text-sm leading-7 text-gray-300">
+          {t.classificationOfRecycling.methodology.summary}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
       <section className="w-full mx-auto mt-12 sm:mt-16">
         <div className="w-full rounded-2xl border border-gray-800 bg-[#111214] p-6">
             {/* Header */}
@@ -749,7 +626,7 @@ export default function ClassificationOfRecycling() {
           </div>
 
           {/* Cards */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {t.classificationOfRecycling.predictions.items.map((item) => (
               <div
                 key={item.actual}

@@ -1,4 +1,14 @@
-import { faChartLine, faCube, faDatabase, faFolderOpen, faImage, faLaptopCode, faLayerGroup, faRobot, faTableCells } from "@fortawesome/free-solid-svg-icons";
+import { faClaude } from "@fortawesome/free-brands-svg-icons";
+import { faArrowTrendDown, faArrowTrendUp, faBorderAll, faBullseye, faChartLine, faCircleQuestion, faComputer, faCube, faDatabase, faDesktop, faFolderOpen, faImage, faLaptopCode, faLayerGroup, faLightbulb, faLock, faMessage, faMicrochip, faRobot, faServer, faShareNodes, faTableCells, faUser, faUsers } from "@fortawesome/free-solid-svg-icons";
+import chatOnSS1 from '../assets/projects/chatOnSS1.png';
+import chatOnSS2 from '../assets/projects/ChatOnSS2.png';
+import chatOnSS3 from '../assets/projects/ChatOnSS3.png';
+import chatOnSS4 from '../assets/projects/chatOnSS4.png';
+import chatOnSS5 from '../assets/projects/chatOnSS5.png';
+import paper from "../assets/projects/paper.png"
+import plastic from "../assets/projects/plastic.jpg"
+import cardboard from "../assets/projects/cardboard.png"
+import glass from "../assets/projects/glass.png"
 
 export const en = {
     common: {
@@ -208,19 +218,19 @@ name: "Jern",
         tools: [
           {
             label: 'Frontend',
-            icon: 'desktop',
+            icon: faDesktop,
           },
           {
             label: 'Backend',
-            icon: 'server',
+            icon: faServer,
           },
           {
             label: 'Database',
-            icon: 'database',
+            icon: faDatabase
           },
           {
             label: 'Hosting',
-            icon: 'cloud',
+            icon: faClaude
           },
         ],
       },
@@ -268,134 +278,147 @@ name: "Jern",
       },
     },
     chatOn: {
-      tag: 'Android App',
-      title1: 'Chat',
-      title2: 'On',
-      subTitle:
-        'A real-time chat application with user authentication and instant messaging.',
-      description:
-        'A real-time chat application with user authentication and instant messaging.',
-      button: 'Live Demo',
-      viewOnGitHub: 'View on GitHub',
-      features: {
-        title: 'Key Features',
-        items: [
-          {
-            icon: 'checked',
-            title: 'User Authentication',
-            description:
-              'Secure user authentication with email and password, allowing users to create accounts and log in to the chat application.',
-          },
-          {
-            icon: 'checked',
-            title: 'Realtime Messaging',
-            description:
-              'Secure login and registration system with Firebase and realtime synchronization.',
-          },
-          {
-            icon: 'checked',
-            title: 'Image Sharing',
-            description:
-              'Secure login and registration system with Firebase and realtime synchronization.',
-          },
-          {
-            icon: 'checked',
-            title: 'Friend Management',
-            description:
-              'Secure login and registration system with Firebase and realtime synchronization.',
-          },
-        ],
+  tag: 'Android App',
+  title1: 'Chat',
+  title2: 'On',
+  subTitle: 'Real-Time Messaging Platform',
+  description:
+    'ChatOn is a modern Android messaging application that enables users to communicate instantly through real-time text messaging and photo sharing. The application features secure authentication, customizable user profiles, image sharing, and a responsive interface powered by Firebase services.',
+
+  button: 'Demo',
+  viewOnGitHub: 'View on GitHub',
+
+  techStack: [
+    'Android',
+    'Android Studio',
+    'Java',
+    'Firebase',
+    'Firebase Authentication',
+    'Firebase Realtime Database',
+    'Firebase Storage',
+  ],
+
+  features: {
+    title: 'Key Features',
+    items: [
+      {
+        icon: faLock,
+        title: 'User Authentication',
+        description:
+          'Secure user registration and login using Firebase Authentication with persistent user sessions.',
       },
-      workflow: [
-        {
-          title: 'Create Account',
-          description:
-            'Create an account securely using Firebase Authentication.',
-          image: 'chatOnSS1',
-          icon: 'userPlus',
-        },
-        {
-          title: 'Login',
-          description: 'Authenticate and access your conversations instantly.',
-          image: 'chatOnSS2',
-          icon: 'lock',
-        },
-        {
-          title: 'Find Friends',
-          description: 'Search users and connect with new friends.',
-          image: 'chatOnSS3',
-          icon: 'magnifyingGlass',
-        },
-        {
-          title: 'Open Chat',
-          description: 'Start private conversations in real time.',
-          image: 'chatOnSS4',
-          icon: 'comments',
-        },
-        {
-          title: 'Send Message',
-          description: 'Exchange text messages instantly.',
-          image: 'chatOnSS5',
-          icon: 'commentDots',
-        },
-      ],
-      challenges: [
-        'Synchronizing messages in real time across multiple devices.',
-        'Designing a simple and scalable Firebase data structure.',
-        'Handling image uploads efficiently and securely.',
-        'Managing user authentication and session persistence.',
-        'Ensuring smooth UI/UX on various Android devices.',
-      ],
-      learned: [
-        'Firebase Authentication and user management.',
-        'Realtime Database and live data synchronization.',
-        'Image upload and retrieval using Firebase Storage.',
-        'RecyclerView and modern Android UI patterns.',
-        'Android app lifecycle and activity management.',
-      ],
+      {
+        icon: faMessage,
+        title: 'Real-Time Messaging',
+        description:
+          'Exchange instant messages with friends using Firebase Realtime Database for live synchronization.',
+      },
+      {
+        icon: faImage,
+        title: 'Image Sharing',
+        description:
+          'Upload and share photos directly in conversations using Firebase Storage.',
+      },
+      {
+        icon: faUsers,
+        title: 'Friend Management',
+        description:
+          'Search for users, add friends, and start private or group conversations.',
+      },
+    ],
+  },
+
+  workflow: [
+    {
+      title: 'Login / Register',
+      description:
+        'Create an account or sign in securely using Firebase Authentication.',
+      image: chatOnSS1,
     },
+    {
+      title: 'Profile Settings',
+      description:
+        'Customize your profile information and manage your account.',
+      image: chatOnSS2,
+    },
+    {
+      title: 'Find Friends',
+      description:
+        'Search for users and add them to your friends list.',
+      image: chatOnSS3,
+    },
+    {
+      title: 'Private Chat',
+      description:
+        'Start one-to-one conversations with real-time message synchronization.',
+      image: chatOnSS4,
+    },
+    {
+      title: 'Group Chats',
+      description:
+        'Create groups and communicate with multiple friends simultaneously.',
+      image: chatOnSS5,
+    },
+  ],
+
+  challenges: [
+    'Synchronizing messages in real time across multiple users.',
+    'Designing a scalable Firebase Realtime Database structure.',
+    'Uploading and displaying images efficiently.',
+    'Managing authentication and persistent user sessions.',
+    'Providing a responsive experience across different Android devices.',
+  ],
+
+  learned: [
+    'Implementing secure authentication with Firebase Authentication.',
+    'Building real-time features using Firebase Realtime Database.',
+    'Uploading and retrieving media with Firebase Storage.',
+    'Developing dynamic interfaces with RecyclerView.',
+    'Managing Android activities, fragments, and the application lifecycle.',
+  ],
+},
     classificationOfRecycling: {
         tag: "Research Project",
         title1: "Classification of",
         title2: "Recycling",
         subTitle: "Using Deep Learning",
         description: "A research project focused on classifying waste materials using deep learning techniques.",
-        techStack: ["Computer Vision", "Deep Learning", "Python", "TensorFlow", "Keras"],
+        techStack: ["Deep Learning", "Image Processing", "Python", "TensorFlow", "Keras"],
         buttonViewOnGitHub: "View on GitHub",
-        buttonDemo: "Demo",
+        buttonResearch: "Research",
         summaryPart: [
             {
-                icon: "faImage",
+                icon: faImage,
                 value: '2527',
                 label: 'Total Images',
                 color: 'text-green-500',
               },
               {
-                icon: "faBorderAll",
+                icon: faBorderAll,
                 value: '6',
                 label: 'Classes',
                 color: 'text-green-500',
               },
               {
-                icon: "faShareNodes",
+                icon: faShareNodes,
                 value: '3',
                 label: 'CNN Models',
                 color: 'text-green-500',
               },
               {
-                icon: "faArrowTrendUp",
+                icon: faArrowTrendUp,
                 value: '97%',
                 label: 'Best Accuracy',
                 color: 'text-green-500',
               },
               {
-                icon: "faMicrochip",
-                value: 'TensorFlow',
-                label: 'Framework',
-                color: 'text-orange-500',
+                icon: faMicrochip,
+                value: '100',
+                label: 'Epochs',
+                color: 'text-green-500',
               },
               {
-                icon: "faComputer",
+                icon: faComputer,
                 value: 'GPU',
                 label: 'Training',
                 color: 'text-green-500',
@@ -403,19 +426,19 @@ name: "Jern",
         ],
         projectDetails: [
             {
-                icon: "faCircleQuestion",
+                icon: faCircleQuestion,
                 title: 'Problem',
                 description:
                   'Traditional waste sorting is manual, expensive and error-prone, leading to inefficient recycling processes.',
               },
               {
-                icon: "faBullseye",
+                icon: faBullseye,
                 title: 'Goal',
                 description:
                   'Build an accurate and efficient deep learning model that can classify six types of recyclable materials.',
               },
               {
-                icon: "faLightbulb",
+                icon: faLightbulb,
                 title: 'Research Question',
                 description:
                   'Which pretrained CNN architecture provides the best balance between accuracy and computational cost?',
@@ -432,12 +455,12 @@ name: "Jern",
         ],
         totalImagePerClass: "Total Images per Class",
         chartData : [
-            { name: 'trash', value: 140 },
-            { name: 'glass', value: 500 },
-            { name: 'plastic', value: 480 },
-            { name: 'cardboard', value: 400 },
-            { name: 'paper', value: 560 },
-            { name: 'metal', value: 400 },
+            { name: 'trash', value: 137 },
+            { name: 'glass', value: 501 },
+            { name: 'plastic', value: 482 },
+            { name: 'cardboard', value: 403 },
+            { name: 'paper', value: 594 },
+            { name: 'metal', value: 410 },
             ]
         },
         methodology:{
@@ -445,8 +468,6 @@ name: "Jern",
             items: [
               { icon: faFolderOpen, label: 'Dataset\nCollection' },
               { icon: faImage, label: 'Image\nPreprocessing' },
-              { icon: faTableCells, label: 'Train/Val/Test\nSplit (70/13/17)' },
-              { icon: faLayerGroup, label: 'Transfer\nLearning' },
               { icon: faLaptopCode, label: 'Model\nTraining' },
               { icon: faChartLine, label: 'Evaluation' },
             ],
@@ -497,10 +518,10 @@ name: "Jern",
         trainingResults: {
             title: "Training Results (Test Accuracy)",
             chartData: [
-            { epoch: '20 Epoch', ResNet50: 0.89, MobileNet: 0.83, VGG16: 0.63 },
-            { epoch: '40 Epoch', ResNet50: 0.89, MobileNet: 0.84, VGG16: 0.56 },
-            { epoch: '60 Epoch', ResNet50: 0.83, MobileNet: 0.95, VGG16: 0.57 },
-            { epoch: '100 Epoch', ResNet50: 0.93, MobileNet: 0.97, VGG16: 0.55 },
+            { epoch: '20 Epoch', ResNet50: 0.90, MobileNet: 0.89, VGG16: 0.75 },
+            { epoch: '40 Epoch', ResNet50: 0.91, MobileNet: 0.90, VGG16: 0.69 },
+            { epoch: '60 Epoch', ResNet50: 0.88, MobileNet: 0.95, VGG16: 0.70 },
+            { epoch: '100 Epoch', ResNet50: 0.96, MobileNet: 0.97, VGG16: 0.69 },
             ]
         },
         accuracyComparisonTable: {
@@ -523,40 +544,28 @@ name: "Jern",
             title: "Predictions",
             items:  [
   {
-    image: '/images/paper.png',
+    image: paper,
     actual: 'Paper',
     predicted: 'Paper',
     confidence: '98.6%',
   },
   {
-    image: '/images/glass.png',
+    image: glass,
     actual: 'Glass',
     predicted: 'Glass',
     confidence: '97.3%',
   },
   {
-    image: '/images/plastic.png',
+    image: plastic,
     actual: 'Plastic',
     predicted: 'Plastic',
     confidence: '98.4%',
   },
   {
-    image: '/images/cardboard.png',
+    image: cardboard,
     actual: 'Cardboard',
     predicted: 'Cardboard',
     confidence: '97.7%',
-  },
-  {
-    image: '/images/metal.png',
-    actual: 'Metal',
-    predicted: 'Metal',
-    confidence: '98.2%',
-  },
-  {
-    image: '/images/trash.png',
-    actual: 'Trash',
-    predicted: 'Trash',
-    confidence: '94.7%',
   },
 ]
         }

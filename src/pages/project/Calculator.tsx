@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import type { IconProp } from '@fortawesome/fontawesome-svg-core';
+import type { IconDefinition, IconProp } from '@fortawesome/fontawesome-svg-core';
 import Calculator1 from '../../assets/projects/calculator1.png';
 import {
   faDatabase,
@@ -24,7 +24,7 @@ export default function Calculator() {
   };
 
   const projectDetails = t.calculator.details.map((detail) => ({
-    icon: icons[detail.icon] ?? faDatabase,
+    icon: icons[detail.icon as keyof typeof icons] ?? faDatabase,
     label: detail.label,
     value: detail.value,
   }));
@@ -90,7 +90,7 @@ export default function Calculator() {
 
             <div className="mt-8 flex w-full max-w-xl flex-col gap-4 sm:flex-row">
               <a
-                href="https://www.youtube.com/watch?v=niV8MlfizxU&t=3s"
+                href="https://www.youtube.com/watch?v=GsF8Dt2YFko"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 rounded-xl px-5 py-3 font-semibold text-white transition hover:scale-105 sm:flex-1"
@@ -173,13 +173,13 @@ export default function Calculator() {
             </div>
 
             {t.calculator.aboutTheProject.tools.map(
-              (tool: { label: string; icon: keyof typeof icons }) => (
+              (tool: { label: string; icon: IconDefinition }) => (
                 <div
                   key={tool.label}
                   className="flex flex-col items-center gap-3 text-center"
                 >
                   <FontAwesomeIcon
-                    icon={icons[tool.icon]}
+                    icon={tool.icon}
                     className="text-3xl text-cyan-400"
                   />
 

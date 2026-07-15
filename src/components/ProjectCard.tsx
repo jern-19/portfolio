@@ -1,10 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faArrowRight,
-  faArrowUpRightFromSquare,
 } from '@fortawesome/free-solid-svg-icons';
 
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 interface Props {
   project: any;
@@ -30,7 +28,7 @@ export default function ProjectCard({ project }: Props) {
         <img
           src={project.image}
           alt={project.title}
-          className="w-full min-h-[310px] object-cover transition duration-700 group-hover:scale-110"
+          className="w-full min-h-[310px] max-h-[450px] object-cover transition duration-700 group-hover:scale-110"
         />
       </div>
 
