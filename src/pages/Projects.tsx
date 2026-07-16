@@ -5,6 +5,9 @@ import ChatOnCard from '../assets/projects/chatOnCard.png';
 import CalculatorCard from '../assets/projects/calculatorCard.png';
 import ClassificationOfRecyclingCard from '../assets/projects/classificationOfRecyclingCard.png';
 import { useLanguage } from '../contex/LanguageContext';
+import { useEffect, useState } from 'react';
+import { preloadImages } from "../utils/preload";
+import ProjectsSkeleton from '../components/skeletons/projectsSkeleton';
 
 type ProjectId =
   | 'restaurantRatings'
@@ -53,6 +56,12 @@ const projects: Project[] = [
   },
 ];
 
+const images = [
+  restaurantRatingCard,
+  ChatOnCard,
+  ClassificationOfRecyclingCard,
+];
+
 function Projects() {
   const { t } = useLanguage();
 
@@ -69,6 +78,19 @@ function Projects() {
       description: translation?.description || project.description,
     };
   });
+
+  const [loaded, setLoaded] = useState(false);
+
+useEffect(() => {
+  preloadImages(images).then(() => setLoaded(true));
+}, []);
+
+if (!loaded) {
+  return (
+    <ProjectsSkeleton />
+  );
+}
+
   return (
     <div className="w-full h-full flex flex-col gap-4 ">
       <div className="grid gap-8 lg:grid-cols-2 h-full ">

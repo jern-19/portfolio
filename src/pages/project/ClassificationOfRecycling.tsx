@@ -6,19 +6,11 @@ import {
   faArrowTrendUp,
   faMicrochip,
   faComputer,
-  faCircleQuestion,
-  faBullseye,
-  faLightbulb,
   faDatabase,
   faCheck,
   faFlask,
-  faFolderOpen,
-  faTableCells,
   faLayerGroup,
-  faLaptopCode,
   faChartLine,
-  faArrowRight,
-  faCube,
   faStar,
 } from '@fortawesome/free-solid-svg-icons';
 import type { IconProp } from '@fortawesome/fontawesome-svg-core';
@@ -36,6 +28,9 @@ import {
   CartesianGrid,
 } from 'recharts';
 import { useLanguage } from '../../contex/LanguageContext';
+import { useEffect, useState } from 'react';
+import { preloadImages } from '../../utils/preload';
+import ClassificationOfRecyclingSkeleton from '../../components/skeletons/ClassificationOfRecyclingSkeleton';
 
 
 const stats = [
@@ -122,8 +117,28 @@ const tableData = [
   },
 ];
 
+
 export default function ClassificationOfRecycling() {
   const {t} = useLanguage()
+ const [loaded, setLoaded] = useState(false);
+  const imagesToPreload = [
+  RecyclingDiagram,
+  ...t.classificationOfRecycling.predictions.items.map(
+    (item) => item.image
+  ),
+];
+useEffect(() => {
+    preloadImages(imagesToPreload).then(() => {
+      setLoaded(true);
+    });
+  }, []);
+  
+  if (!loaded) {
+    return (
+      <ClassificationOfRecyclingSkeleton />
+    );
+  }
+
   return (
     <div className="h-full w-full  pr-2 sm:pr-4 lg:pr-8 ">
       <section className="relative overflow-hidden bg-[#050608]">

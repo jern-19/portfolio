@@ -5,30 +5,36 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import { faChevronRight} from '@fortawesome/free-solid-svg-icons';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import InfoCard from '../../components/InfoCard';
 import { useLanguage } from '../../contex/LanguageContext';
+import { preloadImages } from '../../utils/preload';
+import ChatApplicationSkeleton from '../../components/skeletons/ChatApplicationSkeleton';
 
-
-const challenges = [
-  'Synchronizing messages in real time across multiple devices.',
-  'Designing a simple and scalable Firebase data structure.',
-  'Handling image uploads efficiently and securely.',
-  'Managing user authentication and session persistence.',
-  'Ensuring smooth UI/UX on various Android devices.',
-];
-
-const learned = [
-  'Firebase Authentication and user management.',
-  'Realtime Database and live data synchronization.',
-  'Image upload and retrieval using Firebase Storage.',
-  'RecyclerView and modern Android UI patterns.',
-  'Android app lifecycle and activity management.',
-];
 
 export default function ChatApplication() {
   const { t } = useLanguage();
   const [active, setActive] = useState(0);
+
+    const [loaded, setLoaded] = useState(false);
+    
+  const imagesToPreload = [
+  chatOn1,
+  ...t.chatOn.workflow.map((step) => step.image),
+];
+
+  useEffect(() => {
+    preloadImages(imagesToPreload).then(() => {
+      setLoaded(true);
+    });
+  }, []);
+  
+  if (!loaded) {
+    return (
+      <ChatApplicationSkeleton />
+    );
+  }
+  
   return (
     <div className="w-full flex flex-col gap-[100px] p-20 bg-black  px-6">
       <section className="w-full">

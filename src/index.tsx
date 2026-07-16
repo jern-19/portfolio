@@ -1,16 +1,9 @@
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import { BrowserRouter } from 'react-router';
-import AppRouter from './router/AppRouter';
-import { LanguageProvider } from './contex/LanguageContext';
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import Root from "./Root";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
-root.render(
-  <BrowserRouter>
-    <LanguageProvider>
-      <AppRouter />
-    </LanguageProvider>
-  </BrowserRouter>
-);
+
+root.render(<Root />);

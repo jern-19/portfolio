@@ -11,20 +11,11 @@ import restaurantRatingGallery4 from '../../assets/restaurantRatingGallery4.png'
 import restaurantRatingGallery5 from '../../assets/restaurantRatingGallery5.png';
 import restaurantRatingGallery6 from '../../assets/restaurantRatingGallery6.png';
 import { useEffect, useState } from 'react';
-import {
-  faMagnifyingGlass,
-  faStar,
-} from '@fortawesome/free-solid-svg-icons';
-import {
-  faGlobe,
-  faDatabase,
-  faScaleBalanced,
-  faBrain,
-  faChartLine,
-} from '@fortawesome/free-solid-svg-icons';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useLanguage } from '../../contex/LanguageContext';
 import FeatureCard from '../../components/projects/FeatureCard';
+import { preloadImages } from "../../utils/preload"
+import RestaurantRatingsSkeleton from '../../components/skeletons/RestaurantRatingsSkeleton';
 
 export default function RestaurantRatings() {
   const { t } = useLanguage();
@@ -37,7 +28,15 @@ export default function RestaurantRatings() {
     { id: 6, title: '6', url: restaurantRatingGallery6 },
   ];
 
-  const icons = [faMagnifyingGlass, faStar, faChartLine];
+const imagesToPreload = [
+  restaurantRating1,
+  restaurantRatingGallery1,
+  restaurantRatingGallery2,
+  restaurantRatingGallery3,
+  restaurantRatingGallery4,
+  restaurantRatingGallery5,
+  restaurantRatingGallery6,
+];
 
   const [index, setIndex] = useState(0);
 
@@ -75,6 +74,20 @@ export default function RestaurantRatings() {
     index * itemsPerPage,
     index * itemsPerPage + itemsPerPage
   );
+
+  const [loaded, setLoaded] = useState(false);
+
+useEffect(() => {
+  preloadImages(imagesToPreload).then(() => {
+    setLoaded(true);
+  });
+}, []);
+
+if (!loaded) {
+  return (
+    <RestaurantRatingsSkeleton />
+  );
+}
 
   return (
     <div className="w-full min-h-screen overflow-x-hidden flex flex-col gap-16 md:gap-24 bg-black px-4 sm:px-6 lg:px-20 py-10 md:py-16">
