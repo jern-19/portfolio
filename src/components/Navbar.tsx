@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contex/LanguageContext';
+import J from "../assets/logo512.png"
 
 export default function Navbar() {
   const { language, setLanguage } = useLanguage();
@@ -12,15 +13,20 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-800 bg-black w-full">
+    <header className="sticky top-0 z-50 border-b border-gray-800 bg-black w-full px-10">
       <div className="w-full mx-auto flex h-14 max-w-7xl items-center justify-between ">
         {/* Back Button */}
+
         <button
-          onClick={() => navigate(-1)}
-          className="flex h-10 w-10 items-center justify-center rounded-md text-white transition hover:bg-gray-900"
-        >
-          <FontAwesomeIcon icon={faArrowLeft} className="text-lg" />
-        </button>
+  onClick={() => navigate("/")}
+  className="flex h-10 w-10 items-center justify-center rounded-md transition hover:bg-gray-900"
+>
+  <img
+    src={J}
+    alt="Home"
+    className="h-8 w-8 object-contain"
+  />
+</button>
 
         <div className="flex items-center gap-4">
           {/* Contact Button */}

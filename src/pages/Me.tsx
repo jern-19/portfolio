@@ -62,7 +62,7 @@ export default function Me() {
       onDragEnd={handleDragEnd}
     >
       <SortableContext items={cards} strategy={verticalListSortingStrategy}>
-        <div className="flex flex-col gap-4 w-full">
+        <div className="flex flex-col gap-4 max-w-[900px]">
           {cards.map((card) => (
             <SortableProfileCard key={card.id} card={card} />
           ))}

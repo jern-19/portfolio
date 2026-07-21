@@ -33,6 +33,7 @@ name: "Jern",
       me: 'Über mich',
       experience: 'Erfahrung',
       projects: 'Projekte',
+      learningLog: 'Learning Log'
     },
     home: {
       title: 'Full-Stack-Softwareentwickler',
@@ -40,6 +41,7 @@ name: "Jern",
         'Ich entwickle moderne und skalierbare Software mit intuitiven Benutzererlebnissen und zuverlässigen Backend-Systemen. Mein Fokus liegt auf sauberem Code und wartbaren Lösungen.',
       joined: 'Beigetreten 2016',
       location: 'München, Deutschland',
+      buttonProject: "Go to Projects"
     },
    me: {
   cards: [

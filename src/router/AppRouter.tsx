@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router';
 import HomeLayout from '../layouts/HomeLayout';
 import Me from '../pages/Me';
 import Experience from '../pages/Experience';
-import Projects from '../pages/Projects';
+import Projects from '../pages/LearningLog';
 import RestaurantRatings from '../pages/project/RestaurantRatings';
 import ProjectLayout from '../layouts/ProjectLayout';
 import AppLayout from '../layouts/AppLayout';
@@ -11,6 +11,9 @@ import ClassificationOfRecycling from '../pages/project/ClassificationOfRecyclin
 import Calculator from '../pages/project/Calculator';
 import Contact from '../pages/Contact';
 import Report from '../pages/restaurantRatings/Report';
+import ProjectsNew from '../pages/ProjecetsNew';
+import LearningLog from '../pages/LearningLog';
+import Login from '../pages/Login';
 
 export default function AppRouter() {
   return (
@@ -19,7 +22,7 @@ export default function AppRouter() {
         <Route path="/" element={<HomeLayout />}>
           <Route index element={<Me />} />
           <Route path="experience" element={<Experience />} />
-          <Route path="projects" element={<Projects />} />
+          <Route path="learningLog" element={<LearningLog />} />
           <Route path="articles" element={<Projects />} />
         </Route>
 
@@ -32,10 +35,12 @@ export default function AppRouter() {
           />
           <Route path="calculator" element={<Calculator />} />
           <Route path="restaurantRatings/report" element={<Report />} />
+          
         </Route>
 
-          
+          <Route path="projects" element={<ProjectsNew />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="login" element={<Login />} />
       </Route>
     </Routes>
   );

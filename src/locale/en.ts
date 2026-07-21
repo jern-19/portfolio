@@ -33,6 +33,7 @@ name: "Jern",
       me: 'Me',
       experience: 'Experience',
       projects: 'Projects',
+      learningLog: 'Learning Log'
     },
     home: {
       title: 'Full Stack Software Engineer',
@@ -40,6 +41,7 @@ name: "Jern",
         'I build modern, scalable software with intuitive user experiences and reliable backend systems. My focus is on clean code and maintainable solutions.',
       joined: 'Joined 2016',
       location: 'Munich, Germany',
+      buttonProject: "Go to Projects"
     },
     me: {
       cards: [ 

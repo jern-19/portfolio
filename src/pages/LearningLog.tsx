@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import restaurantRatingCard from '../assets/projects/restaurantRatingCard.png';
 import ProjectCard from '../components/ProjectCard';
 import ChatOnCard from '../assets/projects/chatOnCard.png';
-import CalculatorCard from '../assets/projects/calculatorCard.png';
 import ClassificationOfRecyclingCard from '../assets/projects/classificationOfRecyclingCard.png';
 import { useLanguage } from '../contex/LanguageContext';
 import { useEffect, useState } from 'react';
@@ -62,7 +61,7 @@ const images = [
   ClassificationOfRecyclingCard,
 ];
 
-function Projects() {
+export default function LearningLog() {
   const { t } = useLanguage();
 
   const projectTranslations = t.projects as Record<
@@ -92,20 +91,9 @@ if (!loaded) {
 }
 
   return (
-    <div className="w-full h-full flex flex-col gap-4 ">
-      <div className="grid gap-8 lg:grid-cols-2 h-full ">
-        {localizedProjects.map((project, index) => (
-          <Link
-            to={project.link}
-            key={project.title}
-            className='lg:col-span-2'
-          >
-            <ProjectCard project={project} />
-          </Link>
-        ))}
-      </div>
+    <div className="w-full h-full flex flex-col gap-4 items-center">
+      <span></span>
     </div>
   );
 }
 
-export default Projects;
