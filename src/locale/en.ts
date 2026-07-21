@@ -128,7 +128,7 @@ name: "Jern",
     },
 
    projects: {
-  restaurantRratings: {
+  restaurantRatings: {
     title: 'Restaurant Ratings & Reviews',
     description:
       'A full-stack platform that aggregates restaurant ratings from multiple sources such as Zomato, TripAdvisor, and Google, providing users and restaurant owners with unified reviews, comparisons, and statistical insights.',

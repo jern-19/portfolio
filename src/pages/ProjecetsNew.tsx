@@ -83,7 +83,7 @@ if (!loaded) {
 }
 
   return (
-    <TarotDeck projects={localizedProjects} translations={undefined} />
+    <TarotDeck projects={localizedProjects}/>
   );
 }
 

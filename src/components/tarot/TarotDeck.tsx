@@ -24,12 +24,10 @@ export interface ProjectType {
 
 interface Props {
   projects: ProjectType[];
-  translations: any;
 }
 
 export default function TarotDeck({
   projects,
-  translations,
 }: Props) {
     const { t } = useLanguage();
     
