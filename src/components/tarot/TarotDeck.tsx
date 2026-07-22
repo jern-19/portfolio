@@ -164,7 +164,7 @@ export default function TarotDeck({
   };
 
   return (
-    <div className="relative flex min-h-[calc(100%-60px)] w-full items-center justify-center overflow-hidden px-4 md:min-h-[700px]">
+    <div className="relative flex min-h-[600px] w-full items-center justify-center overflow-hidden px-4 md:min-h-[700px]">
       {projects.map((project, index) => {
         const offset = index - active;
 
